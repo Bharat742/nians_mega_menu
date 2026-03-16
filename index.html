@@ -30,8 +30,8 @@
         transition: max-height 0.4s ease-in-out, opacity 0.3s ease, padding 0.3s ease, margin 0.3s ease !important;
     }
 
-    /* 2. Hide desktop-only elements and back buttons globally */
-    .mega-wrapper ul.hide_mobile,
+   /* 2. Hide desktop-only elements and back buttons globally */
+    .mega-wrapper li > [aria-haspopup="true"] ~ ul.hide_mobile,
     .mega-wrapper .mobile-menu-back-item {
         display: none !important;
     }
@@ -512,51 +512,54 @@ display:block !important;
             <!-- <button class="menu-close">✕</button> -->
             <ul class="menu menu-bar mega-wrapper" data-menu-content="digital">
                 <li>
-                    <a href="javascript:void(0);" class="menu-link menu-bar-link" aria-haspopup="true">Agency</a>      
-                    <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
-                        <div class="swiper-wrapper">
-                            <li class="swiper-slide">
-                            <a href="#" class="menu-link menu-list-link">
-                                <div class="list_data">
-                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                    <div class="service_icon">
-                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
-                                    </div> 
-                                    <h4>SEO</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="swiper-slide">
-                            <a href="#" class="menu-link menu-list-link">
-                                <div class="list_data">
-                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                    <div class="service_icon">
-                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
-                                    </div>    
-                                    <h4>Local SEO</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="swiper-slide">
-                            <a href="#" class="menu-link menu-list-link">
-                                <div class="list_data">
-                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                    <div class="service_icon">
-                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
-                                    </div>     
-                                    <h4>E-commerce SEO</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                </div>
-                            </a>
-                        </li>
-                        </div>
-                    </ul>
-                    <ul class="mega-menu mega-menu--multiLevel hide_mobile">
+                    <a href="javascript:void(0);" class="menu-link menu-bar-link" aria-haspopup="true">Agency</a>   
+                        
+                    <ul class="mega-menu mega-menu--multiLevel ">
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Organic Growth</a>
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <!-- mobile swiper -->
+                             <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
+                                <div class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>SEO</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>Local SEO</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>E-commerce SEO</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                </div>
+                            </ul>
+                            <!-- desktop list -->
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -597,7 +600,7 @@ display:block !important;
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Paid Media & Acquistion</a>
-                            <ul class="menu menu-list d-none d-lg-block"> 
+                            <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -654,7 +657,7 @@ display:block !important;
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Conversation & Performance</a>
-                            <ul class="menu menu-list d-none d-lg-block"> 
+                            <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -711,7 +714,61 @@ display:block !important;
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Social & Brand Growth</a>
-                            <ul class="menu menu-list"> 
+                            <!-- mobile swiper -->
+                             <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
+                                <div class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>Social Media Marketing</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>Influencer Marketing</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>UGC Agency</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>ORM Services</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                </div>
+                            </ul>
+                            <!-- desktop list -->
+                            <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -761,38 +818,41 @@ display:block !important;
                                     </a>
                                 </li> 
                             </ul>
-                            <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
-                                <div class="swiper-wrapper">
-                                    <li class="swiper-slide">
-                                        <a href="#" class="menu-link menu-list-link">
-                                            <div class="list_data">
-                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                <div class="service_icon">
-                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/virtual-meeting.png" alt="img">   
-                                                </div> 
-                                                <h4>CRO Services</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                            </div>
-                                        </a>
-                                    </li> 
-                                    <li class="swiper-slide">
-                                        <a href="#" class="menu-link menu-list-link">
-                                            <div class="list_data">
-                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                <div class="service_icon">
-                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/virtual-meeting.png" alt="img">   
-                                                </div> 
-                                                <h4>Lead Generation</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                            </div>
-                                        </a>
-                                    </li> 
-                                </div>
-                            </ul>
+                             
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Retention & Engagement</a>
-                            <ul class="menu menu-list"> 
+                            <!-- mobile swiper -->
+                             <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
+                                <div class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>Email Marketing</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#" class="menu-link menu-list-link">
+                                        <div class="list_data">
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                            <div class="service_icon">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            </div>     
+                                            <h4>Mobile Marketing</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                </div>
+                            </ul>
+                            <!-- desktop list -->
+                            <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -832,7 +892,7 @@ display:block !important;
                     <a href="javascript:void(0);" class="menu-link menu-bar-link" aria-haspopup="true">Studio</a>
                     <ul class="mega-menu mega-menu--flat">
                         <li>
-                            <a href="#" class="menu-link d-none d-md-block mega-menu-link mega-menu-header">Media Production </a>
+                            <!-- <a href="#" class="menu-link d-none d-md-block mega-menu-link mega-menu-header">Media Production </a> -->
                             <ul class="menu menu-list">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">Product Photography</a>
@@ -907,7 +967,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block"> 
+                            <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -992,7 +1052,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1119,7 +1179,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1191,7 +1251,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1250,7 +1310,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1297,7 +1357,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1368,7 +1428,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1463,7 +1523,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block ">
+                            <ul class="menu menu-list hide_mobile ">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1546,7 +1606,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1629,7 +1689,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1690,7 +1750,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -1726,7 +1786,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list d-none d-lg-block">
+                            <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
