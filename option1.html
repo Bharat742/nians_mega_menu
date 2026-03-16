@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Agency Mega Menu</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .navbar .nav-link {
+            font-weight: 400;
+            font-size: 16px;
+        } 
+
+        .preview-content h5 {
+            font-weight: 600;
+        }
+        #organic-growth{background: #ddd;padding: 20px;border-radius: 10px;}
+        #paid-media{background: #ddd;padding: 20px;border-radius: 10px;}
+        #conversation{background: #ddd;padding: 20px;border-radius: 10px;}
+    .child-panel ul{column-count: 2;}
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #1c3f5e;
+            padding: 14px 0;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin-right: 15px;
+        }
+
+        .nav-link:hover {
+            opacity: .8;
+        }
+
+        /* MEGA MENU */
+
+        .mega-menu {
+            position: static;
+        }
+
+        .mega-menu .dropdown-menu {
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            padding: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CATEGORY */
+
+        .category-list a {
+            display: block;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: .2s;
+            font-size: 17px;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0px;
+        }
+
+        .category-list a img {
+            width: 30px;
+            margin-right: 5px;
+        }
+
+        .category-list a:hover {
+            background: #002a54;
+            color: #fff;
+            font-size: 16px;
+        }
+        .category-list a:hover  img{filter: brightness(0) invert(1);}
+
+        /* SERVICE CARDS */
+
+        .service-card {
+            background: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: .25s;
+            border: 1px solid #eee;display: flex;align-items: center;
+        }
+
+        .service-card:hover { 
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card i {
+            font-size: 22px;
+            color: #002a54; margin-right: 8px;
+        }
+
+        .service-card h6 {
+            margin: 0;
+            font-weight: 500;
+    font-size: 15px;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        /* IMAGE PREVIEW */
+
+        .preview-box {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .preview-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .preview-content {
+            padding: 15px;
+        }
+
+        .preview-content h5 {
+            font-weight: 600;
+        }
+
+        .preview-content p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .child-panel {
+            padding: 0px 20px;
+        }
+
+        .child-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .child-content a {
+            display: block;
+            padding: 8px 0;
+            font-size: 14px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;transition: all 0.3s;
+        }
+
+        .child-content a:hover {
+            color: #002a54;
+            padding-left: 5px;
+            transition: .2s;
+        }
+        .service-card.active{
+border-color:#93bae0;
+background:#f4f8ff;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.service-card.active h6{
+color:#002a54;
+}
+.category-item.active{
+background:#002a54;
+color:#fff;
+font-weight:500;
+}
+.category-item.active img{filter: brightness(0) invert(1);}
+.service-card.active{
+border-color:#93bae0;
+background:#f4f8ff;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.service-card.active h6{
+color:#002a54;
+}
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container">
+
+            <a class="navbar-brand text-white fw-bold" href="#">
+                <img src="https://nians.com/wp-content/uploads/2025/09/nians_white-logo.png" alt="img" class="img-fluid" style="width: 150px;">
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <!-- DIGITAL MARKETING -->
+
+                    <li class="nav-item dropdown mega-menu">
+
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                            Digital Marketing
+                        </a>
+
+                        <div class="dropdown-menu">
+
+                            <div class="container-fluid">
+
+                                <div class="row">
+
+                                    <!-- CATEGORY -->
+
+                                    <div class="col-md-3 border-end">
+
+                                        <div class="category-list">
+
+                                            <a href="#" class="category-item" data-target="agency"><img
+                                                    src="advertisig-agency.png" alt="img" class="img-fluid"> Agency</a>
+                                            <a href="#" class="category-item" data-target="studio"><img
+                                                    src="studio-1.png" alt="img" class="img-fluid"> Studio</a>
+                                            <a href="#" class="category-item" data-target="tech"><img
+                                                    src="technology-1.png" alt="img" class="img-fluid"> Technology</a>
+                                            <a href="#" class="category-item" data-target="case"><img src="research.png"
+                                                    alt="img" class="img-fluid"> Case Study</a>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- SERVICES -->
+
+                                    <div class="col-md-3">
+
+                                        <div id="agency" class="service-content">
+
+                                            <div class="service-card service-parent" data-child="organic-growth">
+<i class="fa-solid fa-chart-line"></i>
+<h6>Organic Growth</h6>
+</div>
+
+<div class="service-card service-parent" data-child="paid-media">
+<i class="fa-solid fa-bullhorn"></i>
+<h6>Paid Media</h6>
+</div>
+
+<div class="service-card service-parent" data-child="conversation">
+<i class="fa-solid fa-comments"></i>
+<h6>Conversation Performance</h6>
+</div>
+
+                                        </div>
+
+
+                                        <div id="studio" class="service-content d-none">
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-palette"></i>
+                                                <h6>Brand Identity</h6>
+                                            </div>
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-pen-nib"></i>
+                                                <h6>Creative Design</h6>
+                                            </div>
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-video"></i>
+                                                <h6>Video Production</h6>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div id="tech" class="service-content d-none">
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-code"></i>
+                                                <h6>Web Development</h6>
+                                            </div>
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-mobile-screen"></i>
+                                                <h6>App Development</h6>
+                                            </div>
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-robot"></i>
+                                                <h6>Automation</h6>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div id="case" class="service-content d-none">
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-chart-pie"></i>
+                                                <h6>Marketing Case Study</h6>
+                                            </div>
+
+                                            <div class="service-card">
+                                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                                <h6>SEO Case Study</h6>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- IMAGE PREVIEW -->
+
+                                    <div class="col-md-6">
+
+                                        <div class="child-panel">
+
+<div class="child-content d-none" id="organic-growth">
+<h6 class="child-title">Organic Growth</h6>
+<ul>
+    <li><a href="#">SEO</a>
+</li>
+    <li><a href="#">Local SEO</a>
+</li>
+    <li><a href="#">E-commerce SEO</a></li>
+</ul>
+</div>
+
+<div class="child-content d-none" id="paid-media">
+<h6 class="child-title">Paid Media</h6>
+<ul>
+    <li><a href="#">Google Ads</a>
+</li>
+    <li><a href="#">Meta Ads</a>
+</li>
+    <li><a href="#">YouTube Ads</a></li>
+</ul>
+</div>
+
+<div class="child-content d-none" id="conversation">
+<h6 class="child-title">Conversation Performance</h6>
+<ul>
+    <li><a href="#">Landing Page Optimization</a>
+</li>
+    <li><a href="#">A/B Testing</a>
+</li>
+    <li><a href="#">Funnel Optimization</a></li>
+</ul>
+</div>
+
+</div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Odoo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">E-Commerce</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resources</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        document.querySelectorAll(".category-item").forEach(item => {
+
+            item.addEventListener("mouseenter", function () {
+
+                let target = this.getAttribute("data-target")
+
+                document.querySelectorAll(".service-content").forEach(el => {
+                    el.classList.add("d-none")
+                })
+
+                document.getElementById(target).classList.remove("d-none")
+
+            })
+
+        })
+
+    </script>
+    <script>
+       document.querySelectorAll(".service-parent").forEach(function(item){
+
+item.addEventListener("mouseenter",function(){
+
+let target = this.dataset.child;
+
+/* remove active from all services */
+document.querySelectorAll(".service-parent").forEach(function(el){
+el.classList.remove("active");
+});
+
+/* add active to current */
+this.classList.add("active");
+
+/* hide all child panels */
+document.querySelectorAll(".child-content").forEach(function(panel){
+panel.classList.add("d-none");
+});
+
+/* show matching panel */
+let activePanel = document.getElementById(target);
+
+if(activePanel){
+activePanel.classList.remove("d-none");
+}
+
+});
+
+});
+    </script>
+    <script>
+        document.querySelectorAll(".category-item").forEach(function(item){
+
+item.addEventListener("mouseenter",function(){
+
+let target = this.dataset.target;
+
+/* remove active from all categories */
+
+document.querySelectorAll(".category-item").forEach(function(el){
+el.classList.remove("active");
+});
+
+/* add active */
+
+this.classList.add("active");
+
+/* hide all service groups */
+
+document.querySelectorAll(".service-content").forEach(function(el){
+el.classList.add("d-none");
+});
+
+/* show selected group */
+
+let group = document.getElementById(target);
+
+if(group){
+group.classList.remove("d-none");
+}
+
+});
+
+});
+    </script>
+
+</body>
+
+</html>
