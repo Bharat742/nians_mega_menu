@@ -183,10 +183,10 @@
         nav a {display: block;text-decoration: none;}
         nav a:hover, nav a:visited {text-decoration: none;}
         .menu-bar {background: #ffffff;display: flex;}
-        .menu-link {padding: 12px 25px;background: #ffffff00;color: #fff;transition: background 0.2s, color 0.2s;position: relative;font-family: "Nunito", sans-serif;z-index: 1;transition: all 0.3s;}
+        .menu-link {padding: 10px 25px;background: #ffffff00;color: #fff;transition: background 0.2s, color 0.2s;position: relative;font-family: "Nunito", sans-serif;z-index: 1;transition: all 0.3s;}
         .menu-bar-link{font-family: "Poppins", sans-serif;font-weight: 400;color: #002a54;}
         .menu-link[aria-haspopup="true"] {padding-right: 40px;}
-        .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #daf0fe;background-color: #fff0;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #fff;border-bottom: 1px solid #ddd;} 
+        .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #daf0fe;background-color: #fff0;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #fff;border-right: 1px solid #ddd;} 
         /* .menu-link[aria-haspopup="true"].mega-menu-link */
         .menu-link[aria-haspopup="true"]:after {content: "";background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent');background-size: 14px;width: 14px;height: 14px;font-size: 12px;position: absolute;right: 10px;top: 50%;transform: translateY(-50%);}
         .mega-menu-header {font-size: 1.2em;text-transform: uppercase;font-family: "Poppins", sans-serif;font-weight: bold;color: #002a54;}
@@ -207,7 +207,7 @@
             .menu-bar > li:focus-within > [aria-haspopup="true"] ~ ul {display: flex;background: #00000070;}
             .menu-bar > li > [aria-haspopup="true"]:focus,
             .menu-bar > li:focus-within > [aria-haspopup="true"],
-            .menu-bar > li:hover > a {background: #1372af;background: #002a54;color: #ffffff;}
+            .menu-bar > li:hover > a {background: #1372af;background: #002a54;color: #ffffff;border-radius: 8px;}
             .menu-bar > li > [aria-haspopup="true"]:focus:after,
             .menu-bar > li:focus-within > [aria-haspopup="true"]:after,
             .menu-bar > li:hover > a:after {
@@ -234,7 +234,7 @@
             .mega-menu--multiLevel li:hover > [aria-haspopup="true"],
             .mega-menu--multiLevel li:focus-within > [aria-haspopup="true"],
             .mega-menu--multiLevel li:hover > a,
-            .mega-menu--multiLevel li:focus-within > a {background: #dde7ed;color: #136a73;background: #707070;background: #002a54;color: #f2f2f2;font-weight: 800; font-size: 15px;border-bottom: 0px;}
+            .mega-menu--multiLevel li:focus-within > a {background: #dde7ed;color: #136a73;background: #707070;background: #002a54;color: #f2f2f2;/*font-weight: 800;*/ font-size: 15px;border-bottom: 0px;border-right: 0px;}
             .mega-menu--multiLevel li > [aria-haspopup="true"]{display: flex;align-items: center;}
             .mega-menu--multiLevel li > a img{width: 25px;margin-right: 10px;}
             .mega-menu--multiLevel li > [aria-haspopup="true"]::after{filter: brightness(15);}
@@ -310,10 +310,11 @@
             0% {opacity: 0;transform: scaleX(0);}
             100% {opacity: 1;transform: scaleX(1);}
         }.bg_img{width: 100%}
-    .nav-main{display: flex;list-style: none;padding-left: 0;gap:20px;padding: 15px;background: #106093; color: #fff;justify-content: center;}
+    .nav-main{display: flex;list-style: none;padding-left: 0;gap: 20px;padding: 15px 40px;background: #e5eef3;color: #002A54;width: fit-content;border-radius: 9px;margin: auto;position: relative;top: 10px;margin-right: 30px;}
     .nav-main li{cursor: pointer;position: relative;font-family: "Poppins", sans-serif; font-weight: 500;}
     .menu.menu-bar {display: none;}
-    .menu.menu-bar.active {display: flex;justify-content: center;}
+    .menu.menu-bar.active {display: flex;position: relative;top: 13px;justify-content: flex-end;
+    margin-right: 20px;}
     /* .mega-wrapper {display: none} */
   .mega-wrapper{
     opacity:0;
@@ -330,18 +331,18 @@
     .mega-wrapper.active {display: block;}
     .menu-list-link{display: flex;flex-direction: column;padding: 0px;border-radius: 12px;}
     .mega-menu--flat .menu-list-link{border-radius: 0px;}
-    .menu-list-link img{width: 50px;background: #ddd0;padding: 8px;border-radius: 50%;}
-    .menu-list-link .list_data{background: #daf0fe;display: flex;flex-direction: column;padding: 15px;border-radius: 12px;transition: all 0.3s;background: url("https://zmatic.teacher-bg.eu/images/Picture-people.png");position: relative;background-size: cover;background-repeat: no-repeat;z-index: 1;overflow: hidden;}
+    .menu-list-link img{width: 50px;background: #ddd0;padding: 0px;filter: invert(1);}
+    .menu-list-link .list_data{background: #daf0fe;display: flex;flex-direction: column;padding: 10px;border-radius: 10px;border: 1px solid #dddddd5e;transition: all 0.3s;background: url("https://zmatic.teacher-bg.eu/images/Picture-people.png");position: relative;background-size: cover;background-repeat: no-repeat;z-index: 1;overflow: hidden;}
     .menu-list-link .list_data::before{content: "";position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: #151515;z-index: -1;opacity: 0.7;backdrop-filter: blur(1px);}
     .mega-menu--flat .menu-list-link{padding: 12px 25px;color: #000;}
-    .menu-list-link .list_data h4{margin: 0; font-size: 17px;color: #fff;}
+    .menu-list-link .list_data h4{margin: 0;font-size: 14px;color: #fff;font-weight: 700;}
     .menu-list-link .list_data p{font-size: 13px;margin: 5px 0;color: #fff;font-weight: 400;}
-    .menu-list-link .list_data .arrow{position: absolute;right: 15px;top: 15px;width: 35px;height: 35px; background-size: contain;background-repeat: no-repeat;transform: rotate(-30deg);transition: all 0.3s;border: 1px solid #ddd;background: #ddd;}
-    .mega-menu--multiLevel li:hover > a .list_data .arrow{transform: rotate(0deg);border: 1px solid #b5cad8;}
-    .mega-menu--multiLevel li:hover > a .list_data .service_icon{background: #002A54; }
-    .mega-menu--multiLevel li > a .list_data .service_icon img{ width: 50px;}
-    .mega-menu--multiLevel li > a .list_data .service_icon{width: 50px;height: 50px;background: #ddd;padding: 8px;border-radius: 50%;position: relative;}
-    .mega-menu--multiLevel li > a .list_data .service_icon img{position: absolute;left: 0;right: 0;top: 0;bottom: 0;transition: all 0.3s;}
+    .menu-list-link .list_data .arrow{position: absolute;right: 15px;top: 0;bottom: 0; margin: auto;width: 20px;height: 20px;padding: 0px; background-size: contain;background-repeat: no-repeat;transform: rotate(0deg);transition: all 0.3s;border: 0px solid #ddd;background: #ddd0;border-radius: 50%;margin-right: 0px;filter: invert(1);}
+    .mega-menu--multiLevel li:hover > a .list_data .arrow{transform: rotate(0deg);border: 0px solid #b5cad8;}
+    .mega-menu--multiLevel li:hover > a .list_data .service_icon{background: #002A5400; }
+    .mega-menu--multiLevel li > a .list_data .service_icon img{ width: 30px;}
+    .mega-menu--multiLevel li > a .list_data .service_icon{width: 40px;height: 30px;background: #ddd0;border-radius: 50%;position: relative;}
+    .mega-menu--multiLevel li > a .list_data .service_icon img{position: absolute;left: 0;right: 0;top: 0;bottom: 0;transition: all 0.3s;filter: invert(1);}
     .mega-menu--multiLevel li:hover > a .list_data .service_icon img{ filter: invert(1);}
     /* .menu-close{display:none;
     position:absolute;
@@ -497,6 +498,11 @@ display:block !important;
 }
 .hide_mobile{display:none !important;}
 }
+.menu_item_list{position: absolute;top: 42px;background: red;background: #00000070;background: #38383870;backdrop-filter: blur(5px);z-index: 9999999;left: 0;right: 0;}
+.menu_item_list li{flex: 1;color: #fff;font-family: 'Poppins', sans-serif;margin: 10px;}
+.menu_item_list li span{font-size: 16px;font-weight: 500;}
+.menu_item_list li ul li{margin-bottom: 5px;}
+.menu_item_list li ul li .service_icon img{width: 22px;margin-right: 5px;}
     </style>
 </head>
 <body>
@@ -520,8 +526,231 @@ display:block !important;
             <ul class="menu menu-bar mega-wrapper" data-menu-content="digital">
                 <li>
                     <a href="javascript:void(0);" class="menu-link menu-bar-link" aria-haspopup="true">Agency</a>   
-                        
-                    <ul class="mega-menu mega-menu--multiLevel ">
+                        <ul class="menu_item_list" >
+                            <li>
+                                <span>Organic Growth</span>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>Local SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>E-commerce SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <!-- <li>Local SEO</li>
+                                    <li>E-commerce SEO</li> -->
+                                </ul>
+                            </li>
+                            <li>
+                                <span>Paid Media & Acquistion</span>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>Local SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>E-commerce SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <span>Conversation & Performance</span>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>Local SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>E-commerce SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>Social & Brand Growth</span>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>Local SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>E-commerce SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>Retention & Engagement</span>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>Local SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="menu-link menu-list-link">
+                                            <div class="list_data">
+                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                                <div class="d-flex align-items-center">
+                                                    <div class="service_icon">
+                                                        <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                    </div> 
+                                                    <h4>E-commerce SEO</h4>
+                                                </div>  
+                                            </div>
+                                        </a>
+                                    </li> 
+                                </ul>
+                            </li>
+                        </ul>
+                    <ul class="mega-menu mega-menu--multiLevel  d-block d-lg-none">
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Organic Growth</a>
                             <!-- mobile swiper -->
@@ -566,17 +795,19 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list hide_mobile">
+                            <!-- <ul class="menu menu-list hide_mobile">
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
-                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                            <div class="service_icon">
-                                                <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">   
+                                            <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2025/08/new-tab.png" alt="arrow" class="arrow">    
+                                            <div class="d-flex align-items-center">
+                                                <div class="service_icon">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img">  
+                                                </div> 
+                                                <h4>SEO</h4>
                                             </div> 
-                                            <h4>SEO</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                        </div>
+                                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p> -->
+                                      <!--  </div>
                                     </a>
                                 </li>
                                 <li>
@@ -603,11 +834,11 @@ display:block !important;
                                         </div>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Paid Media & Acquistion</a>
-                            <ul class="menu menu-list hide_mobile"> 
+                            <!-- <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -632,7 +863,7 @@ display:block !important;
                                         </div>
                                     </a>
                                 </li> 
-                            </ul>
+                            </ul> -->
                             <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
                                 <div class="swiper-wrapper">
                                     <li class="swiper-slide">
@@ -664,7 +895,7 @@ display:block !important;
                         </li>
                         <li>
                             <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true"><img src="agency.png" alt="img" class="img-fluid"> Conversation & Performance</a>
-                            <ul class="menu menu-list hide_mobile"> 
+                            <!-- <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -689,7 +920,7 @@ display:block !important;
                                         </div>
                                     </a>
                                 </li>  
-                            </ul>
+                            </ul> -->
                             <ul class="menu menu-list d-block d-lg-none swiper menu_item_slider">
                                 <div class="swiper-wrapper">
                                     <li class="swiper-slide">
@@ -775,7 +1006,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list hide_mobile"> 
+                            <!-- <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -824,7 +1055,7 @@ display:block !important;
                                         </div>
                                     </a>
                                 </li> 
-                            </ul>
+                            </ul> -->
                              
                         </li>
                         <li>
@@ -859,7 +1090,7 @@ display:block !important;
                                 </div>
                             </ul>
                             <!-- desktop list -->
-                            <ul class="menu menu-list hide_mobile"> 
+                            <!-- <ul class="menu menu-list hide_mobile"> 
                                 <li>
                                     <a href="#" class="menu-link menu-list-link">
                                         <div class="list_data">
@@ -884,7 +1115,7 @@ display:block !important;
                                         </div>
                                     </a>
                                 </li>  
-                            </ul>
+                            </ul> -->
                         </li>
                         <!-- <li>
                             <a href="#" class="menu-link mega-menu-link">1.4 Page link</a>
