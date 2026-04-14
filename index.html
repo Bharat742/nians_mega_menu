@@ -195,16 +195,16 @@
         @media all and (min-width: 951px) {
             .nav {/* margin-top: 50px; */background: #ffffff;}
             .nav > nav {/* max-width: 900px;margin: 0 auto; */width: -webkit-fill-available;}
-            .menu [aria-haspopup="true"] ~ ul {display: none;}
+            .menu [aria-haspopup="true"] ~ ul {display: none !important;}
             .menu-bar {position: relative;}
             .menu-bar > li > [aria-haspopup="true"]:after {background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowBottom.svg#accent');}
             .menu-bar > li > [aria-haspopup="true"]:hover:after {background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowBottom.svg#light');}
             .menu-bar > li > [aria-haspopup="true"]:focus ~ ul {display: flex;transform-origin: top;animation: dropdown 0.2s ease-out;}
-            .menu-bar > li > [aria-haspopup="true"] ~ ul:hover {display: flex;background: #002A54;background: #00000070;backdrop-filter: blur(5px);/*height: 282px;*/}
+            .menu-bar > li > [aria-haspopup="true"] ~ ul:hover {display: flex;background: #002A54;background: #00000070;backdrop-filter: blur(5px); flex-wrap: wrap;/*height: 282px;*/}
             /* ul.mega-menu.mega-menu--multiLevel {height: 205px;} */
             .menu-bar > li > [aria-haspopup="true"] ~ ul {padding-top:0px;
-                background: #00000000;
-                backdrop-filter: blur(5px);}
+                /* background: #00000000; */
+                backdrop-filter: blur(5px);flex-wrap: wrap;}
             .menu-bar > li > [aria-haspopup="true"] ~ ul.mega-menu--flat:hover{width: fit-content;background: #fff;}
             .menu-bar > li:focus-within > [aria-haspopup="true"] ~ ul {display: flex;background: #00000070;}
             .menu-bar > li > [aria-haspopup="true"]:focus,
@@ -316,7 +316,7 @@
     .nav-main li{cursor: pointer;position: relative;font-family: "Poppins", sans-serif; font-weight: 500;}
     .menu.menu-bar {display: none;}
     .menu.menu-bar.active {display: flex;position: relative;top: 13px;justify-content: flex-end;
-    margin-right: 20px;}
+    margin-right: 0px;gap: 2px;}
     /* .mega-wrapper {display: none} */
   .mega-wrapper{
     opacity:0;
@@ -503,8 +503,81 @@ display:block !important;
 .menu_item_list{position: absolute;top: 42px;background: red;background: #00000070;background: #38383870;backdrop-filter: blur(5px);z-index: 9999999;left: 0;right: 0;}
 .menu_item_list li{flex: 1;color: #fff;font-family: 'Poppins', sans-serif;margin: 10px;}
 .menu_item_list li span{font-size: 16px;font-weight: 500;}
-.menu_item_list li ul li{margin-bottom: 5px;}
+.menu_item_list li ul li{margin-bottom: 5px;width: 100%;margin-left: 0;}
 .menu_item_list li ul li .service_icon img{width: 22px;margin-right: 5px;}
+.menu_item_list {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); */
+}
+.menu_item_list,
+.menu_item_list * {
+    box-sizing: border-box;
+}
+
+.menu_item_list > li {
+    break-inside: avoid; /* Content ko column ke beech tootne se rokta hai */
+}
+
+.menu_item_list span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.menu_item_list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+@media (min-width: 951px) {
+    .menu > li > a[aria-haspopup="true"] ~ ul {
+        display: none;
+    }
+     .menu [aria-haspopup="true"] ~ ul {
+        display: none;
+        position: absolute; /* Optional for dropdown */
+    }
+
+    /* Show on hover */
+    .menu li:hover > [aria-haspopup="true"] ~ ul {
+        display: grid !important; /* Ya block, design ke hisaab se */
+    }
+}
+/* Large Screens */
+@media (max-width: 1200px) {
+    .menu_item_list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .menu_item_list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+    .menu_item_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .menu_item_list {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
