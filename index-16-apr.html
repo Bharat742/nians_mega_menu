@@ -202,7 +202,7 @@
             .menu-bar > li > [aria-haspopup="true"]:focus ~ ul {display: flex;transform-origin: top;animation: dropdown 0.2s ease-out;}
             .menu-bar > li > [aria-haspopup="true"] ~ ul:hover {display: flex;background: #002A54;background: #00000070;backdrop-filter: blur(5px);/*height: 282px;*/}
             /* ul.mega-menu.mega-menu--multiLevel {height: 205px;} */
-            .menu-bar > li > [aria-haspopup="true"] ~ ul {padding-top:0px;background: #00000000;backdrop-filter: blur(5px);}
+            .menu-bar > li > [aria-haspopup="true"] ~ ul {padding-top:0px;background: #00000000;backdrop-filter: blur(5px);height: 100vh;width: 50%;left: auto;right: 0;}
             .menu-bar > li > [aria-haspopup="true"] ~ ul.mega-menu--flat:hover{width: fit-content;background: #fff;}
             .menu-bar > li:focus-within > [aria-haspopup="true"] ~ ul {display: flex;background: #00000070;padding: 10px 0px;}
             .menu-bar > li > [aria-haspopup="true"]:focus,
@@ -224,8 +224,8 @@
             .mega-menu:hover {display: flex;}
             .mega-menu a:hover {background: #dceced;color: #136a73;background: #ddecfb;
         color: #002a54;}
-            .mega-menu--multiLevel > li {width: 23.33333333%;}
-            .mega-menu--multiLevel > li > [aria-haspopup="true"] ~ ul {left: 23.33333333%;/* width: 76.7%;*/column-count: 4 !important;/* display: flex; */}
+            .mega-menu--multiLevel > li {width: 100%;}
+            .mega-menu--multiLevel > li > [aria-haspopup="true"] ~ ul {left: 0%;/* width: 76.7%;*/column-count: 4 !important;/* display: flex; */}
             /* .mega-menu--multiLevel > li > [aria-haspopup="true"] ~ ul.menu-list li{flex: 1;} */
             .mega-menu--multiLevel > li > [aria-haspopup="true"] ~ ul ul {width: 100%;left: 100%;}
             .mega-menu--multiLevel li:hover > [aria-haspopup="true"] ~ ul {display: block;transform-origin: left;animation: flyout 0.2s ease-out;column-count: 4;padding: 10px;gap: 10px;background: #002A54;background: #00000000; height: 100%;height: inherit;}
@@ -510,6 +510,26 @@ display:block !important;
   transition: opacity 0.35s;
 }
 .hide_mobile{display:none !important;}
+}
+
+/* ---------------------------------------- */
+
+
+
+/* Hide the desktop submenu initially */
+.menu.menu-list.hide_mobile {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+/* When active, show the submenu */
+.menu.menu-list.hide_mobile.active {
+    display: block;
+}
+
+/* Optional: rotate arrow/icon if you add one */
+.mega-menu-link.active {
+    font-weight: 600;
 }
     </style>
 </head>
@@ -2456,6 +2476,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     swiperMenu.classList.toggle('active');
                 }
             }
+        });
+    });
+});
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const megaMenuLinks = document.querySelectorAll(".mega-menu-link");
+
+    megaMenuLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const parentLi = this.closest("li");
+            const submenu = parentLi.querySelector(".menu.menu-list.hide_mobile");
+
+            // Close other open submenus (accordion behavior)
+            document.querySelectorAll(".menu.menu-list.hide_mobile.active").forEach(openMenu => {
+                if (openMenu !== submenu) {
+                    openMenu.classList.remove("active");
+                    openMenu.closest("li")
+                        .querySelector(".mega-menu-link")
+                        .classList.remove("active");
+                }
+            });
+
+            // Toggle current submenu
+            submenu.classList.toggle("active");
+            this.classList.toggle("active");
         });
     });
 });
