@@ -15,7 +15,7 @@
         @keyframes slideFromTop {
             0% {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-10px);
             }
             100% {
                 opacity: 1;
@@ -201,6 +201,7 @@
         body {font-family: 'Noto Sans', sans-serif;background: #fafafa;padding: 0;margin: 0;}
         *, *:before, *:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
         nav ul, nav li {list-style: none;padding: 0;margin: 0;}
+        .menu-bar.mega-wrapper li:hover .mega-menu {display: block;}
         nav a {display: block;text-decoration: none;}
         nav a:hover, nav a:visited {text-decoration: none;}
         .menu-bar {background: #ffffff;display: flex;}
@@ -208,7 +209,7 @@
         .menu-bar-link{font-family: "Poppins", sans-serif;font-weight: 400;color: #002a54;}
         .menu-link[aria-haspopup="true"] {padding-right: 40px;}
         .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #fff0;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #000000;
-            /* border-bottom: 1px solid #ddd; */
+            border-bottom: 1px solid #ddd;
             width: 95%;} 
         
         .menu-link[aria-haspopup="true"]:after {content: "";background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent');background-size: 14px;width: 14px;height: 14px;font-size: 12px;position: absolute;right: 10px;top: 50%;transform: translateY(-50%);}
@@ -302,6 +303,7 @@
             .mega-menu-scroll-col li:focus-within > [aria-haspopup="true"],
             .mega-menu-scroll-col li:hover > a,
             .mega-menu-scroll-col li:focus-within > a {background: #002a54;color: #f2f2f2;font-weight: 800; font-size: 15px;border-bottom: 0px;border-radius: 10px;}
+            .mega-menu-scroll-col li:hover > [aria-haspopup="true"]::after, .mega-menu-scroll-col li:focus-within > [aria-haspopup="true"]::after{filter: invert(1) brightness(2);}
             .mega-menu-scroll-col li > [aria-haspopup="true"]{display: flex;align-items: center;}
             .mega-menu-scroll-col li > a img{width: 25px;margin-right: 10px;}
             .mega-menu--multiLevel li > a img{width: 25px;margin-right: 10px; filter: invert(1);}
@@ -406,6 +408,8 @@
     position: relative;
     margin-right: 30px;}
     .nav-main li{cursor: pointer;position: relative;font-family: "Poppins", sans-serif; font-weight: 500;}
+    .nav-main li[data-menu]{margin-right: 10px;}
+    .nav-main li[data-menu]::after{  content: " ";background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent");background-size: 14px;width: 14px;height: 14px;/* font-size: 12px; */position: absolute;right: -16px;background-size: contain;top: 0;background-repeat: no-repeat;bottom: 0;margin: auto;transform: rotate(90deg);} 
     .menu.menu-bar {display: none;}
     .menu.menu-bar.active {display: flex;justify-content: flex-end;gap: 5px; margin-bottom: 10px;}
     .mega-wrapper{
@@ -947,7 +951,7 @@
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
                                                     <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
+                                                    <h4>Hire Odoo Developers</h4>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -956,9 +960,113 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
+                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Core Modules</a>
                                  <div class="menu menu-list swiper menu_item_slider">
                                     <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo CRM</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Sales Management</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Purchases</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Project Management</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Finance Modules</a>
+                                 <div class="menu menu-list swiper menu_item_slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Accounting</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Expenses</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Budget</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">HR Modules</a>
+                                 <div class="menu menu-list swiper menu_item_slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo HR Management</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Payroll</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
                                         <div class="swiper-slide">
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
@@ -973,7 +1081,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
+                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Commerce & Website</a>
                                  <div class="menu menu-list swiper menu_item_slider">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
@@ -981,7 +1089,27 @@
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
                                                     <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
+                                                    <h4>Odoo POS</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo E-Commerce</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#" class="menu-link menu-list-link">
+                                                <div class="list_data">
+                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
+                                                    <h4>Odoo Website</h4>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -990,7 +1118,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
+                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">CRM Tools</a>
                                  <div class="menu menu-list swiper menu_item_slider">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
@@ -998,7 +1126,7 @@
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
                                                     <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
+                                                    <h4>Odoo Email Marketing</h4>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -1007,7 +1135,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
+                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Support Tools</a>
                                  <div class="menu menu-list swiper menu_item_slider">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
@@ -1015,65 +1143,14 @@
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
                                                     <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
+                                                    <h4>Odoo Helpdesk</h4>
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
-                                 <div class="menu menu-list swiper menu_item_slider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <a href="#" class="menu-link menu-list-link">
-                                                <div class="list_data">
-                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
-                                 <div class="menu menu-list swiper menu_item_slider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <a href="#" class="menu-link menu-list-link">
-                                                <div class="list_data">
-                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-link mega-menu-link" aria-haspopup="true">Talent</a>
-                                 <div class="menu menu-list swiper menu_item_slider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <a href="#" class="menu-link menu-list-link">
-                                                <div class="list_data">
-                                                    <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Hire Odoo Developer</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            </li> 
                             <li class="mobile-menu-back-item">
                                 <a href="javascript:void(0);" class="menu-link mobile-menu-back-link">Back</a>
                             </li>
@@ -1081,7 +1158,7 @@
                     </div>
                 </li>
                 
-                <li>
+                <!-- <li>
                     <a href="javascript:void(0);" class="menu-link menu-bar-link" aria-haspopup="true">Core Modules</a>
                     <div class="mega-menu mega-menu--multiLevel">
                         <ul class="mega-menu-scroll-col">
@@ -1287,7 +1364,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="menu-link menu-bar-link">Case Study</a>
                 </li>
@@ -1332,7 +1409,7 @@
                         <li> 
                             <ul class="menu menu-list">
                                 <li><a href="#" class="menu-link menu-list-link">Shopify Management</a></li> 
-                                <li><a href="#" class="menu-link menu-list-link">E_Commerce Marketing</a></li> 
+                                <li><a href="#" class="menu-link menu-list-link">E-Commerce Marketing</a></li> 
                                 <li><a href="#" class="menu-link menu-list-link">E-Commerce SEO</a></li> 
                                 <li><a href="#" class="menu-link menu-list-link">CRO</a></li> 
                             </ul>
@@ -1485,7 +1562,7 @@
                 },
                 951: {
                     slidesPerView: 3, 
-                    spaceBetween: 20
+                    spaceBetween: 10
                 }
             }, 
         });
