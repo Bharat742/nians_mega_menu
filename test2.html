@@ -210,7 +210,7 @@
         .menu-link[aria-haspopup="true"] {padding-right: 40px;}
         .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #fff0;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #000000;
             border-bottom: 1px solid #ddd;
-            width: 95%;} 
+            width: 95%;border-radius: 25px;} 
         
         .menu-link[aria-haspopup="true"]:after {content: "";background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent');background-size: 14px;width: 14px;height: 14px;font-size: 12px;position: absolute;right: 10px;top: 50%;transform: translateY(-50%);}
         .mega-menu-header {font-size: 1.2em;text-transform: uppercase;font-family: "Poppins", sans-serif;font-weight: bold;color: #002a54;}
@@ -302,14 +302,16 @@
             .mega-menu-scroll-col li:hover > [aria-haspopup="true"],
             .mega-menu-scroll-col li:focus-within > [aria-haspopup="true"],
             .mega-menu-scroll-col li:hover > a,
-            .mega-menu-scroll-col li:focus-within > a {background: #002a54;color: #f2f2f2;font-weight: 800; font-size: 15px;border-bottom: 0px;border-radius: 10px;}
+            .mega-menu-scroll-col li:focus-within > a {background: #002a54;color: #f2f2f2;/*font-weight: 800; font-size: 15px;*/border-bottom: 0px;border-radius: 10px;background: linear-gradient(135deg, #032b57, #0b63b6);
+    border-radius: 25px;
+    box-shadow: 0 10px 15px rgba(11, 99, 182, .25);}
             .mega-menu-scroll-col li:hover > [aria-haspopup="true"]::after, .mega-menu-scroll-col li:focus-within > [aria-haspopup="true"]::after{filter: invert(1) brightness(2);}
             .mega-menu-scroll-col li > [aria-haspopup="true"]{display: flex;align-items: center;}
             .mega-menu-scroll-col li > a img{width: 25px;margin-right: 10px;}
             .mega-menu--multiLevel li > a img{width: 25px;margin-right: 10px; filter: invert(1);}
             /* .mega-menu-scroll-col li > [aria-haspopup="true"]::after{filter: brightness(15);} */
             .mega-menu-scroll-col [aria-haspopup="true"] ~ ul,
-            .mega-menu-scroll-col [aria-haspopup="true"] {border-left: 0px solid #f0f0f0;padding: 7px;}
+            .mega-menu-scroll-col [aria-haspopup="true"] {border-left: 0px solid #f0f0f0;padding: 7px;padding-left: 15px;}
             
             .mega-menu--flat > * {flex: 1;}
             .mobile-menu-trigger,
