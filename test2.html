@@ -208,9 +208,9 @@
         .menu-link {padding: 12px 25px;background: #ffffff00;color: #fff;transition: background 0.2s, color 0.2s;position: relative;font-family: "Nunito", sans-serif;z-index: 1;transition: all 0.3s;}
         .menu-bar-link{font-family: "Poppins", sans-serif;font-weight: 400;color: #002a54;}
         .menu-link[aria-haspopup="true"] {padding-right: 40px;}
-        .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #fff0;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #000000;
+        .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #fff;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #000000;
             border-bottom: 1px solid #ddd;
-            width: 95%;border-radius: 25px;} 
+            width: 95%;border-radius: 8px;} 
         
         .menu-link[aria-haspopup="true"]:after {content: "";background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent');background-size: 14px;width: 14px;height: 14px;font-size: 12px;position: absolute;right: 10px;top: 50%;transform: translateY(-50%);}
         .mega-menu-header {font-size: 1.2em;text-transform: uppercase;font-family: "Poppins", sans-serif;font-weight: bold;color: #002a54;}
@@ -255,9 +255,12 @@
                 background:#fff;backdrop-filter:blur(5px);
                 height: 260px; /* Fixed height! No overflow-y here. */
             }
+            /* .mega-menu--multiLevel{position: relative;} */
+            .mega-menu--multiLevel, .menu-bar > li:focus-within > [aria-haspopup="true"] ~ .mega-menu--multiLevel{background-image: url("https://t4.ftcdn.net/jpg/13/42/44/73/360_F_1342447333_fchrPkV1K4gtrdjzTdoEukXfmeeyldw4.jpg");background: url("abstract3.png");background-size: cover;background-color: #fff;background-repeat: no-repeat;background-position: bottom;}
+            .mega-menu--multiLevel::before{content: "";position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: #ffffff54;backdrop-filter: blur(10px);}
             .mega-menu.mega-menu--flat{left: auto;width: auto;background: #fff !important; height: auto; min-height: auto;}
             .mega-menu:hover {display: flex;}
-            .mega-menu a:hover {background: #ddecfb;color: #002a54;}
+            .mega-menu a:hover {background: #ddecfb00;color: #002a54;}
             
             /* SCROLLABLE LEFT COLUMN */
             .mega-menu-scroll-col {
@@ -266,8 +269,7 @@
                 height: 100%;
                 overflow-y: auto;
                 overflow-x: hidden;
-                margin: 0; padding: 0; list-style: none;
-            }
+                margin: 0; padding: 0; list-style: none;padding-top: 15px;}
             .mega-menu-scroll-col > li { width: 100%; }
             
             /* Custom Scrollbar for sleek look */
@@ -438,9 +440,12 @@
 }
      .menu-list-link .list_data{background: #ffffffd9;display: flex;flex-direction: column;padding: 15px;border-radius: 12px;transition: all 0.3s ;border:1px solid rgb(210, 213, 255);
         /* background: url("https://zmatic.teacher-bg.eu/images/Picture-people.png"); */
-        position: relative;background-size: cover;background-repeat: no-repeat;z-index: 1;overflow: hidden;}
-    .menu-list-link .list_data::before{content: "";position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: #ffffff;z-index: -1;opacity: 0.7;backdrop-filter: blur(1px);}
-    .menu-list-link:hover .list_data::before{background: #fff;}
+        position: relative;background-size: cover;background-repeat: no-repeat;z-index: 1;overflow: hidden;background: rgb(255 255 255 / 34%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(120, 140, 255, .25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);}
+    .menu-list-link .list_data::before{content: "";position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: #ffffff00;z-index: -1;opacity: 0.7;backdrop-filter: blur(0px);}
+    /* .menu-list-link:hover .list_data::before{background: #fff;} */
     .menu-list-link:hover .list_data h4, .menu-list-link:hover .list_data p{color: #000;}
     .menu-link:hover .list_data h4{font-weight: 700;}
     .mega-menu--flat .menu-list-link{padding: 12px 25px;color: #000;}
@@ -456,7 +461,7 @@
     
     .mega-menu--multiLevel li > a img{width: 25px;margin-right: 10px; filter: invert(1);}
     .mega-menu--multiLevel:not(:hover) .mega-menu-scroll-col > li:first-child > a{
-        background:#002a54;font-weight: 800; color:#fff; border-radius: 10px;}
+        background:linear-gradient(135deg, #032b57, #0b63b6);font-weight: 800; color:#fff; border-radius: 25px;}
          .mega-menu--multiLevel:not(:hover) .mega-menu-scroll-col > li:first-child > a img{filter: invert(0);}
 
     .bg_img{position: absolute;z-index: -1;}
@@ -522,8 +527,7 @@
 
      .mega-menu a:hover .list_data img.arrow{transform: rotate(0deg);}
             .mega-menu a .list_data{    transition: transform 0.2s, box-shadow 0.2s;}
-            .mega-menu a:hover .list_data{     transform: translateY(-5px);
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px;}
+            .mega-menu a:hover .list_data{transform: translateY(-5px);box-shadow:0px 3px 2px 0px rgb(0 0 0 / 25%);}
 
 
     @media (max-width:767px){
