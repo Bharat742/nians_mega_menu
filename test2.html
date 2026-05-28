@@ -205,12 +205,12 @@
         nav a {display: block;text-decoration: none;}
         nav a:hover, nav a:visited {text-decoration: none;}
         .menu-bar {background: #ffffff;display: flex;}
-        .menu-link {padding: 12px 25px;background: #ffffff00;color: #fff;transition: background 0.2s, color 0.2s;position: relative;font-family: "Nunito", sans-serif;z-index: 1;transition: all 0.3s;}
-        .menu-bar-link{font-family: "Poppins", sans-serif;font-weight: 400;color: #002a54;}
-        .menu-link[aria-haspopup="true"] {padding-right: 40px;}
+        .menu-link {padding: 7px 20px;background: #ffffff00;color: #fff;transition: background 0.2s, color 0.2s;position: relative;font-family: "Nunito", sans-serif;z-index: 1;transition: all 0.3s;}
+        .menu-bar-link{font-family: "Poppins", sans-serif;font-weight: 400;color: #002a54;font-size: 12px;}
+        .menu-link[aria-haspopup="true"] {padding-right: 27px;}
         .menu-link[aria-haspopup="true"].mega-menu-link{background-color: #fff;border-radius: 0px;width: 100%;margin: auto;margin-bottom: 8px;color: #000000;
             border-bottom: 1px solid #ddd;
-            width: 95%;border-radius: 8px;} 
+            width: 95%;border-radius: 8px;margin-left: 5%;} 
         
         .menu-link[aria-haspopup="true"]:after {content: "";background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent');background-size: 14px;width: 14px;height: 14px;font-size: 12px;position: absolute;right: 10px;top: 50%;transform: translateY(-50%);}
         .mega-menu-header {font-size: 1.2em;text-transform: uppercase;font-family: "Poppins", sans-serif;font-weight: bold;color: #002a54;}
@@ -257,7 +257,7 @@
                 height: 260px; /* Fixed height! No overflow-y here. */
             }
             /* .mega-menu--multiLevel{position: relative;} */
-            .mega-menu--multiLevel, .menu-bar > li:focus-within > [aria-haspopup="true"] ~ .mega-menu--multiLevel{background-image: url("https://t4.ftcdn.net/jpg/13/42/44/73/360_F_1342447333_fchrPkV1K4gtrdjzTdoEukXfmeeyldw4.jpg");background: url("abstract3.png");background-size: cover;background-color: #fff;background-repeat: no-repeat;background-position: bottom;}
+            .mega-menu--multiLevel, .menu-bar > li:focus-within > [aria-haspopup="true"] ~ .mega-menu--multiLevel{/*background-image: url("https://t4.ftcdn.net/jpg/13/42/44/73/360_F_1342447333_fchrPkV1K4gtrdjzTdoEukXfmeeyldw4.jpg");background: url("abstract3.png");*/background-size: cover;background-color: #fff;background-repeat: no-repeat;background-position: bottom;}
             .mega-menu--multiLevel::before{content: "";position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: #ffffff54;backdrop-filter: blur(10px);}
             .mega-menu.mega-menu--flat{left: auto;width: auto;background: #fff !important; height: auto; min-height: auto;}
             .mega-menu:hover {display: flex;}
@@ -282,7 +282,7 @@
             .mega-menu--multiLevel .menu_item_slider {
                 position: absolute;
                 left: 25%; /* Anchors right next to the scroll column */
-                width: 75%;
+                width: 74%;
                 top: 0;
                 height: 100%;
                 display: none;
@@ -404,19 +404,19 @@
     list-style: none;
     padding-left: 0;
     gap: 20px;
-    padding: 15px 40px;
+    padding: 11px 40px;
     background: #e5eef3;
     color: #002A54;
     width: fit-content;
     border-radius: 9px;
     margin: auto;
     position: relative;
-    margin-right: 30px;}
-    .nav-main li{cursor: pointer;position: relative;font-family: "Poppins", sans-serif; font-weight: 500;}
+    margin-right: 30px;margin-bottom: 5px;}
+    .nav-main li{cursor: pointer;position: relative;font-family: "Poppins", sans-serif; font-weight: 500;font-size: 13px;}
     .nav-main li[data-menu]{margin-right: 10px;}
     .nav-main li[data-menu]::after{  content: " ";background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1397521/arrowRight.svg#accent");background-size: 14px;width: 14px;height: 14px;/* font-size: 12px; */position: absolute;right: -16px;background-size: contain;top: 0;background-repeat: no-repeat;bottom: 0;margin: auto;transform: rotate(90deg);} 
     .menu.menu-bar {display: none;}
-    .menu.menu-bar.active {display: flex;justify-content: flex-end;gap: 5px; margin-bottom: 10px;}
+    .menu.menu-bar.active {display: flex;justify-content: flex-end;gap: 5px; margin-bottom: 10px;margin-right: 15px;}
     .mega-wrapper{
     opacity:0;
     transform:translateY(-15px);
@@ -432,12 +432,12 @@
     .mega-wrapper.active {display: block;}
     .menu-list-link{display: flex;flex-direction: column;padding: 0px;border-radius: 12px;}
     .mega-menu--flat .menu-list-link{border-radius: 0px;}
-    .menu-list-link img{    width: 45px;
+    .menu-list-link img{ width: 38px;
     background: #00000000;
-    padding: 5px;
+    padding: 3px;
     border-radius: 7px;
     border: 1px solid #000;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
      .menu-list-link .list_data{background: #ffffffd9;display: flex;flex-direction: column;padding: 15px;border-radius: 12px;transition: all 0.3s ;border:1px solid rgb(210, 213, 255);
         /* background: url("https://zmatic.teacher-bg.eu/images/Picture-people.png"); */
@@ -448,11 +448,12 @@
     .menu-list-link .list_data::before{content: "";position: absolute;top: 0;bottom: 0;left: 0;right: 0;background: #ffffff00;z-index: -1;opacity: 0.7;backdrop-filter: blur(0px);}
     /* .menu-list-link:hover .list_data::before{background: #fff;} */
     .menu-list-link:hover .list_data h4, .menu-list-link:hover .list_data p{color: #000;}
-    .menu-link:hover .list_data h4{font-weight: 700;}
+    /* .menu-link:hover .list_data h4{font-weight: 700;} */
     .mega-menu--flat .menu-list-link{padding: 12px 25px;color: #000;}
-    .menu-list-link .list_data h4{margin: 0; font-size: 17px;color: #000000;}
-    .menu-list-link .list_data p{font-size: 13px;margin: 5px 0;color: #000000;font-weight: 400;}
-    .menu-list-link .list_data .arrow{position: absolute;right: 15px;top: 15px;width: 35px;height: 35px; background-size: contain;background-repeat: no-repeat;transform: rotate(-30deg);transition: all 0.3s;border: 1px solid #ddd;background: #ddd;border-radius: 50%;}
+    .menu-list-link .list_data h4{margin: 0; font-size: 15px;font-weight: 600;color: #002a54;}
+    .menu-list-link .list_data p{font-size: 12px;margin: 5px 0;color: #000000;font-weight: 400;}
+    .menu-list-link .list_data .arrow{position: absolute;right: 15px;top: 15px;width: 30px;height: 30px; background-size: contain;background-repeat: no-repeat;transform: rotate(-30deg);transition: all 0.3s;border: 1px solid #ddd;background: #ddd;border-radius: 50%;padding: 7px;}
+    .menu-list li:hover{background: #d3e5f7;color: #fff; }
     .mega-menu--multiLevel li:hover > a .list_data .arrow{transform: rotate(0deg);border: 1px solid #b5cad8;border-radius: 10px;filter: invert(1);}
     .mega-menu--multiLevel li:hover > a .list_data .service_icon{background: #002A54; }
     .mega-menu--multiLevel li > a .list_data .service_icon img{ width: 43px;}
@@ -466,7 +467,7 @@
          .mega-menu--multiLevel:not(:hover) .mega-menu-scroll-col > li:first-child > a img{filter: invert(0);}
 
     .bg_img{position: absolute;z-index: -1;}
-    
+    .service_icon {display: flex;align-items: center;gap: 7px;}
     @media (max-width: 767px){
         .bg_img{display: none;}
         .nav-main{flex-direction: column;}
@@ -520,7 +521,7 @@
         .hide_mobile{display:none !important;}
     }
      nav .d-flex img.main-logo{margin-left: 100px;
-    width: 200px;} 
+    width: 140px;} 
     .mega-menu--multiLevel:not(:hover) > li:first-child > a img{filter: invert(0);}
     .mega-menu--multiLevel li > a img{filter: invert(1);}
     .mega-menu--multiLevel:hover > li > a img{filter: invert(0);}
@@ -572,8 +573,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>SEO</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>SEO</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -582,8 +583,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>Local SEO</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>Local SEO</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -592,8 +593,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>E-commerce SEO</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"> <h4>E-commerce SEO</h4></div>     
+                                                   
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -610,8 +611,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>PPC Ads Management</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>PPC Ads Management</h4></div> 
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -620,8 +621,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div> 
-                                                    <h4>Search Engine Marketing</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>Search Engine Marketing</h4></div> 
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -638,8 +639,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/virtual-meeting.png" alt="img"></div> 
-                                                    <h4>CRO Services</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/virtual-meeting.png" alt="img"><h4>CRO Services</h4></div> 
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -648,8 +649,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/virtual-meeting.png" alt="img"></div> 
-                                                    <h4>Lead Generation</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/virtual-meeting.png" alt="img"><h4>Lead Generation</h4></div> 
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -666,8 +667,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>Social Media Marketing</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>Social Media Marketing</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -676,8 +677,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>Influencer Marketing</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>Influencer Marketing</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -686,8 +687,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>UGC Agency</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>UGC Agency</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -696,8 +697,7 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>ORM Services</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>ORM Services</h4></div>     
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -714,8 +714,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>Email Marketing</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>Email Marketing</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -724,8 +724,8 @@
                                             <a href="#" class="menu-link menu-list-link">
                                                 <div class="list_data">
                                                     <img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/right-arrow.png" alt="arrow" class="arrow">    
-                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"></div>     
-                                                    <h4>Mobile Marketing</h4>
+                                                    <div class="service_icon"><img loading="lazy" src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/02/seo.png" alt="img"><h4>Mobile Marketing</h4></div>     
+                                                    
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero molestiae nemo hic minima nam asperiores ullam, sint</p>
                                                 </div>
                                             </a>
@@ -1557,7 +1557,7 @@
             observer: true,
             observeParents: true,
             autoplay: {
-                delay: 3000,
+                delay: 2000,
                 pauseOnMouseEnter: true,
             }, 
             breakpoints: {
