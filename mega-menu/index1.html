@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Mega Menu</title>
+    <style>
+     *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:#f8fafc;
+}
+
+.mega-menu-wrapper{
+    max-width:1400px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+/* LEVEL 1 */
+
+.level-one-tabs{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    padding:25px;
+    border-bottom:1px solid #e8edf5;
+    background:#fff;
+}
+
+.level-one-tab{
+    border:none;
+    background:none;
+    padding:12px 22px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    color:#333;
+    transition:.3s;
+    border-radius:10px;
+}
+
+.level-one-tab:hover{
+    background:#f3f6fb;
+}
+
+.level-one-tab.active{
+    background:#0b3b74;
+    color:#fff;
+}
+
+/* LEVEL 2 */
+
+.main-tabs{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:25px;
+    border-bottom:1px solid #e8edf5;
+}
+
+.main-tab{
+    border:none;
+    background:#f5f7fb;
+    padding:12px 30px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.main-tab.active{
+    background:#0b3b74;
+    color:#fff;
+}
+
+/* LEVEL 3 */
+
+.service-tabs{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding:25px;
+}
+
+.service-tab{
+    border:none;
+    background:#eef3f9;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:500;
+    transition:.3s;
+}
+
+.service-tab:hover{
+    background:#dfe8f4;
+}
+
+.service-tab.active{
+    background:#0b3b74;
+    color:#fff;
+}
+
+/* LEVEL 4 */
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    padding:0 30px 40px;
+}
+
+.service-card{
+    display:block;
+    text-decoration:none;
+    color:#222;
+    background:#fff;
+    border:1px solid #dfe7f2;
+    border-radius:18px;
+    padding:25px;
+    transition:.35s;
+    position:relative;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    border-color:#0b3b74;
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    border-radius:14px;
+    background:#eef4ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:20px;
+}
+
+.icon i{
+    font-size:24px;
+    color:#0b3b74;
+}
+
+.service-card h4{
+    margin-bottom:10px;
+    font-size:20px;
+    font-weight:700;
+}
+
+.service-card p{
+    font-size:14px;
+    line-height:1.7;
+    color:#666;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1199px){
+
+    .cards-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .level-one-tabs{
+        overflow-x:auto;
+        justify-content:flex-start;
+    }
+
+    .main-tabs{
+        overflow-x:auto;
+        justify-content:flex-start;
+    }
+
+    .service-tabs{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+    }
+
+    .cards-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+.mega-menu-wrapper{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    background:#fff;
+    border:1px solid #e7edf7;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+/* LEVEL 1 */
+
+.level-one-tabs{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    padding:20px 40px;
+    border-bottom:1px solid #edf2f8;
+}
+
+.level-one-tab{
+    background:none;
+    border:none;
+    font-size:16px;
+    font-weight:500;
+    color:#172b4d;
+    cursor:pointer;
+    padding:0;
+    position:relative;
+}
+
+.level-one-tab.active{
+    color:#0052cc;
+}
+
+.level-one-tab.active::after{
+    content:"";
+    position:absolute;
+    bottom:-20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:8px;
+    height:8px;
+    background:#0052cc;
+    border-radius:50%;
+}
+
+/* LEVEL 2 */
+
+.main-tabs{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:20px;
+}
+
+.main-tab{
+    border:none;
+    background:#f5f8fd;
+    color:#172b4d;
+    padding:12px 35px;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.main-tab.active{
+    background:#003b7a;
+    color:#fff;
+}
+
+/* LEVEL 3 */
+
+.service-tabs{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:10px 25px 25px;
+    flex-wrap:wrap;
+}
+
+.service-tab{
+    border:none;
+    background:#f4f7fb;
+    color:#172b4d;
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+}
+
+.service-tab.active{
+    background:#0f5bd8;
+    color:#fff;
+}
+
+/* CARDS */
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    padding:0 30px 30px;
+}
+
+.service-card{
+    background:#fff;
+    border:1px solid #e4ebf5;
+    border-radius:12px;
+    padding:20px;
+    text-decoration:none;
+    color:#172b4d;
+    transition:.3s;
+    min-height:180px;
+}
+
+.service-card:hover{
+    border-color:#0f5bd8;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    transform:translateY(-3px);
+}
+
+.icon{
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    background:#f3f7fd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+.icon i{
+    font-size:22px;
+    color:#0f5bd8;
+}
+
+.service-card h4{
+    font-size:18px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.service-card p{
+    font-size:13px;
+    color:#5e6c84;
+    line-height:1.6;
+}
+
+/* CTA CARD */
+
+.service-card.featured{
+    background:#f7faff;
+}
+
+.service-card.featured h4{
+    color:#003b7a;
+}
+
+.service-card.featured .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#003b7a;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:8px;
+    margin-top:15px;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .cards-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:992px){
+
+    .cards-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:767px){
+
+    .cards-grid{
+        grid-template-columns:1fr;
+    }
+
+    .level-one-tabs,
+    .main-tabs,
+    .service-tabs{
+        overflow-x:auto;
+        justify-content:flex-start;
+        white-space:nowrap;
+    }
+
+}
+    </style>
+</head>
+<body>
+<section class="mega-menu-wrapper">
+
+    <!-- LEVEL 1 -->
+    <div class="level-one-tabs">
+        <button class="level-one-tab active" data-menu="digital">
+            Digital Marketing
+        </button>
+
+        <button class="level-one-tab" data-menu="odoo">
+            Odoo
+        </button>
+
+        <button class="level-one-tab" data-menu="ecommerce">
+            E-Commerce
+        </button>
+
+        <button class="level-one-tab" data-menu="tools">
+            Tools
+        </button>
+
+        <button class="level-one-tab" data-menu="resources">
+            Resources
+        </button>
+
+        <button class="level-one-tab" data-menu="contact">
+            Contact Us
+        </button>
+    </div>
+
+    <!-- DIGITAL MARKETING MEGA MENU -->
+    <div class="mega-menu-content active" id="digital">
+
+        <!-- LEVEL 2 -->
+        <div class="main-tabs">
+
+            <button class="main-tab active" data-tab="agency">
+                Agency
+            </button>
+
+            <button class="main-tab" data-tab="studio">
+                Studio
+            </button>
+
+            <button class="main-tab" data-tab="technology">
+                Technology
+            </button>
+
+        </div>
+
+        <!-- AGENCY CONTENT -->
+        <div class="tab-content active" id="agency">
+
+            <!-- LEVEL 3 -->
+            <div class="service-tabs">
+
+                <button class="service-tab active">
+                    Organic Growth
+                </button>
+
+                <button class="service-tab">
+                    Paid Media & Acquisition
+                </button>
+
+                <button class="service-tab">
+                    Social & Brand Growth
+                </button>
+
+                <button class="service-tab">
+                    Retention & Engagement
+                </button>
+
+                <button class="service-tab">
+                    Analytics & CRO
+                </button>
+
+            </div>
+
+            <!-- LEVEL 4 / FINAL SERVICES -->
+            <div class="cards-grid">
+
+                <a href="#" class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>SEO</h4>
+                    <p>Improve rankings and organic visibility.</p>
+                </a>
+
+                <a href="#" class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <h4>Local SEO</h4>
+                    <p>Rank higher in local search results.</p>
+                </a>
+
+                <a href="#" class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-cart-shopping"></i>
+                    </div>
+                    <h4>E-commerce SEO</h4>
+                    <p>Grow online store traffic.</p>
+                </a>
+
+                <a href="#" class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                    </div>
+                    <h4>Technical SEO</h4>
+                    <p>Fix indexing and crawling issues.</p>
+                </a>
+
+                <a href="#" class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h4>Content Marketing</h4>
+                    <p>Create content that converts.</p>
+                </a>
+
+                <a href="#" class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>International SEO</h4>
+                    <p>Expand visibility globally.</p>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      /* LEVEL 1 */
+
+const levelOneTabs = document.querySelectorAll('.level-one-tab');
+
+levelOneTabs.forEach(tab => {
+
+    tab.addEventListener('click', () => {
+
+        levelOneTabs.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+
+    });
+
+});
+
+
+/* LEVEL 2 */
+
+const mainTabs = document.querySelectorAll('.main-tab');
+
+mainTabs.forEach(tab => {
+
+    tab.addEventListener('click', () => {
+
+        mainTabs.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+
+    });
+
+});
+
+
+/* LEVEL 3 */
+
+const serviceTabs = document.querySelectorAll('.service-tab');
+
+serviceTabs.forEach(tab => {
+
+    tab.addEventListener('click', () => {
+
+        serviceTabs.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+
+    });
+
+});
+    </script>
+</body>
+</html>
