@@ -304,6 +304,22 @@ a{text-decoration:none !important;background-color: #002a54 !important;border-co
 }
 .mobile-submenu-header{display:none;}
 @media(max-width:991px){
+    /* .menu-open{display: block;} */
+    body:not(.menu-open) .main-nav{
+    transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.menu-open .main-nav{
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+    .mobile-submenu-header{display: none !important;justify-content: space-between;}
+    .submenu-open .mobile-submenu-header{display: flex !important;}
     .mobile-submenu-header{display:none;align-items:center;gap:12px;padding:16px;border-bottom:1px solid #e5e7eb;background:#fff;}
     body.submenu-open .mobile-submenu-header{display:flex;}
 }
@@ -326,7 +342,7 @@ a{text-decoration:none !important;background-color: #002a54 !important;border-co
     } */
     body.submenu-open .mega-menu-wrapper{display:block;}
     body.submenu-open .mobile-submenu-header{display:none;display: flex;justify-content: space-between;}
-    body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;}
+    /* body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;} */
     .mega-section.active{display:block !important;visibility:visible !important;opacity:1 !important;}
     .studio_menu .mobile-sub-group::before{height: calc(100% - -8px);}
 }
@@ -380,6 +396,8 @@ a{text-decoration:none !important;background-color: #002a54 !important;border-co
     </div>
 
 </header>
+<div class="mega-menu-wrapper">
+
 <!-- MOBILE BACK HEADER -->
     <div class="mobile-submenu-header">
 
@@ -392,8 +410,6 @@ a{text-decoration:none !important;background-color: #002a54 !important;border-co
         </span>
 
     </div>
-<div class="mega-menu-wrapper">
-
     <!-- ========================= -->
     <!-- DIGITAL MARKETING -->
     <!-- ========================= -->
@@ -1505,30 +1521,89 @@ document.querySelector(".mobile-toggle");
 const mainNav =
 document.querySelector(".main-nav");
 
+// if(mobileToggle){
+
+//     mobileToggle.addEventListener("click",()=>{
+
+//         mainNav.classList.toggle("active");
+
+//         const icon =
+//         mobileToggle.querySelector("i");
+
+//         if(mainNav.classList.contains("active")){
+
+//             // submenu view open karo
+//             document.body.classList.add("menu-open");
+//             icon.classList.remove("fa-bars");
+//             icon.classList.add("fa-xmark");
+
+//         }else{
+
+//             document.body.classList.remove("menu-open");
+//             icon.classList.remove("fa-xmark");
+//             icon.classList.add("fa-bars");
+
+//         }
+
+//     });
+
+// }
+
+
+
 if(mobileToggle){
 
     mobileToggle.addEventListener("click",()=>{
 
-        mainNav.classList.toggle("active");
+        const icon = mobileToggle.querySelector("i");
 
-        const icon =
-        mobileToggle.querySelector("i");
+        // STEP 1: Submenu open hai
+        if(document.body.classList.contains("submenu-open")){
 
+    document.body.classList.remove("submenu-open");
+
+    // submenu active states reset
+    document
+        .querySelectorAll(".mega-section")
+        .forEach(section => {
+            section.classList.remove("active");
+        });
+
+    document
+        .querySelectorAll(".level-1-menu li")
+        .forEach(item => {
+            item.classList.remove("active");
+        });
+
+    mainNav.classList.add("active");
+
+    return;
+}
+
+        // STEP 2: Main menu open hai
         if(mainNav.classList.contains("active")){
 
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        }else{
+            mainNav.classList.remove("active");
+            document.body.classList.remove("menu-open");
 
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
+
+        }else{
+
+            // STEP 3: Main menu open karo
+            mainNav.classList.add("active");
+            document.body.classList.add("menu-open");
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
 
         }
 
     });
 
 }
+
 
 // if(mobileToggle){
 
@@ -1567,28 +1642,78 @@ if(mobileToggle){
    CLOSE MOBILE MENU
 ========================== */
 
+    // document
+    // .querySelectorAll(".level-1-menu li")
+    // .forEach(item=>{
+
+    //     item.addEventListener("click",()=>{
+
+    //         if(window.innerWidth < 992){
+
+    //             mainNav.classList.remove("active");
+
+    //             mobileToggle
+    //             .querySelector("i")
+    //             .classList.replace(
+    //                 "fa-xmark",
+    //                 "fa-bars"
+    //             );
+
+    //         }
+
+    //     });
+
+    // });
+
+
+
+
+
     document
-    .querySelectorAll(".level-1-menu li")
-    .forEach(item=>{
+.querySelectorAll(".level-1-menu li")
+.forEach(item=>{
 
-        item.addEventListener("click",()=>{
+    item.addEventListener("click",()=>{
 
-            if(window.innerWidth < 992){
+        // if(window.innerWidth < 992){
 
-                mainNav.classList.remove("active");
+        //     mainNav.classList.remove("active");
 
-                mobileToggle
-                .querySelector("i")
-                .classList.replace(
-                    "fa-xmark",
-                    "fa-bars"
-                );
+        //     mobileToggle
+        //     .querySelector("i")
+        //     .classList.replace(
+        //         "fa-xmark",
+        //         "fa-bars"
+        //     );
 
-            }
+        // }
+          if(window.innerWidth < 992){
 
-        });
+            // submenu view open karo
+            document.body.classList.add("submenu-open");
+
+            // main nav visible rakho
+            mainNav.classList.remove("active");
+
+            // cross icon maintain rakho
+            const icon = mobileToggle.querySelector("i");
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        }
+        else{
+            
+            // main nav visible rakho
+            mainNav.classList.add("active");
+        }
 
     });
+
+});
+
+
+
+
 
     // document
     // .querySelectorAll(".level-1-menu li")
