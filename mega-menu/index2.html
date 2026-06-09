@@ -291,7 +291,7 @@ a{text-decoration:none !important;background-color: #002a54 !important;border-co
     .mobile-main-group h3{font-size:23px;font-weight:600;margin-bottom:20px;color:#003b7a;width: fit-content;/* border-bottom: 1px solid #ddd */}
     .mobile-sub-group{margin-bottom:24px;position: relative;}
     .mobile-sub-group h4{font-size:15px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#181818;}
-    .mobile-sub-group::before{content: "";position: absolute;bottom: 14px;left: 1px;width: 1px;height: calc(100% - 32px);background-color: #002a542e;}
+    .mobile-sub-group::before{content: "";position: absolute;bottom: 10px;left: 1px;width: 1px;height: calc(100% - 30px);background-color: #002a542e;}
     .mobile-sub-group a{display:flex;justify-content:space-between;align-items:center;padding:2px 0px 3px 12px;margin-bottom:8px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;text-decoration:none;color:#111;background-color: transparent !important;border-color: transparent !important;position: relative;font-size: 12px;line-height: 15px;}
     .mobile-sub-group a::before{content: "";position: absolute;bottom: 0px;top: 0px;left: 1px;width: 10px;height: 1px;background-color: #002a542e;margin: auto;}
     .service-grid{display:grid !important;}
@@ -328,6 +328,7 @@ a{text-decoration:none !important;background-color: #002a54 !important;border-co
     body.submenu-open .mobile-submenu-header{display:none;display: flex;justify-content: space-between;}
     body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;}
     .mega-section.active{display:block !important;visibility:visible !important;opacity:1 !important;}
+    .studio_menu .mobile-sub-group::before{height: calc(100% - -8px);}
 }
 
     </style>
@@ -1900,7 +1901,7 @@ if(window.innerWidth < 992){
 
         </div>
 
-        <div class="mobile-main-group">
+        <div class="mobile-main-group studio_menu">
 
             <h3>Studio</h3>
 
