@@ -1801,29 +1801,36 @@ if(mobileToggle){
 
     if(backBtn){
 
-        backBtn.addEventListener("click",()=>{
+    backBtn.addEventListener("click",()=>{
 
-            document.body.classList.remove(
-                "submenu-open"
-            );
+        document.body.classList.remove("submenu-open");
 
-            if(title){
-                title.textContent = "Menu";
-            }
+        if(title){
+            title.textContent = "Menu";
+        }
 
-            mainNav.classList.add("active");
+        // Main menu dikhao
+        mainNav.classList.add("active");
 
-            mobileToggle
-            .querySelector("i")
-            .classList.remove("fa-bars");
+        // Icon cross hi rahe
+        mobileToggle
+        .querySelector("i")
+        .classList.remove("fa-bars");
 
-            mobileToggle
-            .querySelector("i")
-            .classList.add("fa-xmark");
+        mobileToggle
+        .querySelector("i")
+        .classList.add("fa-xmark");
 
-        });
+        // IMPORTANT: Submenu state reset karo
+        document
+            .querySelectorAll(".mega-section")
+            .forEach(section => {
+                section.classList.remove("active");
+            });
 
-    }
+    });
+
+}
 
     }
 
