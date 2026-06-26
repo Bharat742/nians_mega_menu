@@ -154,11 +154,11 @@
     @keyframes menuFade{
         from{
             opacity:0;
-            transform:translateX(70px);
+            transform:translateY(20px);
         }
         to{
             opacity:1;
-            transform:translateX(0);
+            transform:translateY(0);
         }
     }
 
@@ -258,61 +258,11 @@
         .mobile-toggle{display:block;}
         .nav-container{width:100%;padding:0 15px; }
         .level-1-menu li.active::after{height:0px;}
-        /* .main-nav{position:fixed;top:80px;left:-100%;width:100%;height:calc(100vh - 80px);background:#fff;transition:.35s;overflow:auto;z-index:999;} */
-        .main-nav{
-            position:fixed;
-            top:80px;
-            left:0;
-            width:100%;
-            height:calc(100vh - 80px);
-            background:#002a54; /* DARK BLUE FIXED */
-            overflow:hidden;
-
-            transform:none !important;
-            visibility:hidden;
-            opacity:0;
-            pointer-events:none;
-
-            transition:opacity .3s ease;
-        }
-        .main-nav.active{
-            visibility:visible;
-            opacity:1;
-            pointer-events:auto;
-        }
-
-        /* LIGHT BLUE CURTAIN */
-        .main-nav::before{
-            content:"";
-            position:absolute;
-            inset:0;
-            background:#8dd9ec;
-
-            border-bottom-left-radius:70% 100%;
-
-            transform:translateX(-100%);
-            transition:transform .55s cubic-bezier(.77,0,.18,1);
-
-            z-index:-1;
-        }
-
-        .main-nav.active::before{
-            transform:translateX(100%);
-        }
-
-        /* MENU CONTENT */
-        .level-1-menu{
-            position:relative;
-            z-index:2;
-        }
+        .main-nav{position:fixed;top:80px;left:-100%;width:100%;height:calc(100vh - 80px);background:#fff;transition:.35s;overflow:auto;z-index:999;}
         .main-nav.active{left:0;padding-left: 0px; }
         .category-column{border-radius:7px;padding: 15px 10px;}
         .level-1-menu{flex-direction:column;align-items:flex-start; gap:7px;padding: 0 12px;}
-        .level-1-menu li {color: #fff;padding: 12px 0 3px 0;width: -webkit-fill-available;justify-content: flex-end;}.logo img{width: 120px;}
-        .level-1-menu li.active{color: #fff;}
-        .level-1-menu li.active::before {
-    background: #f9f9f9;
-}
+        .level-1-menu li { padding: 12px 0 3px 0;width: -webkit-fill-available;justify-content: flex-end;}.logo img{width: 120px;}
         .category-cards, .detail-content{grid-template-columns:1fr;}
         .ecommerce-mega{padding: 20px 12px;}
         .mega-header h2{font-size: 17px;font-weight: 600;}
@@ -364,7 +314,7 @@
 
     body.menu-open .main-nav{
         transform: translateX(0);
-        /* visibility: visible; */
+        visibility: visible;
         opacity: 1;
         pointer-events: auto;
     }
@@ -395,205 +345,6 @@
         /* body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;} */
         .mega-section.active{display:block !important;visibility:visible !important;opacity:1 !important;}
         .studio_menu .mobile-sub-group::before{height: calc(100% - -8px);}
-        
-
-/* menu with curtain */
-
-        .main-nav{
-    position:fixed;
-    overflow:hidden;
-    background:#002a54;
-}
-
-/* Curtain Layers */
-.menu-curtain{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    transform:translateX(-100%);
-}
-
-.curtain-1{
-    background:#ffffff;
-    z-index:1;
-}
-
-.curtain-2{
-    background:#c5f0f6;
-    z-index:2;
-}
-
-.curtain-3{
-    background:#00bad3;
-    z-index:3;
-}
-
-/* Content Above Curtain */
-.level-1-menu,
-.mobile-submenu-header,
-.mega-menu-wrapper{
-    position:relative;
-    z-index:10;
-}
-
-/* OPEN */
-.main-nav.active .curtain-1{
-    animation:curtainOpen .5s ease forwards;
-}
-
-.main-nav.active .curtain-2{
-    animation:curtainOpen .7s ease forwards;
-}
-
-.main-nav.active .curtain-3{
-    animation:curtainOpen .9s ease forwards;
-}
-
-/* CLOSE */
-.main-nav.is-closing .curtain-1{
-    animation:curtainClose .5s ease forwards;
-}
-
-.main-nav.is-closing .curtain-2{
-    animation:curtainClose .7s ease forwards;
-}
-
-.main-nav.is-closing .curtain-3{
-    animation:curtainClose .9s ease forwards;
-}
-
-@keyframes curtainOpen{
-    from{
-        transform:translateX(-100%);
-    }
-    to{
-        transform:translateX(100%);
-    }
-}
-
-@keyframes curtainClose{
-    from{
-        transform:translateX(100%);
-    }
-    to{
-        transform:translateX(-100%);
-    }
-}
-
-
-
-    /* Default hidden */
-    /* style for menu item with delay */
-/* .level-1-menu,
-.mega-menu-wrapper,
-.mobile-submenu-header{
-    opacity:0;
-    visibility:hidden;
-}
-
-/* Open hone ke baad show */
-/* .main-nav.active.menu-content-visible .level-1-menu,
-.main-nav.active.menu-content-visible .mega-menu-wrapper,
-.main-nav.active.menu-content-visible .mobile-submenu-header{
-    opacity:1;
-    visibility:visible;
-    transition:opacity .25s ease;
-}
-
-/* Close ke time force hide */
-/* .main-nav.is-closing .level-1-menu,
-.main-nav.is-closing .mega-menu-wrapper,
-.main-nav.is-closing .mobile-submenu-header{
-    opacity:0;
-    visibility:hidden;
-}
-/* Initial state */
-/* .level-1-menu li,
-.mega-section.active .mobile-main-group,
-.mega-section.active .category-column,
-.mega-section.active .service-card{
-    opacity:0;
-    transform:translateX(-25px);
-}
-
-/* Animate when menu content visible */
-/* .main-nav.menu-content-visible .level-1-menu li,
-.main-nav.menu-content-visible .mega-section.active .mobile-main-group,
-.main-nav.menu-content-visible .mega-section.active .category-column,
-.main-nav.menu-content-visible .mega-section.active .service-card{
-    animation:menuItemReveal .25s ease forwards;
-} */
-
-@keyframes menuItemReveal{
-    from{
-        opacity:0;
-        transform:translateX(-25px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
-} 
-.mobile-main-group:nth-child(1){
-    animation-delay:.10s !important;
-}
-.mobile-main-group:nth-child(2){
-    animation-delay:.20s !important;
-}
-.mobile-main-group:nth-child(3){
-    animation-delay:.30s !important;
-}
-
-
-
-
-.main-nav.menu-content-visible .level-1-menu li{
-    opacity:0;
-    transform:translateX(-30px);
-    animation:menuItemReveal .3s ease forwards;
-} 
-
-@keyframes menuItemReveal{
-    from{
-        opacity:0;
-        transform:translateX(-30px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
-}
-/* .mobile-sub-group a{
-    opacity:0;
-    transform:translateX(-20px);
-} */
-
-.main-nav.menu-content-visible .mobile-sub-group a{
-    animation:menuItemReveal .3s ease forwards;
-}
- 
-.level-1-menu li{
-    opacity:0;
-    transform:translateX(-30px);
-}
-
-.main-nav.menu-content-visible .level-1-menu li{
-    animation:menuItemReveal .3s ease forwards;
-}
-
-@keyframes menuItemReveal{
-
-    from{
-        opacity:0;
-        transform:translateX(-30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
-
-}
     }
 
 </style>
@@ -601,297 +352,596 @@
 <body>
 
 <header class="main-header">
+
     <div class="nav-container">
+
         <a href="#" class="logo"><img src="https://nians.com/wp-content/uploads/2025/09/nians-logo.png" alt="img" class="img-fluid"></a>
+
         <button class="mobile-toggle">
             <i class="fa-solid fa-bars"></i>
         </button>
+
         <nav class="main-nav">
-            <div class="menu-curtain curtain-1"></div>
-            <div class="menu-curtain curtain-2"></div>
-            <div class="menu-curtain curtain-3"></div>
+
             <ul class="level-1-menu">
-                <li data-menu="digital-marketing">Agency</li>
-                <li data-menu="odoo">Odoo</li>
-                <li data-menu="ecommerce">E-Commerce</li>
-                <li data-menu="tools">Tools</li>
-                <li data-menu="resources">Resources</li>
-                <li data-menu="contact">Contact</li>
+
+                <li class="active" data-menu="digital-marketing">
+                    Agency
+                </li>
+
+                <li data-menu="odoo">
+                    Odoo
+                </li>
+
+                <li data-menu="ecommerce">
+                    E-Commerce
+                </li>
+
+                <li data-menu="tools">
+                    Tools
+                </li>
+
+                <li data-menu="resources">
+                    Resources
+                </li>
+
+                <li data-menu="contact">
+                    Contact
+                </li>
+
             </ul>
+
         </nav>
+
     </div>
+
 </header>
 <div class="mega-menu-wrapper">
+
 <!-- MOBILE BACK HEADER -->
     <div class="mobile-submenu-header">
-        <button class="mobile-back">← Back</button>
-        <span class="mobile-submenu-title">Menu</span>
+
+        <button class="mobile-back">
+            ← Back
+        </button>
+
+        <span class="mobile-submenu-title">
+            Menu
+        </span>
+
     </div>
     <!-- ========================= -->
     <!-- DIGITAL MARKETING -->
     <!-- ========================= -->
+
     <section class="mega-section" id="digital-marketing">
+
         <div class="row">
             <div class="col-lg-3 pe-lg-0 ">
                 <div class="category">
                     <h1>Digital Marketing</h1>
                     <p>Drive measurable business growth with data-driven digital marketing strategies, including SEO, paid advertising, social media, content marketing, and conversion optimization services.</p>
                     <a href="#" class="btn btn-primary mt-lg-3">Learn More</a>
-                    <img src="https://png.pngtree.com/png-vector/20260316/ourmid/pngtree-3d-megaphone-icon-for-digital-marketing-announcement-and-communication-png-image_18690593.webp" alt="img" class="img-fluid d-none d-lg-block">
+                    <img src="https://png.pngtree.com/png-vector/20260316/ourmid/pngtree-3d-megaphone-icon-for-digital-marketing-announcement-and-communication-png-image_18690593.webp" alt="img" class="img-fluid d-none d-lg-block"">
                 </div>
             </div>
             <div class="col-lg-9 ps-lg-0">
+                <!-- <div class="category d-block d-lg-none" style="height: auto;padding: 0 12px;">
+                    <h1>Digital Marketing</h1>
+                </div> -->
                 <div class="category_bg">
                     <div class="level-2-tabs">
-                        <button class="level-2-btn active" data-tab="agency">Digital Marketing</button>
-                        <button class="level-2-btn" data-tab="studio">Studio</button>
-                        <button class="level-2-btn" data-tab="technology">Technology</button>
+
+                        <button class="level-2-btn active" data-tab="agency">
+                            Digital Marketing
+                        </button>
+
+                        <button class="level-2-btn" data-tab="studio">
+                            Studio
+                        </button>
+
+                        <button class="level-2-btn" data-tab="technology">
+                            Technology
+                        </button>
+
                     </div>
 
                     <!-- AGENCY -->
+
                     <div class="tab-panel active" id="agency">
+
                         <div class="level-3-tabs">
-                            <button class="level-3-btn active" data-service="organic">Organic Growth</button>
-                            <button class="level-3-btn" data-service="paid">Paid Media & Acquisition</button>
-                            <button class="level-3-btn" data-service="conversion">Conversion & Performance</button>
-                            <button class="level-3-btn" data-service="social">Social & Brand Growth</button>
-                            <button class="level-3-btn" data-service="retention">Retention & Engagement</button>
+
+                            <button class="level-3-btn active" data-service="organic">
+                                Organic Growth
+                            </button>
+
+                            <button class="level-3-btn" data-service="paid">
+                                Paid Media & Acquisition
+                            </button>
+
+                            <button class="level-3-btn" data-service="conversion">
+                                Conversion & Performance
+                            </button>
+
+                            <button class="level-3-btn" data-service="social">
+                                Social & Brand Growth
+                            </button>
+
+                            <button class="level-3-btn" data-service="retention">
+                                Retention & Engagement
+                            </button>
+
                         </div>
 
                         <!-- ORGANIC -->
+
                         <div class="service-grid active" id="organic">
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>SEO</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-location-dot"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Local SEO</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>E-Commerce SEO</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
 
                         <!-- PAID -->
+
                         <div class="service-grid" id="paid">
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>PPC Ads Management</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a> 
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Search Engine Marketing</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a> 
+
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
 
                         <!-- CONVERSION -->
+
                         <div class="service-grid" id="conversion">
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>CRO Services</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+                            
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Lead Generation</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
 
                         <!-- SOCIAL -->
+
                         <div class="service-grid" id="social">
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Social Media Marketing</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
+                            <!-- <a href="#" class="service-card">
+                                <i class="fa-solid fa-share-nodes"></i>        
+                                <h4>Social Media Marketing</h4>
+                            </a> -->
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Influencer Marketing</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+                            <!-- <a href="#" class="service-card">
+                                <i class="fa-solid fa-users"></i>
+                                <h4>Influencer Marketing</h4>
+                            </a> -->
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>UGC Agency</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+                            <!-- <a href="#" class="service-card">
+                                <i class="fa-solid fa-camera"></i>
+                                <h4>UGC Agency</h4>
+                            </a> -->
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>ORM Services</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
+                            <!-- <a href="#" class="service-card">
+                                <i class="fa-solid fa-star"></i>
+                                <h4>ORM Services</h4>
+                            </a> -->
+
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
 
                         <!-- RETENTION -->
+
                         <div class="service-grid" id="retention">
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Email Marketing</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Mobile Marketing</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
+                            <!-- <a href="#" class="service-card">
+                                <i class="fa-solid fa-envelope"></i>
+                                <h4>Email Marketing</h4>
+                            </a>
+
+                            <a href="#" class="service-card">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <h4>Mobile Marketing</h4>
+                            </a> -->
+
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
+
                     </div>
 
                     <!-- STUDIO -->
+
                     <div class="tab-panel" id="studio">
+
                         <div class="service-grid active">
+ 
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Product Photography</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Video Production</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a> 
+
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
+
                     </div>
 
                     <!-- TECHNOLOGY -->
+
                     <div class="tab-panel" id="technology">
+
                         <div class="level-3-tabs">
-                            <button class="level-3-btn active" data-service="web_app">Web Apps</button>
-                            <button class="level-3-btn" data-service="cloud_solution">App & Cloud Solutions</button> 
+
+                            <button class="level-3-btn active" data-service="web_app">
+                                Web Apps
+                            </button>
+
+                            <button class="level-3-btn" data-service="cloud_solution">
+                                App & Cloud Solutions
+                            </button> 
                         </div> 
+
                         <div class="service-grid active" id="web_app">
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Website Development</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>WordPress Development</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Website Design</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                             <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>UI/UX Design</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+  
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div>
+
                         <div class="service-grid" id="cloud_solution">
+ 
                              <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Mobile Apps Development</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+
                              <a href="#" class="service-card">
+                                <!-- <i class="fa-solid fa-store"></i> -->
                                 <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
                                 <h4>Cloud Apps Development</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <div class="learn_more">Learn More <span>→</span></div>
                             </a>
+ 
                             <div class="cta-card">
+
                                 <div class="cta-graph">
+
                                     <i class="fa-solid fa-chart-column"></i>
+
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                                <h4>
+                                    Looking for a custom strategy?
+                                </h4>
+
+                                <p>
+                                    Let's build a plan that drives measurable growth.
+                                </p>
+
+                                <a href="#" class="cta-btn">
+
+                                    Talk To Our Experts
+
+                                </a>
+
                             </div>
+
                         </div> 
+
                     </div>
+
                     <!-- ------------------------ -->
                     <div class="mobile-digital-layout"></div>
                     <!-- ------------------------ -->
+
                 </div>
             </div>
+            <!-- <div class="col-lg-3 pe-lg-0 d-block d-lg-none">
+                <div class="category">
+                    <h1>Digital Marketing</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="btn btn-primary mt-3">Learn More</a>
+                    <img src="https://png.pngtree.com/png-vector/20260316/ourmid/pngtree-3d-megaphone-icon-for-digital-marketing-announcement-and-communication-png-image_18690593.webp" alt="img" class="img-fluid">
+                </div>
+            </div> -->
         </div>
+
+
     </section>
 
     <!-- ========================= -->
@@ -899,6 +949,8 @@
     <!-- ========================= -->
 
     <section class="mega-section" id="odoo">
+        <!-- <h1>ODOO</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
         <div class="row">
             <div class="col-lg-3 pe-lg-0">
                 <div class="category">
@@ -910,89 +962,135 @@
             </div>
             <div class="col-lg-9 ps-lg-0">
                 <div class="odoo-grid">
+
                     <div class="category-column">
+                        
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Core Services</h3>
+
                             <a href="#">Odoo Implementation</a>
                             <a href="#">Odoo Customization</a>
                             <a href="#">Odoo Development</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Platform Support</h3>
+
                             <a href="#">Odoo Hosting</a>
                             <a href="#">Odoo Maintenance</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Training & Advisory</h3>
+
                             <a href="#">Odoo Training</a>
                             <a href="#">Odoo Consulting</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Talent</h3>
+
                             <a href="#">Hire Odoo Developer</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Core Modules</h3>
+
                             <a href="#">Odoo CRM</a>
                             <a href="#">Odoo Sales Management</a>
                             <a href="#">Odoo Purchase Management</a>
                             <a href="#">Odoo Project Management</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Finance Modules</h3>
+
                             <a href="#">Odoo Accounting</a>
                             <a href="#">Odoo Expenses</a>
                             <a href="#">Odoo Budget</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > HR Modules</h3>
+
                             <a href="#">Odoo HR Management</a>
                             <a href="#">Odoo Payroll</a>
                             <a href="#">Hire Odoo Developer</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Commerce & Website</h3>
+
                             <a href="#">Odoo POS</a>
                             <a href="#">Odoo E-Commerce</a>
                             <a href="#">Odoo Website</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > CRM Tools</h3>
+
                             <a href="#">Odoo Email Marketing</a>
                         </div>
                     </div>
+
                     <div class="category-column">
                         <div class="category-content">
                             <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Support Tools</h3>
+
                             <a href="#">Odoo Helpdesk</a>
                         </div>
                     </div>
+
                     <div class="cta-card">
+
                         <div class="cta-graph">
+
                             <i class="fa-solid fa-chart-column"></i>
+
                         </div>
-                        <h4>Looking for a custom strategy?</h4>
-                        <p>Let's build a plan that drives measurable growth.</p>
-                        <a href="#" class="cta-btn">Talk To Our Experts</a>
+
+                        <h4>
+                            Looking for a custom strategy?
+                        </h4>
+
+                        <p>
+                            Let's build a plan that drives measurable growth.
+                        </p>
+
+                        <a href="#" class="cta-btn">
+
+                            Talk To Our Experts
+
+                        </a>
+
                     </div>
+
                 </div>
             </div>
+            <!-- <div class="col-lg-3 pe-lg-0 d-block d-lg-none">
+                <div class="category">
+                    <h1>ODOO</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="btn btn-primary mt-3">Learn More</a>
+                    <img src="https://datapillar.ai/wp-content/uploads/2024/09/Soft-Green-Modern-Personal-Branding-Golden-Rules-Instagram-Post.png" alt="img" class="img-fluid">
+                </div>
+            </div> -->
         </div>
     </section>
 
@@ -1002,100 +1100,225 @@
 
     <section class="mega-section" id="ecommerce">
         <section class="container ecommerce-mega">
-            <div class="mega-header">
-                <h2>E-Commerce Solutions</h2>
-                <p>Powerful e-commerce solutions to launch and grow your online business.</p>
-            </div>
-            <div class="category-cards">
-                <div class="category-card active" data-target="marketplace">
-                    <div class="card-text">
-                        <h3>Marketplace Solutions</h3>
-                        <p>Multi-vendor marketplaces that scale with your vision.</p>
-                    </div>
-                    <div class="card-icon">🛒</div>
-                </div>
-                <div class="category-card"
-                    data-target="quick">
-                    <div class="card-text">
-                        <h3>Quick Commerce</h3>
-                        <p>Fast delivery solutions for on-demand shoppers.</p>
-                    </div>
-                    <div class="card-icon"> 🛵 </div>
-                </div>
-                <div class="category-card" data-target="d2c">
-                    <div class="card-text">
-                        <h3>D2C Platforms</h3>
-                        <p>Build your brand and sell directly to customers.</p>
-                    </div>
-                    <div class="card-icon">🛍️</div>
-                </div>
+
+    <div class="mega-header">
+        <h2>E-Commerce Solutions</h2>
+        <p>
+            Powerful e-commerce solutions to launch and grow your online business.
+        </p>
+    </div>
+
+    <div class="category-cards">
+
+        <div class="category-card active"
+            data-target="marketplace">
+
+            <div class="card-text">
+                <h3>Marketplace Solutions</h3>
+                <p>Multi-vendor marketplaces that scale with your vision.</p>
             </div>
 
-            <!-- Dynamic Content Area -->
-
-            <div class="detail-panel">
-                <!-- Marketplace -->
-                <div class="detail-content active" id="marketplace">
-                    <div class="detail-left">
-                        <span class="tag">Marketplace Solutions</span>
-                        <h3>Marketplace Growth Services</h3>
-                        <p>Manage, optimize and scale your marketplace presence across major platforms.</p>
-                        <div class="services">
-                            <a href="#">Marketplace Management <span>→</span></a>
-                            <a href="#">Amazon Marketing <span>→</span></a>
-                            <a href="#">Flipkart Marketing <span>→</span></a>
-                        </div>
-
-                        <a href="#" class="cta-btn">Explore Marketplace →</a>
-                    </div>
-
-                    <div class="detail-right">
-                        <img src="https://images.bizibl.com/sites/default/files/marketplaces.png" alt="Marketplace">
-                    </div>
-                </div>
-
-                <!-- Quick Commerce -->
-
-                <div class="detail-content" id="quick">
-                    <div class="detail-left">
-                        <span class="tag">Quick Commerce</span>
-                        <h3>Instant Delivery Growth</h3>
-                        <p> Reach customers faster with quick commerce marketplace optimization. </p>
-                        <div class="services">
-                            <a href="#">Blinkit Marketing <span>→</span></a>
-                        </div>
-
-                        <a href="#" class="cta-btn"> Explore Quick Commerce → </a>
-                    </div>
-
-                    <div class="detail-right">
-                        <!-- <img src="https://placehold.co/200x140" alt="Quick Commerce"> -->
-                        <img src="https://www.orangemantra.com/blog/wp-content/uploads/2025/02/Infographic-Leading-Quick-Commerce-Platforms-in-India.png" alt="Quick Commerce">
-                    </div>
-                </div>
-
-                <!-- D2C -->
-                <div class="detail-content" id="d2c">
-                    <div class="detail-left">
-                        <span class="tag">D2C Platforms</span>
-                        <h3>Build & Scale Your Brand</h3>
-                        <p> Create a powerful direct-to-consumer growth engine. </p>
-                        <div class="services">
-                            <a href="#">Shopify Management <span>→</span></a>
-                            <a href="#">E-Commerce Marketing <span>→</span></a>
-                            <a href="#">E-Commerce SEO <span>→</span></a>
-                            <a href="#">CRO <span>→</span></a>
-                        </div>
-                        <a href="#" class="cta-btn"> Explore D2C → </a>
-                    </div>
-                    <div class="detail-right">
-                        <!-- <img src="https://placehold.co/200x140" alt="D2C"> -->
-                        <img src="https://media.licdn.com/dms/image/v2/D4D12AQEhyz34aN3XFw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695082251762?e=2147483647&v=beta&t=VDa59D0BPBAaOBCeXNDXPUDWsxtfxERhYH4FyL73Jrg" alt="D2C">
-
-                    </div>
-                </div>
+            <div class="card-icon">
+                🛒
             </div>
-        </section> 
+
+        </div>
+
+        <div class="category-card"
+            data-target="quick">
+
+            <div class="card-text">
+                <h3>Quick Commerce</h3>
+                <p>Fast delivery solutions for on-demand shoppers.</p>
+            </div>
+
+            <div class="card-icon">
+                🛵
+            </div>
+
+        </div>
+
+        <div class="category-card"
+            data-target="d2c">
+
+            <div class="card-text">
+                <h3>D2C Platforms</h3>
+                <p>Build your brand and sell directly to customers.</p>
+            </div>
+
+            <div class="card-icon">
+                🛍️
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Dynamic Content Area -->
+
+    <div class="detail-panel">
+
+        <!-- Marketplace -->
+
+        <div class="detail-content active"
+            id="marketplace">
+
+            <div class="detail-left">
+
+                <span class="tag">Marketplace Solutions</span>
+
+                <h3>Marketplace Growth Services</h3>
+
+                <p>
+                    Manage, optimize and scale your marketplace presence
+                    across major platforms.
+                </p>
+
+                <div class="services">
+
+                    <a href="#">Marketplace Management <span>→</span></a>
+
+                    <a href="#">Amazon Marketing <span>→</span></a>
+
+                    <a href="#">Flipkart Marketing <span>→</span></a>
+
+                </div>
+
+                <a href="#" class="cta-btn">
+                    Explore Marketplace →
+                </a>
+
+            </div>
+
+            <div class="detail-right">
+
+                <!-- <img src="https://makewebbetter.com/wp-content/uploads/2023/05/blogg-1.webp" alt="Marketplace"> -->
+                <img src="https://images.bizibl.com/sites/default/files/marketplaces.png" alt="Marketplace">
+
+            </div>
+
+        </div>
+
+        <!-- Quick Commerce -->
+
+        <div class="detail-content"
+            id="quick">
+
+            <div class="detail-left">
+
+                <span class="tag">Quick Commerce</span>
+
+                <h3>Instant Delivery Growth</h3>
+
+                <p>
+                    Reach customers faster with quick commerce
+                    marketplace optimization.
+                </p>
+
+                <div class="services">
+
+                    <a href="#">Blinkit Marketing <span>→</span></a>
+
+                    <!-- <a href="#">Zepto Marketing <span>→</span></a>
+
+                    <a href="#">Instamart Marketing <span>→</span></a> -->
+
+                </div>
+
+                <a href="#" class="cta-btn">
+                    Explore Quick Commerce →
+                </a>
+
+            </div>
+
+            <div class="detail-right">
+
+                <!-- <img src="https://placehold.co/200x140" alt="Quick Commerce"> -->
+                <img src="https://www.orangemantra.com/blog/wp-content/uploads/2025/02/Infographic-Leading-Quick-Commerce-Platforms-in-India.png" alt="Quick Commerce">
+
+            </div>
+
+        </div>
+
+        <!-- D2C -->
+
+        <div class="detail-content"
+            id="d2c">
+
+            <div class="detail-left">
+
+                <span class="tag">D2C Platforms</span>
+
+                <h3>Build & Scale Your Brand</h3>
+
+                <p>
+                    Create a powerful direct-to-consumer
+                    growth engine.
+                </p>
+
+                <div class="services">
+
+                    <a href="#">Shopify Management <span>→</span></a>
+
+                    <a href="#">E-Commerce Marketing <span>→</span></a>
+
+                    <a href="#">E-Commerce SEO <span>→</span></a>
+
+                    <a href="#">CRO <span>→</span></a>
+
+                </div>
+
+                <a href="#" class="cta-btn">
+                    Explore D2C →
+                </a>
+
+            </div>
+
+            <div class="detail-right">
+
+                <!-- <img src="https://placehold.co/200x140" alt="D2C"> -->
+                 <img src="https://media.licdn.com/dms/image/v2/D4D12AQEhyz34aN3XFw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695082251762?e=2147483647&v=beta&t=VDa59D0BPBAaOBCeXNDXPUDWsxtfxERhYH4FyL73Jrg" alt="D2C">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- <div class="container ecommerce-grid">
+
+            <div class="category-card">
+
+                <h3>Marketplace</h3>
+
+                <a href="#">Marketplace Management</a>
+                <a href="#">Amazon Marketing</a>
+                <a href="#">Flipkart Marketing</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <h3>Quick Commerce</h3>
+
+                <a href="#">Blinkit Marketing</a>
+
+            </div>
+
+            <div class="category-card">
+
+                <h3>D2C Platform</h3>
+
+                <a href="#">Shopify Management</a>
+                <a href="#">E-Commerce Marketing</a>
+                <a href="#">E-Commerce SEO</a>
+                <a href="#">CRO</a>
+
+            </div>
+
+        </div> -->
+
     </section>
 
     <!-- TOOLS -->
@@ -1116,6 +1339,8 @@
         <h2>Contact Section</h2>
     </section>
 
+
+
     <!-- Mobile Menu start -->
 
     <!-- Mobile Menu end -->
@@ -1127,471 +1352,732 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+
     /* ===================================
        LEVEL 1 MENU SWITCHING
     =================================== */
 
-//     const level1Menus = document.querySelectorAll(".level-1-menu li");
-//     const megaSections = document.querySelectorAll(".mega-section");
-//     // level1Menus.forEach(menu => {
-//     //     menu.addEventListener("click", () => {
-//     //         const target = menu.dataset.menu;
-//     //     console.log("Clicked:", target);
-//     //         level1Menus.forEach(item => {
-//     //             item.classList.remove("active");
-//     //         });
-//     //         menu.classList.add("active");
-//     //         megaSections.forEach(section => {
-//     //             section.classList.remove("active");
-//     //         });
-//     //         const activeSection = document.getElementById(target);
-//     //     console.log("Section Found:", activeSection);
-//     //         if (activeSection) {
-//     //             activeSection.classList.add("active");
-//     //         }
-//     //     });
-//     // });
-//     level1Menus.forEach(menu => {
+    const level1Menus = document.querySelectorAll(".level-1-menu li");
+    const megaSections = document.querySelectorAll(".mega-section");
 
-//     menu.addEventListener("click", () => {
+    level1Menus.forEach(menu => {
 
-//         const target = menu.dataset.menu;
-//         console.log("Clicked:", target);
-//         const activeSection =
-//         document.getElementById(target);
+        menu.addEventListener("click", () => {
 
-//         const isAlreadyActive =
-//         menu.classList.contains("active");
+            const target = menu.dataset.menu;
 
-//         // reset all
-//         level1Menus.forEach(item =>
-//             item.classList.remove("active")
-//         );
+        console.log("Clicked:", target);
 
-//         megaSections.forEach(section =>
-//             section.classList.remove("active")
-//         );
+            level1Menus.forEach(item => {
+                item.classList.remove("active");
+            });
 
-//         // agar same menu pe click hua to close hi rehne do
-//         if(isAlreadyActive){
-//             document.body.classList.remove("submenu-open");
-//             return;
-//         }
+            menu.classList.add("active");
 
-//         // warna open karo
-//         menu.classList.add("active");
+            megaSections.forEach(section => {
+                section.classList.remove("active");
+            });
 
-//         if(activeSection){
-//             activeSection.classList.add("active");
-//         }
+            const activeSection = document.getElementById(target);
+        console.log("Section Found:", activeSection);
 
-//         if(window.innerWidth < 992){
-//             document.body.classList.add("submenu-open");
-//         }
-
-//     });
-
-// });
-
-const level1Menus = document.querySelectorAll(".level-1-menu li");
-const megaSections = document.querySelectorAll(".mega-section");
-
-level1Menus.forEach(menu => {
-
-    menu.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        const target = menu.dataset.menu;
-        const activeSection = document.getElementById(target);
-
-        const isActive = menu.classList.contains("active");
-
-        // reset all
-        level1Menus.forEach(item =>
-            item.classList.remove("active")
-        );
-
-        megaSections.forEach(section =>
-            section.classList.remove("active")
-        );
-
-        // if already active -> close
-        if (isActive) {
-
-            document.body.classList.remove("submenu-open");
-
-            if(window.innerWidth < 992){
-                mainNav.classList.add("active");
+            if (activeSection) {
+                activeSection.classList.add("active");
             }
 
-            return;
-        }
-
-        // open
-        menu.classList.add("active");
-
-        if (activeSection) {
-            activeSection.classList.add("active");
-        }
-
-        if(window.innerWidth < 992){
-
-            document.body.classList.add("submenu-open");
-            mainNav.classList.remove("active");
-
-        }
+        });
 
     });
-
-});
 
     /* ===================================
        LEVEL 2 TAB SWITCHING
     =================================== */
 if(window.innerWidth > 991){
     const level2Buttons = document.querySelectorAll(".level-2-btn");
+
     level2Buttons.forEach(button => {
+
         button.addEventListener("click", () => {
+
             const parentSection = button.closest(".mega-section");
+
             parentSection.querySelectorAll(".level-2-btn")
                 .forEach(btn => btn.classList.remove("active"));
+
             button.classList.add("active");
+
             const targetTab = button.dataset.tab;
+
             parentSection.querySelectorAll(".tab-panel")
                 .forEach(panel => panel.classList.remove("active"));
-            const activePanel = parentSection.querySelector(`#${targetTab}`);
+
+            const activePanel =
+                parentSection.querySelector(`#${targetTab}`);
+
             if (activePanel) {
                 activePanel.classList.add("active");
             }
+
         });
+
     });
     }
 
     /* ===================================
        LEVEL 3 TAB SWITCHING
     =================================== */
+
     if(window.innerWidth > 991){
     const level3Buttons = document.querySelectorAll(".level-3-btn");
+
     level3Buttons.forEach(button => {
+
         button.addEventListener("click", () => {
-            const currentPanel = button.closest(".tab-panel");
+
+            const currentPanel =
+                button.closest(".tab-panel");
+
             currentPanel.querySelectorAll(".level-3-btn")
                 .forEach(btn => btn.classList.remove("active"));
+
             button.classList.add("active");
-            const targetService = button.dataset.service;
+
+            const targetService =
+                button.dataset.service;
+
             currentPanel.querySelectorAll(".service-grid")
                 .forEach(grid => grid.classList.remove("active"));
-            const activeGrid = currentPanel.querySelector(`#${targetService}`);
+
+            const activeGrid =
+                currentPanel.querySelector(`#${targetService}`);
+
             if (activeGrid) {
                 activeGrid.classList.add("active");
             }
+
         });
+
     });
 }
 
     /* ===================================
        CARD HOVER ANIMATION
     =================================== */
+
     const cards = document.querySelectorAll(".service-card");
+
     cards.forEach(card => {
+
         card.addEventListener("mouseenter", () => {
             card.style.transform = "translateY(-8px)";
         });
+
         card.addEventListener("mouseleave", () => {
             card.style.transform = "translateY(0)";
         });
+
     });
 
     /* ===================================
        ACTIVE STATES ON PAGE LOAD
     =================================== */
+
     function initializeTabs() {
-        const activeSection = document.querySelector(".mega-section.active");
+
+        const activeSection =
+            document.querySelector(".mega-section.active");
+
         if (!activeSection) return;
-        const firstPanel = activeSection.querySelector(".tab-panel");
+
+        const firstPanel =
+            activeSection.querySelector(".tab-panel");
+
         if (firstPanel) {
             firstPanel.classList.add("active");
         }
-        const firstGrid = activeSection.querySelector(".service-grid");
+
+        const firstGrid =
+            activeSection.querySelector(".service-grid");
+
         if (firstGrid) {
             firstGrid.classList.add("active");
         }
+
     }
+
     initializeTabs();
+
 });
+
 
 // --------------------------------------------
 /* ==========================
    MOBILE MENU
 ========================== */
 
-const mobileToggle = document.querySelector(".mobile-toggle");
-const mainNav = document.querySelector(".main-nav"); 
+const mobileToggle =
+document.querySelector(".mobile-toggle");
+
+const mainNav =
+document.querySelector(".main-nav");
+
+// if(mobileToggle){
+
+//     mobileToggle.addEventListener("click",()=>{
+
+//         mainNav.classList.toggle("active");
+
+//         const icon =
+//         mobileToggle.querySelector("i");
+
+//         if(mainNav.classList.contains("active")){
+
+//             // submenu view open karo
+//             document.body.classList.add("menu-open");
+//             icon.classList.remove("fa-bars");
+//             icon.classList.add("fa-xmark");
+
+//         }else{
+
+//             document.body.classList.remove("menu-open");
+//             icon.classList.remove("fa-xmark");
+//             icon.classList.add("fa-bars");
+
+//         }
+
+//     });
+
+// }
+
+
+
 if(mobileToggle){
+
     mobileToggle.addEventListener("click",()=>{
+
         const icon = mobileToggle.querySelector("i");
+
         // STEP 1: Submenu open hai
         if(document.body.classList.contains("submenu-open")){
+
     document.body.classList.remove("submenu-open");
+
     // submenu active states reset
     document
         .querySelectorAll(".mega-section")
         .forEach(section => {
             section.classList.remove("active");
         });
+
     document
         .querySelectorAll(".level-1-menu li")
         .forEach(item => {
             item.classList.remove("active");
         });
+
     mainNav.classList.add("active");
+
     return;
 }
+
         // STEP 2: Main menu open hai
         if(mainNav.classList.contains("active")){
-            mainNav.classList.remove("menu-content-visible");
-            mainNav.classList.add("is-closing");
-            setTimeout(() => {
-                mainNav.classList.remove("active");
-                mainNav.classList.remove("is-closing");
-                document.body.classList.remove("menu-open");
-            }, 900); // curtain animation duration
-            mainNav.addEventListener("animationend", function closeMenu(){
-                mainNav.classList.remove("active");
-                mainNav.classList.remove("is-closing");
-                document.body.classList.remove("menu-open");
-                mainNav.removeEventListener(
-                    "animationend",
-                    closeMenu
-                );
-            });
+
+            mainNav.classList.remove("active");
+            document.body.classList.remove("menu-open");
+
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
+
         }else{
+
             // STEP 3: Main menu open karo
             mainNav.classList.add("active");
             document.body.classList.add("menu-open");
-            setTimeout(() => {
-                mainNav.classList.add("menu-content-visible");
-                document
-                    .querySelectorAll(".level-1-menu li")
-                    .forEach((item,index)=>{
-                        item.style.animationDelay =
-                        `${0.03 + (index * 0.03)}s`;
-                    });
-            }, 900);
+
             icon.classList.remove("fa-bars");
             icon.classList.add("fa-xmark");
+
         }
+
     });
+
 }
-//     document
-// .querySelectorAll(".level-1-menu li")
-// .forEach(item=>{
-//     item.addEventListener("click",()=>{
-//           if(window.innerWidth < 992){
-//             // submenu view open karo
-//             document.body.classList.add("submenu-open");
-//             // main nav visible rakho
-//             mainNav.classList.remove("active");
-//             mainNav.classList.remove("is-closing");
-//             // cross icon maintain rakho
-//             const icon = mobileToggle.querySelector("i");
+
+
+// if(mobileToggle){
+
+//     mobileToggle.addEventListener("click",()=>{
+
+//         mainNav.classList.toggle("active");
+
+//         if(!mainNav.classList.contains("active")){
+
+//             document.body.classList.remove(
+//                 "submenu-open"
+//             );
+
+//         }
+
+//         const icon =
+//         mobileToggle.querySelector("i");
+
+//         if(mainNav.classList.contains("active")){
+
 //             icon.classList.remove("fa-bars");
 //             icon.classList.add("fa-xmark");
+
+//         }else{
+
+//             icon.classList.remove("fa-xmark");
+//             icon.classList.add("fa-bars");
+
 //         }
-//         else{
-//             // main nav visible rakho
-//             mainNav.classList.add("active");
-//         }
+
 //     });
-// });
+
+// }
+
+/* ==========================
+   CLOSE MOBILE MENU
+========================== */
+
+    // document
+    // .querySelectorAll(".level-1-menu li")
+    // .forEach(item=>{
+
+    //     item.addEventListener("click",()=>{
+
+    //         if(window.innerWidth < 992){
+
+    //             mainNav.classList.remove("active");
+
+    //             mobileToggle
+    //             .querySelector("i")
+    //             .classList.replace(
+    //                 "fa-xmark",
+    //                 "fa-bars"
+    //             );
+
+    //         }
+
+    //     });
+
+    // });
+
+
+
+
+
+    document
+.querySelectorAll(".level-1-menu li")
+.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        // if(window.innerWidth < 992){
+
+        //     mainNav.classList.remove("active");
+
+        //     mobileToggle
+        //     .querySelector("i")
+        //     .classList.replace(
+        //         "fa-xmark",
+        //         "fa-bars"
+        //     );
+
+        // }
+          if(window.innerWidth < 992){
+
+            // submenu view open karo
+            document.body.classList.add("submenu-open");
+
+            // main nav visible rakho
+            mainNav.classList.remove("active");
+
+            // cross icon maintain rakho
+            const icon = mobileToggle.querySelector("i");
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        }
+        else{
+            
+            // main nav visible rakho
+            mainNav.classList.add("active");
+        }
+
+    });
+
+});
+
+
+
+
+
+    // document
+    // .querySelectorAll(".level-1-menu li")
+    // .forEach(item=>{
+
+    //     item.addEventListener("click",()=>{
+
+    //         if(window.innerWidth < 992){
+
+    //             document.body.classList.add(
+    //                 "submenu-open"
+    //             );
+
+    //             const title =
+    //             document.querySelector(
+    //                 ".mobile-submenu-title"
+    //             );
+
+    //             if(title){
+    //                 title.textContent =
+    //                 item.innerText.trim();
+    //             }
+
+    //         }
+
+    //     });
+
+    // });
+    
+
+
     /* =====================================
     MOBILE BACK NAVIGATION
     ===================================== */
+
     if(window.innerWidth < 992){
-        const menuItems = document.querySelectorAll(".level-1-menu li");
-        const backBtn = document.querySelector(".mobile-back");
-        const title = document.querySelector(".mobile-submenu-title");
+
+        const menuItems =
+        document.querySelectorAll(".level-1-menu li");
+
+        const backBtn =
+        document.querySelector(".mobile-back");
+
+        const title =
+        document.querySelector(".mobile-submenu-title");
+
         menuItems.forEach(item=>{
+
             item.addEventListener("click",()=>{
-                const menuName = item.innerText.trim();
+
+                const menuName =
+                item.innerText.trim();
+
                 document.body.classList.add(
                     "submenu-open"
                 );
+
                 if(title){
                     title.textContent =
                     menuName;
                 }
+
             });
-        }); 
+
+        });
+
+    //     if(backBtn){
+
+    //     backBtn.addEventListener("click",()=>{
+
+    //         document.body.classList.remove(
+    //             "submenu-open"
+    //         );
+
+    //         if(title){
+    //             title.textContent = "Menu";
+    //         }
+
+    //         // Main menu open rakho
+    //         mainNav.classList.add("active");
+
+    //     });
+
+    // }
+
     if(backBtn){
+
     backBtn.addEventListener("click",()=>{
+
         document.body.classList.remove("submenu-open");
+
         if(title){
             title.textContent = "Menu";
         }
+
         // Main menu dikhao
         mainNav.classList.add("active");
+
         // Icon cross hi rahe
         mobileToggle
         .querySelector("i")
         .classList.remove("fa-bars");
+
         mobileToggle
         .querySelector("i")
         .classList.add("fa-xmark");
+
         // IMPORTANT: Submenu state reset karo
         document
             .querySelectorAll(".mega-section")
             .forEach(section => {
                 section.classList.remove("active");
             });
+
     });
+
 }
+
     }
 
+
+
     // -----------------
-const cards = document.querySelectorAll(".category-card");
-const contents = document.querySelectorAll(".detail-content");
+   const cards =
+document.querySelectorAll(".category-card");
+
+const contents =
+document.querySelectorAll(".detail-content");
+
 cards.forEach(card => {
+
     card.addEventListener("mouseenter", () => {
-        const target = card.dataset.target;
+
+        const target =
+        card.dataset.target;
+
         cards.forEach(c =>
             c.classList.remove("active")
         );
+
         card.classList.add("active");
+
         contents.forEach(content =>
             content.classList.remove("active")
         );
+
         document
             .getElementById(target)
             .classList.add("active");
+
     });
+
 });
 
 /* Mobile Click Support */
+
 cards.forEach(card => {
+
     card.addEventListener("click", () => {
-        const target = card.dataset.target;
+
+        const target =
+        card.dataset.target;
+
         cards.forEach(c =>
             c.classList.remove("active")
         );
+
         card.classList.add("active");
+
         contents.forEach(content =>
             content.classList.remove("active")
         );
+
         document
             .getElementById(target)
             .classList.add("active");
+
     });
+
 });
+
 
 // -----------------------------------------------
 if(window.innerWidth < 992){
-    const mobileContainer = document.querySelector(".mobile-digital-layout");
+
+    const mobileContainer =
+    document.querySelector(".mobile-digital-layout");
+
     if(mobileContainer){
+
         const groups = [
+
             {
                 title:"Organic Growth",
                 grid:"#organic"
             },
+
             {
                 title:"Paid Media & Acquisition",
                 grid:"#paid"
             },
+
             {
                 title:"Conversion & Performance",
                 grid:"#conversion"
             },
+
             {
                 title:"Social & Brand Growth",
                 grid:"#social"
             },
+
             {
                 title:"Retention & Engagement",
                 grid:"#retention"
             }
+
         ];
+
         let html = "";
+
         groups.forEach(group=>{
-            const grid = document.querySelector(group.grid);
+
+            const grid =
+            document.querySelector(group.grid);
+
             if(!grid) return;
-            const links = grid.querySelectorAll(".service-card h4");
+
+            const links =
+            grid.querySelectorAll(".service-card h4");
+
             let items = "";
+
             links.forEach(link=>{
+
                 items += `
                     <a href="#">
                         ${link.innerText}
                         <span>→</span>
                     </a>
                 `;
+
             });
+
             html += `
                 <div class="mobile-group">
-                    <div class="mobile-group-title">${group.title}</div>
-                    <div class="mobile-links">${items}</div>
+
+                    <div class="mobile-group-title">
+                        ${group.title}
+                    </div>
+
+                    <div class="mobile-links">
+                        ${items}
+                    </div>
+
                 </div>
             `;
+
         });
+
         mobileContainer.innerHTML = html;
+
     }
+
 }
 if(window.innerWidth < 992){
-    const container = document.querySelector(".mobile-digital-layout");
+
+    const container =
+    document.querySelector(".mobile-digital-layout");
+
     if(container){
+
         container.innerHTML = `
+
         <div class="mobile-main-group">
+
             <h3>Agency</h3>
+
             <div class="mobile-sub-group">
+
                 <h4>Organic Growth</h4>
+
                 <a href="#">SEO <span>→</span></a>
                 <a href="#">Local SEO <span>→</span></a>
                 <a href="#">E-Commerce SEO <span>→</span></a>
+
             </div>
+
             <div class="mobile-sub-group">
+
                 <h4>Paid Media & Acquisition</h4>
+
                 <a href="#">PPC Ads Management <span>→</span></a>
                 <a href="#">Search Engine Marketing <span>→</span></a>
+
             </div>
+
             <div class="mobile-sub-group">
+
                 <h4>Conversion & Performance</h4>
+
                 <a href="#">CRO Services <span>→</span></a>
                 <a href="#">Lead Generation <span>→</span></a>
+
             </div>
+
             <div class="mobile-sub-group">
+
                 <h4>Social & Brand Growth</h4>
+
                 <a href="#">Social Media Marketing <span>→</span></a>
                 <a href="#">Influencer Marketing <span>→</span></a>
                 <a href="#">UGC Agency <span>→</span></a>
                 <a href="#">ORM Services <span>→</span></a>
+
             </div>
+
         </div>
+
         <div class="mobile-main-group studio_menu">
+
             <h3>Studio</h3>
+
             <div class="mobile-sub-group">
+
                 <a href="#">Product Photography <span>→</span></a>
                 <a href="#">Video Production <span>→</span></a>
+
             </div>
+
         </div>
+
         <div class="mobile-main-group">
+
             <h3>Technology</h3>
+
             <div class="mobile-sub-group">
+
                 <h4>Web Apps</h4>
+
                 <a href="#">Website Development <span>→</span></a>
                 <a href="#">WordPress Development <span>→</span></a>
                 <a href="#">Website Design <span>→</span></a>
                 <a href="#">UI/UX Design <span>→</span></a>
+
             </div>
+
             <div class="mobile-sub-group">
+
                 <h4>App & Cloud Solutions</h4>
+
                 <a href="#">Mobile Apps Development <span>→</span></a>
                 <a href="#">Cloud Apps Development <span>→</span></a>
+
             </div>
+
         </div>
         `;
     }
 }
+
+
+
 </script>
+
 </body>
 </html>

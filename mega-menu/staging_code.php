@@ -1,0 +1,4118 @@
+<?php
+/* Template Name: Microsite Menu */
+get_header();
+$pageid = get_the_ID();
+?>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+	@media (max-width: 575px) {
+	.testimonial-col-right {
+		position: relative;
+	}
+	.testimonial-col-right:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 99999999999999999999999999;
+	}
+	}
+
+	/* 	microsite menu start */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.cta-btn {
+	font-family: "Poppins", sans-serif !important;
+	}
+	.main-header {
+	background: #ffffff;
+	position: absolute;
+	top: -80px;
+	right: 0;
+	z-index: 9999;
+	}
+	.main-nav {
+	/* max-width:1440px; */
+	margin: auto;
+	padding: 0 30px;
+	}
+	.level-1-menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	list-style: none;
+	margin-bottom: 0;
+	min-height: 80px;
+	padding-left: 0;
+	width: max-content;
+	}
+	.level-1-menu li {
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 500;
+	color: #374151;
+	transition: 0.3s;
+	position: relative;
+	padding: 10px 0;
+	}
+	.level-1-menu li:hover {
+	color: #002a54;
+	}
+	.level-1-menu li.active {
+	color: #002a54;
+	}
+	.level-1-menu li.active::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #002a54;
+	}
+
+	/* ===================================
+		MEGA WRAPPER
+		=================================== */
+	/* 	.mega-menu-wrapper{width:100%;min-height:calc(100vh - 80px);background:#fff;} */
+	.mega-section {
+	display: none;
+	animation: fadeIn 0.3s ease;
+	}
+	.mega-section.active {
+	display: block; /* width: calc(100% - 90px); */
+	margin-left: auto;
+	}
+	@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	}
+	/* ===================================
+		LEVEL 2
+		=================================== */
+
+	.level-2-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 0px;
+	width: fit-content;
+	background: #fcfbfb;
+	border: 2px solid #dddddd6b;
+	border-radius: 10px;
+	position: relative;
+	margin-bottom: 20px;
+	}
+	.level-2-tabs::after {
+	content: "";
+	position: absolute;
+	top: auto;
+	left: 0;
+	right: 0;
+	bottom: -15px;
+	width: 100%;
+	height: 1px;
+	background: #e5e5e5;
+	margin: auto;
+	}
+	.level-2-btn {
+	border: none;
+	background: #eef4ff00;
+	color: #1f2937;
+	padding: 7px 20px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: 0.3s;
+	}
+	.level-2-btn:hover {
+	background: #dbe8ff;
+	}
+	.level-2-btn.active {
+	background: #002a54;
+	color: #fff;
+	}
+
+	/* ===================================
+		LEVEL 3
+		=================================== */
+
+	.level-3-tabs {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 0px;
+	border-bottom: 1px solid #c3c3c3;
+	width: fit-content; /* padding:10px 20px 35px; */
+	}
+	.level-3-btn {
+	border: none;
+	background: #f3f4f6;
+	padding: 8px 15px;
+	border-radius: 0px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s;
+	}
+	.transforming_bar {
+	display: none;
+	}
+	.level-3-btn:hover {
+	background: #e5e7eb;
+	}
+	.level-3-btn.active {
+	background: #002a54;
+	color: #fff;
+	}
+
+	/* ===================================
+		SERVICE GRID
+		=================================== */
+	.service-grid {
+	display: none;
+	max-width: 1400px;
+	margin: auto;
+	padding: 0 0px 50px;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+	margin-top: 10px;
+	}
+	.service-grid.active {
+	display: grid;
+	}
+	.service-card {
+	background: #fff;
+	border: 1px solid #d3d3d3 !important;
+	border-radius: 10px;
+	padding: 15px;
+	min-height: 180px;
+	transition: 0.35s;
+	color: #111827;
+	background-color: transparent !important;
+	border-radius: 10px;
+	height: 100%;
+	transition: 0.35s ease;
+	position: relative;
+	overflow: hidden;
+	}
+	.service-card p {
+	color: #64748b;
+	font-size: 14px;
+	line-height: 22px;
+	min-height: auto;
+	}
+	.service-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+	}
+
+	.service-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0px;
+	width: 0%;
+	height: 3px;
+	background: linear-gradient(90deg, #1db7d1, #ffb507);
+	transform: scaleX(0);
+	transition: 0.4s;
+	}
+	.service-card:hover::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(90deg, #1db7d1, #ffb507);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: 0.45s;
+	transform: scaleX(1);
+	}
+	.service-card:hover {
+	transform: translateY(-6px);
+	border-color: #0f62fe;
+	box-shadow: 0 20px 35px rgba(15, 98, 254, 0.08);
+	overflow: hidden;
+	}
+	.service-card i {
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 14px;
+	background: #eef4ff;
+	color: #0f62fe;
+	font-size: 22px;
+	margin-bottom: 20px;
+	}
+	.service-card h4 {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.4;
+	margin-top: 13px;
+	margin-bottom: 5px;
+	}
+
+	/* ===================================
+		ODOO GRID
+		=================================== */
+	.odoo-grid {
+	/* max-width:1450px; */
+	margin: auto;
+	padding: 15px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	background: #f5f5f5;
+	gap: 10px;
+	}
+	.category-column {
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 16px;
+	padding: 20px 10px;
+	box-shadow: 0px 4px 8px #dddddd9e;
+	}
+	.category-column h3 {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #002a54;
+	display: flex;
+	align-items: center;
+	}
+	.category-column h3 img {
+	margin-right: 5px;
+	}
+	.category-column a {
+	display: block;
+	color: #4b5563;
+	padding: 5px 0 5px;
+	background-color: transparent !important;
+	transition: 0.3s;
+	padding-left: 40px;
+	position: relative;
+	font-size: 13px;
+	transform: translateX(0px);
+	}
+	.category-column a::before {
+	content: "•";
+	position: absolute;
+	left: 14px;
+	top: 18px;
+	width: 15px;
+	height: 1px;
+	background: #002a54;
+	color: transparent;
+	transition: all 0.3s;
+	}
+	.category-column a::after {
+	content: "•";
+	position: absolute;
+	left: 28px;
+	top: 16px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #002a54;
+	color: transparent;
+	}
+	.category-column a:hover {
+	color: #0f62fe;
+	transform: translateX(10px);
+	}
+	.category-column a:hover::before {
+	width: 20px;
+	left: 4px;
+	}
+	.category-column a:hover::after {
+	width: 5px;
+	left: 28px;
+	}
+
+	/* ===================================
+		ECOMMERCE GRID
+		=================================== */
+	.ecommerce-grid {
+	/* max-width:1400px;margin:auto; */
+	padding: 0px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	}
+	.category-card {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 18px;
+	padding: 30px;
+	transition: 0.3s;
+	}
+	.category-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+	}
+	.category-card h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #002a54;
+	}
+	.category-card a {
+	display: block;
+	padding: 12px 0;
+	color: #4b5563;
+	transition: 0.3s;
+	}
+	.category-card a:hover {
+	color: #002a54;
+	}
+
+	/* ===================================
+		PLACEHOLDER SECTIONS
+		=================================== */
+	#tools,
+	#resources,
+	#contact {
+	padding: 80px;
+	text-align: center;
+	}
+	#tools h2,
+	#resources h2,
+	#contact h2 {
+	font-size: 42px;
+	}
+	/* TAB PANELS */
+	.tab-panel {
+	display: none;
+	}
+	.tab-panel.active {
+	display: block;
+	}
+
+	/* ===================================
+		RESPONSIVE
+		=================================== */
+
+	@media (max-width: 1200px) {
+		.service-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.odoo-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 992px) {
+		.service-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.odoo-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.ecommerce-grid {
+			grid-template-columns: 1fr;
+		}
+		.level-1-menu {
+			gap: 20px;
+			flex-wrap: wrap;
+			padding: 15px 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.service-grid {
+			grid-template-columns: 1fr;
+			padding: 20px;
+		}
+		.odoo-grid {
+			grid-template-columns: 1fr;
+			padding: 20px 12px;
+		}
+		.level-2-tabs,
+		.level-3-tabs {
+			overflow-x: auto;
+			justify-content: flex-start;
+			flex-wrap: nowrap;
+			padding-left: 20px;
+		}
+		.level-2-btn,
+		.level-3-btn {
+			white-space: nowrap;
+		}
+		.main-nav {
+			padding: 0 15px;
+		}
+		.level-1-menu {
+			justify-content: flex-start;
+			overflow-x: auto;
+			flex-wrap: nowrap;
+		}
+	}
+	/* ==========================
+		NAV CONTAINER
+		========================== */
+	.nav-container {
+	max-width: 1440px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 80px;
+	padding: 0 30px;
+	width: calc(100% - 90px);
+	}
+	.logo {
+	font-size: 24px;
+	font-weight: 800;
+	color: #0f62fe;
+	background-color: transparent !important;
+	}
+	.mobile-toggle {
+	display: none;
+	border: none;
+	background: none;
+	font-size: 24px;
+	cursor: pointer;
+	}
+
+	/* ==========================
+		MEGA MENU ANIMATION
+		========================== */
+	.mega-menu-wrapper {
+	opacity: 1;
+	visibility: visible;
+	transition: 0.35s ease;
+	}
+	.mega-section {
+	animation: menuFade 0.4s ease;
+	}
+	@keyframes menuFade {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	}
+
+	/* ==========================
+		FEATURED CARD
+		========================== */
+	.featured-card {
+	background: linear-gradient(135deg, #0f62fe, #0043ce);
+	color: #fff;
+	border: none;
+	}
+	.featured-card i {
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	}
+	.featured-card h4 {
+	color: #fff;
+	}
+	.featured-card p {
+	color: rgba(255, 255, 255, 0.8);
+	margin-top: 10px;
+	}
+	.featured-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 18px;
+	padding: 12px 20px;
+	border-radius: 10px;
+	background: #fff;
+	color: #0f62fe;
+	font-weight: 600;
+	}
+
+	/* ==========================
+		MENU INDICATORS
+		========================== */
+
+	.level-1-menu li {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	flex-direction: row-reverse;
+	}
+	.level-1-menu li::before {
+	content: "";
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #d1d5db;
+	}
+	.level-1-menu li.active::before {
+	background: #002a54;
+	}
+
+	/* ==========================
+		SCROLLBAR
+		========================== */
+	::-webkit-scrollbar {
+	width: 8px;
+	}
+	::-webkit-scrollbar-thumb {
+	background: #d1d5db;
+	border-radius: 20px;
+	}
+
+	/* ==========================
+		MOBILE
+		========================== */
+	.category {
+	background: #f6f9fd;
+	padding: 20px;
+	height: 100%;
+	}
+	.category h1 {
+	color: #000;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 600;
+	}
+	.category p {
+	color: #000;
+	font-size: 13px;
+	margin: 8px 0px 10px;
+	}
+	.category_bg {
+	background: #f3f3f3;
+	padding: 20px;
+	height: 100%;
+	}
+	.cta-card {
+	padding: 15px;
+	border-radius: 10px;
+	}
+	.cta-card h4 {
+	font-size: 20px;
+	font-weight: 600;
+	}
+	.cta-graph {
+	font-size: 30px;
+	margin-bottom: 5px;
+	}
+
+	.category-content {
+	position: relative;
+	}
+	.category-content::before {
+	content: "";
+	position: absolute;
+	top: 40px;
+	left: 14px;
+	width: 1px;
+	height: calc(100% - 51px);
+	background-color: #002a54;
+	opacity: 0.5;
+	}
+	.ecommerce-mega {
+	padding: 20px 0;
+	}
+	.mega-header {
+	margin-bottom: 20px;
+	}
+	.mega-header h2 {
+	font-size: 30px;
+	margin-bottom: 5px;
+	}
+	.mega-header p {
+	color: #64748b;
+	}
+	.category-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-bottom: 10px;
+	}
+	.category-card {
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.35s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid transparent;
+	}
+	.category-card:hover {
+	transform: translateY(-5px);
+	}
+	.category-card:nth-child(1) {
+	background: #f7f1ff;
+	}
+	.category-card:nth-child(2) {
+	background: #edf9ef;
+	}
+	.category-card:nth-child(3) {
+	background: #fff7ea;
+	}
+	.category-card.active {
+	border-color: #002a541f;
+	}
+	.card-text h3 {
+	font-size: 19px;
+	margin-bottom: 10px;
+	font-weight: 500;
+	}
+	.card-text p {
+	color: #64748b;
+	margin-bottom: 0px;
+	font-size: 13px;
+	}
+	.card-icon {
+	font-size: 38px;
+	height: 35px;
+	width: 35px;
+	}
+	.detail-panel {
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #e5e7eb;
+	overflow: hidden;
+	}
+	.detail-content {
+	display: none;
+	padding: 25px;
+	grid-template-columns: 1fr 300px;
+	gap: 20px;
+	align-items: center;
+	}
+	.detail-content .cta-btn {
+	background-color: #002a54 !important;
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.3s;
+	padding: 8px 15px;
+	margin-top: 0;
+	font-size: 12px;
+	font-weight: 400;
+	}
+	.detail-content.active {
+	display: grid;
+	}
+	.tag {
+	background: #eef4ff;
+	color: #002a54;
+	padding: 5px 10px;
+	border-radius: 50px;
+	display: inline-block;
+	margin-bottom: 20px;
+	font-size: 11px;
+	border: 1px solid #002a542e;
+	font-weight: 400;
+	}
+	.detail-left h3 {
+	font-size: 20px;
+	margin-bottom: 5px;
+	font-weight: 500;
+	}
+	.detail-left p {
+	color: #64748b;
+	margin-bottom: 25px;
+	max-width: 600px;
+	font-size: 12px;
+	}
+	.services {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-bottom: 20px;
+	}
+	.services a {
+	padding: 5px 15px;
+	background: #f8fafc !important;
+	border-radius: 4px;
+	color: #334155;
+	border-bottom: 1px solid #919191 !important;
+	font-size: 12px;
+	position: relative;
+	z-index: 0;
+	-webkit-transition: border-color 0.35s ease, background 0.35s ease;
+	transition: border-color 0.35s ease, background 0.35s ease;
+	}
+	.services a:before {
+	background-color: #002a54;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	-webkit-transition: all 0.35s ease;
+	transition: all 0.35s ease;
+	}
+	.services a:hover:before {
+	top: 0;
+	}
+	.services a:hover {
+	color: #fff;
+	transition: 0.25s;
+	}
+	.services a:after {
+	position: absolute;
+	right: 2.34375rem;
+	top: 50%;
+	-webkit-transform: translateY(-50%) translateX(50%);
+	-ms-transform: translateY(-50%) translateX(50%);
+	transform: translateY(-50%) translateX(50%);
+	font-size: 1.75em;
+	}
+
+	/* .cta-btn{
+		display:inline-block;
+		padding:14px 22px;
+		background:#0f62fe;
+		color:#fff;
+		border-radius:12px;
+		} */
+
+	.detail-right img {
+	width: 100%;
+	border-radius: 20px;
+	object-fit: cover;
+	height: 100%;
+	border: 1px solid #ddd;
+	}
+	.detail-right {
+	width: 100%;
+	height: 210px;
+	}
+	.learn_more {
+	font-size: 13px;
+	transition: all 0.3s;
+	}
+	.learn_more:hover {
+	letter-spacing: 0.3px;
+	}
+	.learn_more span {
+	margin-left: 0px;
+	transition: all 0.3s;
+	}
+	.learn_more:hover span {
+	margin-left: 5px;
+	}
+	.mobile-digital-layout {
+	display: none;
+	}
+	.odoo-grid .category-content h3 img {
+	width: 40px;
+	height: 40px;
+	border-radius: 7px;
+	padding: 6px;
+	border: 1px solid #ccc;
+	}
+
+	.mobile-submenu-header {
+	display: none;
+	}
+	/* ==========================
+		MOBILE SUBMENU HEADER
+		========================== */
+
+	.mobile-submenu-header {
+	display: none;
+	}
+	.cta-card {
+	height: 100%;
+
+	border-radius: 22px;
+
+	padding: 30px;
+
+	background: linear-gradient(135deg, #002a54, #106093);
+
+	color: #fff;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	}
+
+	.cta-card {
+	background: linear-gradient(135deg, #002a54, #106093);
+
+	border-radius: 30px;
+
+	padding: 34px;
+
+	position: relative;
+
+	overflow: hidden;
+
+	box-shadow: 0 30px 70px rgba(0, 42, 84, 0.25);
+	padding: 15px;
+	border-radius: 10px;
+	}
+
+	.cta-card::before {
+	content: "";
+
+	position: absolute;
+
+	width: 320px;
+	height: 320px;
+
+	border-radius: 50%;
+
+	top: -150px;
+	right: -120px;
+
+	background: rgba(255, 255, 255, 0.08);
+	}
+
+	.cta-graph {
+	font-size: 40px;
+	margin-bottom: 20px;
+	}
+
+	.cta-card h4 {
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	}
+
+	.cta-card p {
+	opacity: 0.9;
+	line-height: 22px;
+	font-size: 15px;
+	}
+
+	.learn-more {
+	background-color: #002a54;
+	color: #fff;
+	border: 1px solid #002a54;
+	}
+	.learn-more:hover {
+	background-color: transparent;
+	color: #002a54;
+	border: 1px solid #002a54;
+	}
+	.cta-btn {
+	}
+
+	.cta-btn {
+	display: inline-flex;
+	width: max-content;
+	text-decoration: none;
+	border-radius: 50px;
+	font-weight: 700;
+	margin-top: 15px;
+	background-color: #fff !important;
+	color: #002a54;
+	border-radius: 999px;
+	transition: 0.3s;
+	padding: 10px 25px;
+	font-weight: 600;
+	margin-top: 0;
+	font-size: 14px;
+	}
+	.cta-btn:hover {
+	transform: translateY(-3px);
+	background: #ffb507;
+	color: #002a54;
+	}
+
+	@media (max-width: 991px) {
+	/* .menu-open{display: block;} */
+		body:not(.menu-open) .main-nav {
+			transform: translateX(-100%);
+			visibility: hidden;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		body.menu-open .main-nav {
+			transform: translateX(0);
+			/* visibility: visible; */
+			opacity: 1;
+			pointer-events: auto;
+		}
+		.mobile-submenu-header {
+			display: none !important;
+			justify-content: space-between;
+		}
+		.submenu-open .mobile-submenu-header {
+			display: flex !important;
+		}
+		.mobile-submenu-header {
+			display: none;
+			align-items: center;
+			gap: 12px;
+			padding: 16px;
+			border-bottom: 1px solid #e5e7eb;
+			background: #fff;
+		}
+		body.submenu-open .mobile-submenu-header {
+			display: flex;
+		}
+		.mobile-submenu-header {
+			position: sticky;
+			top: 0;
+			z-index: 999;
+			background: #fff;
+			border-bottom: 1px solid #e5e5e5;
+			padding: 12px 15px;
+			align-items: center;
+			gap: 15px;
+		}
+		.mobile-back {
+			border: none;
+			background: none;
+			font-size: 12px;
+			font-weight: 600;
+			color: #002b5b;
+			padding: 0;
+			cursor: pointer;
+		}
+		.mobile-submenu-title {
+			font-size: 12px;
+			font-weight: 600;
+			color: #002b5b;
+			text-transform: uppercase;
+		}
+		/* submenu open state */
+		body.submenu-open .mobile-submenu-header {
+			display: flex;
+		}
+		body.submenu-open .mega-menu-wrapper {
+			display: block;
+		}
+		body.submenu-open .mobile-submenu-header {
+			display: none;
+			display: flex;
+			justify-content: space-between;
+		}
+		/* body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;} */
+		.mega-section.active {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+		.studio_menu .mobile-sub-group::before {
+			height: calc(100% - -8px);
+		}
+
+		/* menu with curtain */
+
+		.main-nav {
+			position: fixed;
+			overflow: hidden;
+			background: #002a54;
+		}
+
+		/* Curtain Layers */
+		.menu-curtain {
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			transform: translateX(-100%);
+		}
+
+		.curtain-1 {
+			background: #ffffff;
+			z-index: 1;
+		}
+
+		.curtain-2 {
+			background: #c5f0f6;
+			z-index: 2;
+		}
+
+		.curtain-3 {
+			background: #00bad3;
+			z-index: 3;
+		}
+
+		/* Content Above Curtain */
+		.level-1-menu,
+		.mobile-submenu-header,
+		.mega-menu-wrapper {
+			position: relative;
+			z-index: 10;
+		}
+
+		/* OPEN */
+		.main-nav.active .curtain-1 {
+			animation: curtainOpen 0.5s ease forwards;
+		}
+
+		.main-nav.active .curtain-2 {
+			animation: curtainOpen 0.7s ease forwards;
+		}
+
+		.main-nav.active .curtain-3 {
+			animation: curtainOpen 0.9s ease forwards;
+		}
+
+		/* CLOSE */
+		.main-nav.is-closing .curtain-1 {
+			animation: curtainClose 0.5s ease forwards;
+		}
+
+		.main-nav.is-closing .curtain-2 {
+			animation: curtainClose 0.7s ease forwards;
+		}
+
+		.main-nav.is-closing .curtain-3 {
+			animation: curtainClose 0.9s ease forwards;
+		}
+
+		@keyframes curtainOpen {
+			from {
+			transform: translateX(-100%);
+			}
+			to {
+			transform: translateX(100%);
+			}
+		}
+
+		@keyframes curtainClose {
+			from {
+			transform: translateX(100%);
+			}
+			to {
+			transform: translateX(-100%);
+			}
+		}
+
+		@keyframes menuItemReveal {
+			from {
+			opacity: 0;
+			transform: translateX(-25px);
+			}
+			to {
+			opacity: 1;
+			transform: translateX(0);
+			}
+		}
+		.mobile-main-group:nth-child(1) {
+			animation-delay: 0.1s !important;
+		}
+		.mobile-main-group:nth-child(2) {
+			animation-delay: 0.2s !important;
+		}
+		.mobile-main-group:nth-child(3) {
+			animation-delay: 0.3s !important;
+		}
+
+		.main-nav.menu-content-visible .level-1-menu li {
+			opacity: 0;
+			transform: translateX(-30px);
+			animation: menuItemReveal 0.5s ease forwards;
+		}
+
+		@keyframes menuItemReveal {
+			from {
+			opacity: 0;
+			transform: translateX(-30px);
+			}
+			to {
+			opacity: 1;
+			transform: translateX(0);
+			}
+		}
+		/* .mobile-sub-group a{
+				opacity:0;
+				transform:translateX(-20px);
+			} */
+
+		.main-nav.menu-content-visible .mobile-sub-group a {
+			animation: menuItemReveal 0.3s ease forwards;
+		}
+
+		.level-1-menu li {
+			opacity: 0;
+			transform: translateX(-30px);
+		}
+
+		/* ===================================
+				HEADER
+				=================================== */
+		.main-header {
+			background: #fff;
+			border-bottom: 1px solid #e5e7eb;
+			position: absolute;
+			top: -80px;
+			right: 0;
+			z-index: 9999;
+			position: absolute;
+			top: auto;
+			top: -8px;
+			left: 0;
+			z-index: 9999;
+			height: 100%;
+			bottom: 0px;
+		}
+		.menu-open .main-header {
+			background: #002a54;
+		}
+		.menu-content-visible {
+			top: -40px;
+		}
+		.main-nav {
+			/* max-width:1440px; */
+			margin: auto;
+			padding: 0 30px;
+		}
+		.level-1-menu {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 40px;
+			list-style: none;
+			margin-bottom: 0;
+			min-height: 80px;
+			padding-left: 0;
+		}
+		.level-1-menu li {
+			cursor: pointer;
+			font-size: 15px;
+			font-weight: 500;
+			color: #374151;
+			transition: 0.3s;
+			position: relative;
+			padding: 10px 0;
+		}
+		.level-1-menu li:hover {
+			color: #002a54;
+		}
+		.level-1-menu li.active {
+			color: #002a54;
+		}
+		.level-1-menu li.active::after {
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #002a54;
+		}
+
+		/* ===================================
+				MEGA WRAPPER
+				=================================== */
+		.mega-menu-wrapper {
+			width: 100%;
+			min-height: calc(100vh - 80px);
+			background: #fff;
+		}
+		.mega-section {
+			display: none;
+			animation: fadeIn 0.3s ease;
+		}
+	/* 		.mega-section.active{display:block;/* width: calc(100% - 90px); */
+	/* /margin-left: auto;
+	} */
+	@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	}
+	/* ===================================
+			LEVEL 2
+			=================================== */
+
+	.level-2-tabs {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 0px;
+	width: fit-content;
+	background: #fcfbfb;
+	border: 2px solid #dddddd6b;
+	border-radius: 10px;
+	position: relative;
+	margin-bottom: 20px;
+	}
+	.level-2-tabs::after {
+	content: "";
+	position: absolute;
+	top: auto;
+	left: 0;
+	right: 0;
+	bottom: -15px;
+	width: 100%;
+	height: 1px;
+	background: #e5e5e5;
+	margin: auto;
+	}
+	.level-2-btn {
+	border: none;
+	background: #eef4ff00;
+	color: #1f2937;
+	padding: 7px 20px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: 0.3s;
+	}
+	.level-2-btn:hover {
+	background: #dbe8ff;
+	}
+	.level-2-btn.active {
+	background: #002a54;
+	color: #fff;
+	}
+
+	/* ===================================
+			LEVEL 3
+			=================================== */
+
+	.level-3-tabs {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 0px;
+	border-bottom: 1px solid #c3c3c3;
+	width: fit-content; /* padding:10px 20px 35px; */
+	}
+	.level-3-btn:hover {
+	background: #e5e7eb;
+	}
+	.level-3-btn.active {
+	background: #002a54;
+	color: #fff;
+	}
+
+	/* ===================================
+			SERVICE GRID
+			=================================== */
+	.service-grid {
+	display: none;
+	max-width: 1400px;
+	margin: auto;
+	padding: 0 0px 50px;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+	margin-top: 10px;
+	}
+	.service-grid.active {
+	display: grid;
+	}
+
+	.service-card p {
+	color: #64748b;
+	font-size: 12px;
+	line-height: 1.8;
+	min-height: auto;
+	}
+	.service-card:hover {
+	transform: translateY(-6px);
+	border-color: #0f62fe;
+	box-shadow: 0 20px 35px rgba(15, 98, 254, 0.08);
+	}
+	.service-card i {
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 14px;
+	background: #eef4ff;
+	color: #0f62fe;
+	font-size: 22px;
+	margin-bottom: 20px;
+	}
+	.service-card h4 {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.4;
+	margin-top: 13px;
+	margin-bottom: 5px;
+	}
+
+	/* ===================================
+			ODOO GRID
+			=================================== */
+	.odoo-grid {
+	/* max-width:1450px; */
+	margin: auto;
+	padding: 15px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	background: #f5f5f5;
+	gap: 10px;
+	}
+	.category-column {
+	background: #fff;
+	border: 1px solid #e1e1e1;
+	border-radius: 16px;
+	padding: 20px 10px;
+	box-shadow: 0px 4px 8px #dddddd9e;
+	}
+	.category-column h3 {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #002a54;
+	display: flex;
+	align-items: center;
+	}
+	.category-column h3 img {
+	margin-right: 5px;
+	}
+	.category-column a {
+	display: block;
+	color: #4b5563;
+	padding: 5px 0 5px;
+	background-color: transparent !important;
+	transition: 0.3s;
+	padding-left: 40px;
+	position: relative;
+	font-size: 13px;
+	transform: translateX(0px);
+	}
+	.category-column a::before {
+	content: "•";
+	position: absolute;
+	left: 14px;
+	top: 18px;
+	width: 15px;
+	height: 1px;
+	background: #002a54;
+	color: transparent;
+	transition: all 0.3s;
+	}
+	.category-column a::after {
+	content: "•";
+	position: absolute;
+	left: 28px;
+	top: 16px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #002a54;
+	color: transparent;
+	}
+	.category-column a:hover {
+	color: #0f62fe;
+	transform: translateX(10px);
+	}
+	.category-column a:hover::before {
+	width: 20px;
+	left: 4px;
+	}
+	.category-column a:hover::after {
+	width: 5px;
+	left: 28px;
+	}
+
+	/* ===================================
+			ECOMMERCE GRID
+			=================================== */
+	.ecommerce-grid {
+	/* max-width:1400px;margin:auto; */
+	padding: 0px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	}
+	.category-card {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 18px;
+	padding: 30px;
+	transition: 0.3s;
+	}
+	.category-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+	}
+	.category-card h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+	color: #002a54;
+	}
+	.category-card a {
+	display: block;
+	padding: 12px 0;
+	color: #4b5563;
+	transition: 0.3s;
+	}
+	.category-card a:hover {
+	color: #002a54;
+	}
+
+	/* ===================================
+			PLACEHOLDER SECTIONS
+			=================================== */
+	#tools,
+	#resources,
+	#contact {
+	padding: 80px;
+	text-align: center;
+	}
+	#tools h2,
+	#resources h2,
+	#contact h2 {
+	font-size: 42px;
+	}
+	/* TAB PANELS */
+	.tab-panel {
+	display: none;
+	}
+	.tab-panel.active {
+	display: block;
+	}
+
+	/* ===================================
+			RESPONSIVE
+			=================================== */
+
+	@media (max-width: 1200px) {
+	.service-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.odoo-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	}
+
+	@media (max-width: 992px) {
+	.service-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.odoo-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.ecommerce-grid {
+		grid-template-columns: 1fr;
+	}
+	.level-1-menu {
+		gap: 20px;
+		flex-wrap: wrap;
+		padding: 15px 0;
+	}
+	}
+
+	@media (max-width: 768px) {
+	.service-grid {
+		grid-template-columns: 1fr;
+		padding: 20px;
+	}
+	.odoo-grid {
+		grid-template-columns: 1fr;
+		padding: 20px 12px;
+	}
+	.level-2-tabs,
+	.level-3-tabs {
+		overflow-x: auto;
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+		padding-left: 20px;
+	}
+	.level-2-btn,
+	.level-3-btn {
+		white-space: nowrap;
+	}
+	.main-nav {
+		padding: 0 15px;
+	}
+	.level-1-menu {
+		justify-content: flex-start;
+		overflow-x: auto;
+		flex-wrap: nowrap;
+	}
+	}
+	/* ==========================
+			NAV CONTAINER
+			========================== */
+	.nav-container {
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 80px;
+	padding: 0 30px;
+	width: calc(100% - 90px);
+	}
+	.logo {
+	font-size: 24px;
+	font-weight: 800;
+	color: #0f62fe;
+	background-color: transparent !important;
+	}
+	.mobile-toggle {
+	display: none;
+	border: none;
+	background: none;
+	font-size: 24px;
+	cursor: pointer;
+	}
+
+	/* ==========================
+			MEGA MENU ANIMATION
+			========================== */
+	.mega-menu-wrapper {
+	opacity: 1;
+	visibility: visible;
+	transition: 0.35s ease;
+	}
+	.mega-section {
+	animation: menuFade 0.4s ease;
+	}
+	@keyframes menuFade {
+	from {
+		opacity: 0;
+		transform: translateX(70px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	}
+
+	/* ==========================
+			FEATURED CARD
+			========================== */
+	.featured-card {
+	background: linear-gradient(135deg, #0f62fe, #0043ce);
+	color: #fff;
+	border: none;
+	}
+	.featured-card i {
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	}
+	.featured-card h4 {
+	color: #fff;
+	}
+	.featured-card p {
+	color: rgba(255, 255, 255, 0.8);
+	margin-top: 10px;
+	}
+	.featured-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 18px;
+	padding: 12px 20px;
+	border-radius: 10px;
+	background: #fff;
+	color: #0f62fe;
+	font-weight: 600;
+	}
+
+	/* ==========================
+			MENU INDICATORS
+			========================== */
+
+	.level-1-menu li {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	flex-direction: row-reverse;
+	}
+	.level-1-menu li::before {
+	content: "";
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #d1d5db;
+	}
+	.level-1-menu li.active::before {
+	background: #002a54;
+	}
+
+	/* ==========================
+			SCROLLBAR
+			========================== */
+	::-webkit-scrollbar {
+	width: 8px;
+	}
+	::-webkit-scrollbar-thumb {
+	background: #d1d5db;
+	border-radius: 20px;
+	}
+
+	/* ==========================
+			MOBILE
+			========================== */
+	.category {
+	background: #f6f9fd;
+	padding: 20px;
+	height: 100%;
+	}
+	.category h1 {
+	color: #000;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 600;
+	}
+	.category p {
+	color: #000;
+	font-size: 13px;
+	margin: 8px 0px 10px;
+	}
+	.category_bg {
+	background: #f3f3f3;
+	padding: 20px;
+	height: 100%;
+	}
+	.cta-card {
+	padding: 15px;
+	border-radius: 10px;
+	}
+	.cta-card h4 {
+	font-size: 20px;
+	font-weight: 600;
+	}
+	.cta-graph {
+	font-size: 30px;
+	margin-bottom: 5px;
+	}
+	.cta-btn {
+	background-color: #fff !important;
+	color: #002a54;
+	border-radius: 999px;
+	transition: 0.3s;
+	padding: 10px 25px;
+	font-weight: 600;
+	margin-top: 0;
+	}
+	.category-content {
+	position: relative;
+	}
+	/* 		.category-content::before{content: "";position: absolute;top: 40px;left: 14px;width: 1px;height: calc(100% - 51px);background-color: #002a54;opacity: 0.5;} */
+	.ecommerce-mega {
+	padding: 20px 0;
+	}
+	.mega-header {
+	margin-bottom: 20px;
+	}
+	.mega-header h2 {
+	font-size: 30px;
+	margin-bottom: 5px;
+	}
+	.mega-header p {
+	color: #64748b;
+	}
+	.category-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-bottom: 10px;
+	}
+	.category-card {
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.35s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid transparent;
+	}
+	.category-card:hover {
+	transform: translateY(-5px);
+	}
+	.category-card:nth-child(1) {
+	background: #f7f1ff;
+	}
+	.category-card:nth-child(2) {
+	background: #edf9ef;
+	}
+	.category-card:nth-child(3) {
+	background: #fff7ea;
+	}
+	.category-card.active {
+	border-color: #002a541f;
+	}
+	.card-text h3 {
+	font-size: 19px;
+	margin-bottom: 10px;
+	font-weight: 500;
+	}
+	.card-text p {
+	color: #64748b;
+	margin-bottom: 0px;
+	font-size: 13px;
+	}
+	.card-icon {
+	font-size: 38px;
+	height: 35px;
+	width: 35px;
+	}
+	.detail-panel {
+	background: #fff;
+	border-radius: 10px;
+	border: 1px solid #e5e7eb;
+	overflow: hidden;
+	}
+	.detail-content {
+	display: none;
+	padding: 25px;
+	grid-template-columns: 1fr 300px;
+	gap: 20px;
+	align-items: center;
+	}
+	.detail-content .cta-btn {
+	background-color: #002a54 !important;
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.3s;
+	padding: 8px 15px;
+	margin-top: 0;
+	font-size: 12px;
+	font-weight: 400;
+	}
+	.detail-content.active {
+	display: grid;
+	}
+	.tag {
+	background: #eef4ff;
+	color: #002a54;
+	padding: 5px 10px;
+	border-radius: 50px;
+	display: inline-block;
+	margin-bottom: 20px;
+	font-size: 11px;
+	border: 1px solid #002a542e;
+	font-weight: 400;
+	}
+	.detail-left h3 {
+	font-size: 20px;
+	margin-bottom: 5px;
+	font-weight: 500;
+	}
+	.detail-left p {
+	color: #64748b;
+	margin-bottom: 25px;
+	max-width: 600px;
+	font-size: 12px;
+	}
+	.services {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-bottom: 20px;
+	}
+	.services a {
+	padding: 5px 15px;
+	background: #f8fafc !important;
+	border-radius: 4px;
+	color: #334155;
+	border-bottom: 1px solid #919191 !important;
+	font-size: 12px;
+	position: relative;
+	z-index: 0;
+	-webkit-transition: border-color 0.35s ease, background 0.35s ease;
+	transition: border-color 0.35s ease, background 0.35s ease;
+	}
+	.services a:before {
+	background-color: #002a54;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	-webkit-transition: all 0.35s ease;
+	transition: all 0.35s ease;
+	}
+	.services a:hover:before {
+	top: 0;
+	}
+	.services a:hover {
+	color: #fff;
+	transition: 0.25s;
+	}
+	.services a:after {
+	position: absolute;
+	right: 2.34375rem;
+	top: 50%;
+	-webkit-transform: translateY(-50%) translateX(50%);
+	-ms-transform: translateY(-50%) translateX(50%);
+	transform: translateY(-50%) translateX(50%);
+	font-size: 1.75em;
+	}
+
+	/* .cta-btn{
+			display:inline-block;
+			padding:14px 22px;
+			background:#0f62fe;
+			color:#fff;
+			border-radius:12px;
+		} */
+
+	.detail-right img {
+	width: 100%;
+	border-radius: 20px;
+	object-fit: cover;
+	height: 100%;
+	border: 1px solid #ddd;
+	}
+	.detail-right {
+	width: 100%;
+	height: 210px;
+	}
+	.learn_more {
+	font-size: 13px;
+	transition: all 0.3s;
+	}
+	.learn_more:hover {
+	letter-spacing: 0.3px;
+	}
+	.learn_more span {
+	margin-left: 0px;
+	transition: all 0.3s;
+	}
+	.learn_more:hover span {
+	margin-left: 5px;
+	}
+	.mobile-digital-layout {
+	display: none;
+	}
+	.odoo-grid .category-content h3 img {
+	width: 40px;
+	height: 40px;
+	border-radius: 7px;
+	padding: 6px;
+	border: 1px solid #ccc;
+	}
+
+	.mobile-submenu-header {
+	display: none;
+	}
+
+	@media (max-width: 991px) {
+	.mobile-toggle .fa-xmark {
+		position: relative;
+		z-index: 999;
+	}
+	.category-card {
+		padding: 12px;
+	}
+	.card-text h3 {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+	.card-text p {
+		font-size: 12px;
+	}
+	.card-icon {
+		font-size: 32px;
+		height: 28px;
+		width: 28px;
+	}
+	.category-card .card-text {
+		margin-right: 5px;
+	}
+	.category-cards {
+		gap: 5px;
+	}
+	.detail-content {
+		padding: 15px;
+	}
+	.tag {
+		padding: 2px 5px;
+		border-radius: 3px;
+		font-size: 9px;
+		margin-bottom: 10px;
+	}
+	.detail-left p {
+		font-size: 11px;
+		margin-bottom: 15px;
+	}
+	.services a {
+		font-size: 10px;
+		padding: 5px;
+	}
+	.detail-left h3 {
+		font-size: 16px;
+		font-weight: 600;
+	}
+	.mobile-toggle {
+		display: block;
+	}
+	.nav-container {
+		width: 100%;
+		padding: 0 15px;
+		position: fixed;
+		top: 90%;
+	}
+	.level-1-menu li.active::after {
+		height: 0px;
+	}
+	/* .main-nav{position:fixed;top:80px;left:-100%;width:100%;height:calc(100vh - 80px);background:#fff;transition:.35s;overflow:auto;z-index:999;} */
+	.main-nav {
+		position: fixed;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 60px);
+		background: #002a54; /* DARK BLUE FIXED */
+		overflow: hidden;
+
+		transform: none !important;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+
+		transition: opacity 0.3s ease;
+	}
+	.main-nav.active {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	/* LIGHT BLUE CURTAIN */
+	.main-nav::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: #8dd9ec;
+
+		border-bottom-left-radius: 70% 100%;
+
+		transform: translateX(-100%);
+		transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+
+		z-index: -1;
+	}
+
+	.main-nav.active::before {
+		transform: translateX(100%);
+	}
+
+	/* MENU CONTENT */
+	.level-1-menu {
+		position: relative;
+		z-index: 2;
+	}
+	.main-nav.active {
+		left: 0;
+		padding-left: 0px;
+	}
+	.category-column {
+		border-radius: 7px;
+		padding: 15px 10px;
+	}
+	.level-1-menu {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 7px;
+		padding: 0 12px;
+	}
+	.level-1-menu li {
+		color: #fff;
+		padding: 12px 0 3px 0;
+		width: -webkit-fill-available;
+		justify-content: flex-end;
+	}
+	.logo img {
+		width: 120px;
+	}
+	.level-1-menu li.active {
+		color: #fff;
+	}
+	.level-1-menu li.active::before {
+		background: #f9f9f9;
+	}
+	.category-cards,
+	.detail-content {
+		grid-template-columns: 1fr;
+	}
+	.ecommerce-mega {
+		padding: 20px 12px;
+	}
+	.mega-header h2 {
+		font-size: 17px;
+		font-weight: 600;
+	}
+	.mega-header p {
+		font-size: 12px;
+	}
+	.mega-header {
+		margin-bottom: 10px;
+	}
+	.odoo-grid .category-content h3 img {
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+		padding: 6px;
+		border: 1px solid #ccc;
+	}
+	.category-column h3 {
+		font-size: 14px;
+	}
+	.category-column a {
+		font-size: 12px;
+	}
+	.category-content::before {
+		top: 35px;
+		height: calc(100% - 49px);
+	}
+	.category-column a::before {
+		top: 14px;
+	}
+	.category-column a::after {
+		top: 12px;
+	}
+	.level-2-tabs,
+	.level-3-tabs,
+	.tab-panel {
+		display: none !important;
+	}
+	.mobile-digital-layout {
+		display: block;
+	}
+	.mobile-group {
+		margin-bottom: 24px;
+	}
+	.mobile-group-title {
+		font-size: 16px;
+		font-weight: 700;
+		color: #003b7a;
+		margin-bottom: 12px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #e5e7eb;
+	}
+	.mobile-links {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.mobile-links a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 12px 14px;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #111;
+		background: #fff;
+	}
+	.mobile-links a:hover {
+		background: #f5f7fa;
+	}
+	.mobile-group {
+		margin-bottom: 24px;
+	}
+	.mobile-group-title {
+		font-size: 15px;
+		font-weight: 700;
+		color: #003b7a;
+		margin-bottom: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+	.mobile-links {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.mobile-links a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 14px;
+		background: #fff;
+		border: 1px solid #edf1f5;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #111;
+		transition: 0.3s;
+	}
+	.mobile-links a:hover {
+		transform: translateX(5px);
+	}
+	.mobile-digital-layout {
+		display: block;
+	}
+	.mobile-main-group {
+		margin-bottom: 30px;
+	}
+	.mobile-main-group h3 {
+		font-size: 23px;
+		font-weight: 600;
+		margin-bottom: 20px;
+		color: #003b7a;
+		width: fit-content; /* border-bottom: 1px solid #ddd */
+	}
+	.mobile-sub-group {
+		margin-bottom: 24px;
+		position: relative;
+	}
+	.mobile-sub-group h4 {
+		font-size: 15px;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		color: #181818;
+	}
+	.mobile-sub-group::before {
+		content: "";
+		position: absolute;
+		bottom: 10px;
+		left: 1px;
+		width: 1px;
+		height: calc(100% - 30px);
+		background-color: #002a542e;
+	}
+	.mobile-sub-group a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2px 0px 3px 12px;
+		margin-bottom: 8px;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #111;
+		background-color: transparent !important;
+		border-color: transparent !important;
+		position: relative;
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.mobile-sub-group a::before {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		top: 0px;
+		left: 1px;
+		width: 10px;
+		height: 1px;
+		background-color: #002a542e;
+		margin: auto;
+	}
+	.service-grid {
+		display: grid !important;
+	}
+	.level-2-tabs,
+	.level-3-tabs {
+		display: none;
+	}
+	.category_bg {
+		padding: 25px 12px;
+		background: #f5f5f5;
+	}
+	.category {
+		background: #fff;
+		padding: 20px 12px;
+	}
+	.category a {
+		font-size: 12px;
+		padding: 5px 15px;
+	}
+	.category p {
+		font-size: 12px;
+		line-height: 20px;
+	}
+	.detail-content .cta-btn {
+		font-size: 11px;
+	}
+	}
+	@media (max-width: 991px) {
+	.mobile-toggle .fa-solid {
+		color: #fff;
+	}
+	.waves {
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		background: #002a54bf;
+		opacity: 0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		border-radius: 100%;
+		left: -8px;
+		bottom: 0px;
+		z-index: -1;
+		-webkit-animation: waves 3s ease-in-out infinite;
+		animation: waves 3s ease-in-out infinite;
+	}
+	.menu-open .waves {
+		background: #ffffffbf;
+	}
+
+	.wave-1 {
+		-webkit-animation-delay: 0s;
+		animation-delay: 0s;
+	}
+
+	.wave-2 {
+		-webkit-animation-delay: 1s;
+		animation-delay: 1s;
+	}
+
+	.wave-3 {
+		-webkit-animation-delay: 2s;
+		animation-delay: 2s;
+	}
+	@keyframes waves {
+		0% {
+		-webkit-transform: scale(0.4, 0.4);
+		transform: scale(0.4, 0.4);
+		opacity: 0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		}
+		50% {
+		opacity: 0.9;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+		}
+		100% {
+		-webkit-transform: scale(0.9, 0.9);
+		transform: scale(0.9, 0.9);
+		opacity: 0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		}
+	}
+	.category-card {
+		padding: 12px;
+	}
+	.card-text h3 {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+	.card-text p {
+		font-size: 12px;
+	}
+	.card-icon {
+		font-size: 32px;
+		height: 28px;
+		width: 28px;
+	}
+	.category-card .card-text {
+		margin-right: 5px;
+	}
+	.category-cards {
+		gap: 5px;
+	}
+	.detail-content {
+		padding: 15px;
+	}
+	.tag {
+		padding: 2px 5px;
+		border-radius: 3px;
+		font-size: 9px;
+		margin-bottom: 10px;
+	}
+	.detail-left p {
+		font-size: 11px;
+		margin-bottom: 15px;
+	}
+	.services a {
+		font-size: 10px;
+		padding: 5px;
+	}
+	.detail-left h3 {
+		font-size: 16px;
+		font-weight: 600;
+	}
+	.mobile-toggle {
+		display: block;
+	}
+	/* 			.nav-container{width:100%;padding:0 15px; } */
+	.level-1-menu li.active::after {
+		height: 0px;
+	}
+	/* .main-nav{position:fixed;top:80px;left:-100%;width:100%;height:calc(100vh - 80px);background:#fff;transition:.35s;overflow:auto;z-index:999;} */
+	.main-nav {
+		position: fixed;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 60px);
+		background: #002a54; /* DARK BLUE FIXED */
+		overflow: hidden;
+
+		transform: none !important;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+
+		transition: opacity 0.3s ease;
+	}
+	.main-nav.active {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	/* LIGHT BLUE CURTAIN */
+	.main-nav::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: #8dd9ec;
+
+		border-bottom-left-radius: 70% 100%;
+
+		transform: translateX(-100%);
+		transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+
+		z-index: -1;
+	}
+
+	.main-nav.active::before {
+		transform: translateX(100%);
+	}
+
+	/* MENU CONTENT */
+	.level-1-menu {
+		position: relative;
+		z-index: 2;
+	}
+	.main-nav.active {
+		left: 0;
+		padding-left: 0px;
+	}
+	.category-column {
+		border-radius: 7px;
+		padding: 15px 10px;
+	}
+	.level-1-menu {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 7px;
+		padding: 0 12px !important;
+	}
+	.level-1-menu li {
+		color: #fff;
+		padding: 12px 0 3px 0;
+		width: -webkit-fill-available;
+		justify-content: flex-end;
+	}
+	.logo img {
+		width: 120px;
+	}
+	.level-1-menu li.active {
+		color: #fff;
+	}
+	.level-1-menu li.active::before {
+		background: #f9f9f9;
+	}
+	.category-cards,
+	.detail-content {
+		grid-template-columns: 1fr;
+	}
+	.ecommerce-mega {
+		padding: 20px 12px;
+	}
+	.mega-header h2 {
+		font-size: 17px;
+		font-weight: 600;
+	}
+	.mega-header p {
+		font-size: 12px;
+	}
+	.mega-header {
+		margin-bottom: 10px;
+	}
+	.odoo-grid .category-content h3 img {
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+		padding: 6px;
+		border: 1px solid #ccc;
+	}
+	.category-column h3 {
+		font-size: 14px;
+	}
+	.category-column a {
+		font-size: 12px;
+	}
+	.category-content::before {
+		top: 35px;
+		height: calc(100% - 49px);
+	}
+	.category-column a::before {
+		top: 14px;
+	}
+	.category-column a::after {
+		top: 12px;
+	}
+	.level-2-tabs,
+	.level-3-tabs,
+	.tab-panel {
+		display: none !important;
+	}
+	.mobile-digital-layout {
+		display: block;
+	}
+	.mobile-group {
+		margin-bottom: 24px;
+	}
+	.mobile-group-title {
+		font-size: 16px;
+		font-weight: 700;
+		color: #003b7a;
+		margin-bottom: 12px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #e5e7eb;
+	}
+	.mobile-links {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.mobile-links a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 12px 14px;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #111;
+		background: #fff;
+	}
+	.mobile-links a:hover {
+		background: #f5f7fa;
+	}
+	.mobile-group {
+		margin-bottom: 24px;
+	}
+	.mobile-group-title {
+		font-size: 15px;
+		font-weight: 700;
+		color: #003b7a;
+		margin-bottom: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+	.mobile-links {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.mobile-links a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 14px;
+		background: #fff;
+		border: 1px solid #edf1f5;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #111;
+		transition: 0.3s;
+	}
+	.mobile-links a:hover {
+		transform: translateX(5px);
+	}
+	.mobile-digital-layout {
+		display: block;
+	}
+	.mobile-main-group {
+		margin-bottom: 30px;
+	}
+	.mobile-main-group h3 {
+		font-size: 23px;
+		font-weight: 600;
+		margin-bottom: 20px;
+		color: #003b7a;
+		width: fit-content; /* border-bottom: 1px solid #ddd */
+	}
+	.mobile-sub-group {
+		margin-bottom: 24px;
+		position: relative;
+	}
+	.mobile-sub-group h4 {
+		font-size: 15px;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		color: #181818;
+	}
+	.mobile-sub-group::before {
+		content: "";
+		position: absolute;
+		bottom: 10px;
+		left: 1px;
+		width: 1px;
+		height: calc(100% - 30px);
+		background-color: #002a542e;
+	}
+	.mobile-sub-group a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2px 0px 3px 12px;
+		margin-bottom: 8px;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #111;
+		background-color: transparent !important;
+		border-color: transparent !important;
+		position: relative;
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.mobile-sub-group a::before {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		top: 0px;
+		left: 1px;
+		width: 10px;
+		height: 1px;
+		background-color: #002a542e;
+		margin: auto;
+	}
+	.service-grid {
+		display: grid !important;
+	}
+	.level-2-tabs,
+	.level-3-tabs {
+		display: none;
+	}
+	.category_bg {
+		padding: 25px 12px;
+		background: #f5f5f5;
+	}
+	.category {
+		background: #fff;
+		padding: 20px 12px;
+	}
+	.category a {
+		font-size: 12px;
+		padding: 5px 15px;
+	}
+	.category p {
+		font-size: 12px;
+		line-height: 20px;
+	}
+	.detail-content .cta-btn {
+		font-size: 11px;
+	}
+	/* .menu-open{display: block;} */
+	body:not(.menu-open) .main-nav {
+		transform: translateX(-100%);
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	body.menu-open .main-nav {
+		transform: translateX(0);
+		/* visibility: visible; */
+		opacity: 1;
+		pointer-events: auto;
+	}
+	.mobile-submenu-header {
+		display: none !important;
+		justify-content: space-between;
+	}
+	.submenu-open .mobile-submenu-header {
+		display: flex !important;
+	}
+	.mobile-submenu-header {
+		display: none;
+		align-items: center;
+		gap: 12px;
+		padding: 16px;
+		border-bottom: 1px solid #e5e7eb;
+		background: #fff;
+	}
+	body.submenu-open .mobile-submenu-header {
+		display: flex;
+	}
+	.mobile-submenu-header {
+		position: sticky;
+		top: 0;
+		z-index: 999;
+		background: #fff;
+		border-bottom: 1px solid #e5e5e5;
+		padding: 12px 15px;
+		align-items: center;
+		gap: 15px;
+	}
+	.mobile-back {
+		border: none;
+		background: none;
+		font-size: 12px;
+		font-weight: 600;
+		color: #002b5b;
+		padding: 0;
+		cursor: pointer;
+	}
+	.mobile-submenu-title {
+		font-size: 12px;
+		font-weight: 600;
+		color: #002b5b;
+		text-transform: uppercase;
+	}
+	/* submenu open state */
+	body.submenu-open .mobile-submenu-header {
+		display: flex;
+	}
+	body.submenu-open .mega-menu-wrapper {
+		display: block;
+	}
+	body.submenu-open .mobile-submenu-header {
+		display: none;
+		display: flex;
+		justify-content: space-between;
+	}
+	/* body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;} */
+	.mega-section.active {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+	.studio_menu .mobile-sub-group::before {
+		height: calc(100% - -8px);
+	}
+
+	/* menu with curtain */
+
+	.main-nav {
+		position: fixed;
+		overflow: hidden;
+		background: #002a54;
+	}
+
+	/* Curtain Layers */
+	.menu-curtain {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		transform: translateX(-100%);
+	}
+
+	.curtain-1 {
+		background: #ffffff;
+		z-index: 1;
+	}
+
+	.curtain-2 {
+		background: #c5f0f6;
+		z-index: 2;
+	}
+
+	.curtain-3 {
+		background: #00bad3;
+		z-index: 3;
+	}
+
+	/* Content Above Curtain */
+	.level-1-menu,
+	.mobile-submenu-header,
+	.mega-menu-wrapper {
+		position: relative;
+		z-index: 10;
+	}
+
+	/* OPEN */
+	.main-nav.active .curtain-1 {
+		animation: curtainOpen 0.5s ease forwards;
+	}
+
+	.main-nav.active .curtain-2 {
+		animation: curtainOpen 0.7s ease forwards;
+	}
+
+	.main-nav.active .curtain-3 {
+		animation: curtainOpen 0.9s ease forwards;
+	}
+
+	/* CLOSE */
+	.main-nav.is-closing .curtain-1 {
+		animation: curtainClose 0.5s ease forwards;
+	}
+
+	.main-nav.is-closing .curtain-2 {
+		animation: curtainClose 0.7s ease forwards;
+	}
+
+	.main-nav.is-closing .curtain-3 {
+		animation: curtainClose 0.9s ease forwards;
+	}
+
+	@keyframes curtainOpen {
+		from {
+		transform: translateX(-100%);
+		}
+		to {
+		transform: translateX(100%);
+		}
+	}
+
+	@keyframes curtainClose {
+		from {
+		transform: translateX(100%);
+		}
+		to {
+		transform: translateX(-100%);
+		}
+	}
+	@keyframes menuItemReveal {
+		from {
+		opacity: 0;
+		transform: translateX(-25px);
+		}
+		to {
+		opacity: 1;
+		transform: translateX(0);
+		}
+	}
+	.mobile-main-group:nth-child(1) {
+		animation-delay: 0.1s !important;
+	}
+	.mobile-main-group:nth-child(2) {
+		animation-delay: 0.2s !important;
+	}
+	.mobile-main-group:nth-child(3) {
+		animation-delay: 0.3s !important;
+	}
+
+	.main-nav.menu-content-visible .level-1-menu li {
+		opacity: 0;
+		transform: translateX(-30px);
+		animation: menuItemReveal 0.3s ease forwards;
+	}
+
+	@keyframes menuItemReveal {
+		from {
+		opacity: 0;
+		transform: translateX(-30px);
+		}
+		to {
+		opacity: 1;
+		transform: translateX(0);
+		}
+	}
+	/* .mobile-sub-group a{
+				opacity:0;
+				transform:translateX(-20px);
+			} */
+
+	.main-nav.menu-content-visible .mobile-sub-group a {
+		animation: menuItemReveal 0.3s ease forwards;
+	}
+
+	.level-1-menu li {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+
+	.main-nav.menu-content-visible .level-1-menu li {
+		animation: menuItemReveal 0.3s ease forwards;
+	}
+
+	@keyframes menuItemReveal {
+		from {
+		opacity: 0;
+		transform: translateX(-30px);
+		}
+
+		to {
+		opacity: 1;
+		transform: translateX(0);
+		}
+	}
+	}
+	/* 	microsite menu end */
+
+
+
+
+</style>
+
+<div class="main-header">
+	<div class="nav-container"> 
+		<button class="mobile-toggle">
+			<div class="waves wave-1"></div>
+			<div class="waves wave-2"></div>
+			<div class="waves wave-3"></div>
+			<i class="fa-solid fa-bars"></i>
+		</button>
+		<nav class="main-nav">
+			<div class="menu-curtain curtain-1"></div>
+			<div class="menu-curtain curtain-2"></div>
+			<div class="menu-curtain curtain-3"></div>
+			<ul class="level-1-menu">
+				<li class="active" data-menu="digital-marketing">Agency</li>
+				<li data-menu="odoo">Odoo</li>
+				<li data-menu="ecommerce">E-Commerce</li>
+				<li data-menu="tools">Tools</li>
+				<li data-menu="resources">Resources</li>
+				<li data-menu="contact">Contact</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+<div class="mega-menu-wrapper">
+	<!-- MOBILE BACK HEADER -->
+	<div class="mobile-submenu-header">
+		<button class="mobile-back">← Back</button>
+		<span class="mobile-submenu-title">Menu</span>
+	</div>
+	<!-- ========================= -->
+	<!-- DIGITAL MARKETING -->
+	<!-- ========================= -->
+	<div class="mega-section" id="digital-marketing">
+		<div class="row">
+			<div class="col-lg-3 pe-lg-0 ">
+				<div class="category">
+					<h1>Digital Marketing</h1>
+					<p>Drive measurable business growth with data-driven digital marketing strategies, including SEO, paid advertising, social media, content marketing, and conversion optimization services.</p>
+					<a href="#" class="btn mt-lg-3 learn-more">Learn More</a>
+					<img src="https://png.pngtree.com/png-vector/20260316/ourmid/pngtree-3d-megaphone-icon-for-digital-marketing-announcement-and-communication-png-image_18690593.webp" alt="img" class="img-fluid d-none d-lg-block">
+				</div>
+			</div>
+			<div class="col-lg-9 ps-lg-0">
+				<div class="category_bg">
+					<div class="level-2-tabs">
+						<button class="level-2-btn active" data-tab="agency">Digital Marketing</button>
+						<button class="level-2-btn" data-tab="studio">Studio</button>
+						<button class="level-2-btn" data-tab="technology">Technology</button>
+					</div>
+
+					<!-- AGENCY -->
+					<div class="tab-panel active" id="agency">
+						<div class="level-3-tabs">
+							<button class="level-3-btn active" data-service="organic">Organic Growth</button>
+							<button class="level-3-btn" data-service="paid">Paid Media & Acquisition</button>
+							<button class="level-3-btn" data-service="conversion">Conversion & Performance</button>
+							<button class="level-3-btn" data-service="social">Social & Brand Growth</button>
+							<button class="level-3-btn" data-service="retention">Retention & Engagement</button>
+						</div>
+
+						<!-- ORGANIC -->
+						<div class="service-grid active" id="organic">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>SEO</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Local SEO</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>E-Commerce SEO</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+
+						<!-- PAID -->
+						<div class="service-grid" id="paid">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>PPC Ads Management</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a> 
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Search Engine Marketing</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a> 
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+
+						<!-- CONVERSION -->
+						<div class="service-grid" id="conversion">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>CRO Services</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Lead Generation</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+
+						<!-- SOCIAL -->
+						<div class="service-grid" id="social">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Social Media Marketing</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Influencer Marketing</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>UGC Agency</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>ORM Services</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+
+						<!-- RETENTION -->
+						<div class="service-grid" id="retention">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Email Marketing</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Mobile Marketing</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- STUDIO -->
+					<div class="tab-panel" id="studio">
+						<div class="service-grid active">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Product Photography</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Video Production</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a> 
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- TECHNOLOGY -->
+					<div class="tab-panel" id="technology">
+						<div class="level-3-tabs">
+							<button class="level-3-btn active" data-service="web_app">Web Apps</button>
+							<button class="level-3-btn" data-service="cloud_solution">App & Cloud Solutions</button> 
+						</div> 
+						<div class="service-grid active" id="web_app">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Website Development</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>WordPress Development</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Website Design</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>UI/UX Design</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div>
+						<div class="service-grid" id="cloud_solution">
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Mobile Apps Development</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<a href="#" class="service-card">
+								<img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
+								<h4>Cloud Apps Development</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<div class="learn_more">Learn More <span>→</span></div>
+							</a>
+							<div class="cta-card">
+								<div class="cta-graph">
+									<i class="fa-solid fa-chart-column"></i>
+								</div>
+								<h4>Looking for a custom strategy?</h4>
+								<p>Let's build a plan that drives measurable growth.</p>
+								<a href="#" class="cta-btn">Talk To Our Experts</a>
+							</div>
+						</div> 
+					</div>
+					<!-- ------------------------ -->
+					<div class="mobile-digital-layout"></div>
+					<!-- ------------------------ -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ========================= -->
+	<!-- ODOO -->
+	<!-- ========================= -->
+
+	<div class="mega-section" id="odoo">
+		<div class="row">
+			<div class="col-lg-3 pe-lg-0">
+				<div class="category">
+					<h1>ODOO</h1>
+					<p>Streamline operations with expert Odoo implementation, customization, integration, and support services tailored to your business needs.</p>
+					<a href="#" class="btn mt-lg-3 learn-more">Learn More</a>
+					<img src="https://datapillar.ai/wp-content/uploads/2024/09/Soft-Green-Modern-Personal-Branding-Golden-Rules-Instagram-Post.png" alt="img" class="img-fluid d-none d-lg-block">
+				</div>
+			</div>
+			<div class="col-lg-9 ps-lg-0">
+				<div class="odoo-grid">
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Core Services</h3>
+							<a href="#">Odoo Implementation</a>
+							<a href="#">Odoo Customization</a>
+							<a href="#">Odoo Development</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Platform Support</h3>
+							<a href="#">Odoo Hosting</a>
+							<a href="#">Odoo Maintenance</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Training & Advisory</h3>
+							<a href="#">Odoo Training</a>
+							<a href="#">Odoo Consulting</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Talent</h3>
+							<a href="#">Hire Odoo Developer</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Core Modules</h3>
+							<a href="#">Odoo CRM</a>
+							<a href="#">Odoo Sales Management</a>
+							<a href="#">Odoo Purchase Management</a>
+							<a href="#">Odoo Project Management</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Finance Modules</h3>
+							<a href="#">Odoo Accounting</a>
+							<a href="#">Odoo Expenses</a>
+							<a href="#">Odoo Budget</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > HR Modules</h3>
+							<a href="#">Odoo HR Management</a>
+							<a href="#">Odoo Payroll</a>
+							<a href="#">Hire Odoo Developer</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Commerce & Website</h3>
+							<a href="#">Odoo POS</a>
+							<a href="#">Odoo E-Commerce</a>
+							<a href="#">Odoo Website</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > CRM Tools</h3>
+							<a href="#">Odoo Email Marketing</a>
+						</div>
+					</div>
+					<div class="category-column">
+						<div class="category-content">
+							<h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Support Tools</h3>
+							<a href="#">Odoo Helpdesk</a>
+						</div>
+					</div>
+					<div class="cta-card">
+						<div class="cta-graph">
+							<i class="fa-solid fa-chart-column"></i>
+						</div>
+						<h4>Looking for a custom strategy?</h4>
+						<p>Let's build a plan that drives measurable growth.</p>
+						<a href="#" class="cta-btn">Talk To Our Experts</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ========================= -->
+	<!-- ECOMMERCE -->
+	<!-- ========================= -->
+
+	<div class="mega-section" id="ecommerce">
+		<section class="container ecommerce-mega">
+			<div class="mega-header">
+				<h2>E-Commerce Solutions</h2>
+				<p>Powerful e-commerce solutions to launch and grow your online business.</p>
+			</div>
+			<div class="category-cards">
+				<div class="category-card active" data-target="marketplace">
+					<div class="card-text">
+						<h3>Marketplace Solutions</h3>
+						<p>Multi-vendor marketplaces that scale with your vision.</p>
+					</div>
+					<div class="card-icon">🛒</div>
+				</div>
+				<div class="category-card"
+					 data-target="quick">
+					<div class="card-text">
+						<h3>Quick Commerce</h3>
+						<p>Fast delivery solutions for on-demand shoppers.</p>
+					</div>
+					<div class="card-icon"> 🛵 </div>
+				</div>
+				<div class="category-card" data-target="d2c">
+					<div class="card-text">
+						<h3>D2C Platforms</h3>
+						<p>Build your brand and sell directly to customers.</p>
+					</div>
+					<div class="card-icon">🛍️</div>
+				</div>
+			</div>
+
+			<!-- Dynamic Content Area -->
+
+			<div class="detail-panel">
+				<!-- Marketplace -->
+				<div class="detail-content active" id="marketplace">
+					<div class="detail-left">
+						<span class="tag">Marketplace Solutions</span>
+						<h3>Marketplace Growth Services</h3>
+						<p>Manage, optimize and scale your marketplace presence across major platforms.</p>
+						<div class="services">
+							<a href="#">Marketplace Management <span>→</span></a>
+							<a href="#">Amazon Marketing <span>→</span></a>
+							<a href="#">Flipkart Marketing <span>→</span></a>
+						</div>
+
+						<a href="#" class="cta-btn">Explore Marketplace →</a>
+					</div>
+
+					<div class="detail-right">
+						<img src="https://images.bizibl.com/sites/default/files/marketplaces.png" alt="Marketplace">
+					</div>
+				</div>
+
+				<!-- Quick Commerce -->
+
+				<div class="detail-content" id="quick">
+					<div class="detail-left">
+						<span class="tag">Quick Commerce</span>
+						<h3>Instant Delivery Growth</h3>
+						<p> Reach customers faster with quick commerce marketplace optimization. </p>
+						<div class="services">
+							<a href="#">Blinkit Marketing <span>→</span></a>
+						</div>
+
+						<a href="#" class="cta-btn"> Explore Quick Commerce → </a>
+					</div>
+
+					<div class="detail-right">
+						<!-- <img src="https://placehold.co/200x140" alt="Quick Commerce"> -->
+						<img src="https://www.orangemantra.com/blog/wp-content/uploads/2025/02/Infographic-Leading-Quick-Commerce-Platforms-in-India.png" alt="Quick Commerce">
+					</div>
+				</div>
+
+				<!-- D2C -->
+				<div class="detail-content" id="d2c">
+					<div class="detail-left">
+						<span class="tag">D2C Platforms</span>
+						<h3>Build & Scale Your Brand</h3>
+						<p> Create a powerful direct-to-consumer growth engine. </p>
+						<div class="services">
+							<a href="#">Shopify Management <span>→</span></a>
+							<a href="#">E-Commerce Marketing <span>→</span></a>
+							<a href="#">E-Commerce SEO <span>→</span></a>
+							<a href="#">CRO <span>→</span></a>
+						</div>
+						<a href="#" class="cta-btn"> Explore D2C → </a>
+					</div>
+					<div class="detail-right">
+						<!-- <img src="https://placehold.co/200x140" alt="D2C"> -->
+						<img src="https://media.licdn.com/dms/image/v2/D4D12AQEhyz34aN3XFw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695082251762?e=2147483647&v=beta&t=VDa59D0BPBAaOBCeXNDXPUDWsxtfxERhYH4FyL73Jrg" alt="D2C">
+
+					</div>
+				</div>
+			</div>
+		</section> 
+	</div>
+
+	<!-- TOOLS -->
+
+	<section class="mega-section" id="tools">
+		<h2>Tools Section</h2>
+	</section>
+
+	<!-- RESOURCES -->
+
+	<section class="mega-section" id="resources">
+		<h2>Resources Section</h2>
+	</section>
+
+	<!-- CONTACT -->
+
+	<section class="mega-section" id="contact">
+		<h2>Contact Section</h2>
+	</section>
+
+	<!-- Mobile Menu start -->
+
+	<!-- Mobile Menu end -->
+ 
+</div> 
+<!-- Hero slider start -->
+<?php
+$top_title_overview = get_post_meta($pageid, "top_title_overview", true);
+$top_title = get_post_meta($pageid, "top_title", true);
+$top_description = get_post_meta($pageid, "top_description", true);
+$slider_ids = get_post_meta($pageid, "top_section_slider", true);
+if (!$slider_ids) {
+  $slider_ids = [];
+}
+$slider_args = [
+  "post_type" => "banner",
+  "post_status" => "publish",
+  "include" => $slider_ids,
+  "meta_key" => "banner_serial_number",
+  "orderby" => "meta_value",
+  "order" => "ASC",
+  "meta_query" => [
+    [
+      "key" => "banner_type",
+      "value" => "Slider",
+    ],
+  ],
+];
+$sliderlist = get_posts($slider_args);
+?>
+<section class="hs-hero-wrapper" id="top-slider">
+	<div class="hero-module">
+		<div class="container">
+			<div class="hero-row"> 
+				<div class="hero-col hero-col-left">
+					<div class="btm-60">
+						<div class="top-title">
+							<p>	DOMINATE DIGITALLY &amp;</p>
+						</div>
+						<div>
+							<h1 class="text-center text-lg-start"> Unlock<br> <span class="highlighter1">Exceptional</span><br> Growth! </h1>
+						</div>
+						<div class="lead-text">
+							<p>Since 2009, Nians has helped hundreds of companies achieve outstanding online growth and millions of dollars in sales. Your business can be next.</p>
+						</div> 
+					</div>
+					<a href="javascript:;" id="letstalk" class="hero-cta-new">
+						<span class="hero-icons"></span>Question? Let's Talk
+					</a>
+				</div>
+				<div class="hero-col hero-col-right">
+					<div class="hero-sliders">
+						<div class="hero-progress-slider">
+							<div class="progress-slider">
+								<div class="progress-slider-top">
+									<div class="progress-slider-container">
+										<div class="progress-slider-wrapper">
+											<?php if ($sliderlist) {
+             $i = 1;
+             foreach ($sliderlist as $slider) { ?>
+											<div class="progress-slider-item">0<?php
+           echo $i;
+           $i++;
+           ?></div>
+											<?php }
+           } ?>
+										</div>
+									</div>
+									<div class="progress-slider-lenght">0<?php echo count($sliderlist); ?></div>
+								</div>
+								<div class="progress-slider-line">
+									<div class="progress-slider-line-inner"></div>
+								</div>
+							</div>
+						</div>
+						<div class="hero-images-slider">
+							<div class=images-slider>
+								<div class=images-slider-wrapper>
+									<?php if ($sliderlist) {
+           foreach ($sliderlist as $slider) {
+
+             $desktop_alt = get_post_meta(
+               get_post_thumbnail_id($slider->ID),
+               "_wp_attachment_image_alt",
+               true,
+             );
+             $mobile_alt = get_post_meta(
+               $mobile_image_id,
+               "_wp_attachment_image_alt",
+               true,
+             );
+             ?>
+									<div class=images-slider-item>
+										<?php
+          $video_top = get_post_meta($slider->ID, "banner_video", true);
+          if ($video_top) { ?>
+										<video class="hero-title-bg-video" playsinline="" autoplay="" muted="" loop="">
+											<source src=<?php echo $video_top; ?> type=video/mp4> <source src=<?php echo $video_top; ?> type=video>
+											Your
+											browser
+											does not support the video tag. I suggest you upgrade your browser.
+										</video>
+										<?php } else { ?>
+										<img src="<?php echo get_the_post_thumbnail_url(
+            $slider->ID,
+            "full",
+          ); ?>" class="desktop-banner" alt="<?php echo esc_attr(
+  $desktop_alt,
+); ?>" loading="lazy" width="668" height="420"/>
+										<?php }
+          ?>
+										<?php
+          $mobile_image = get_post_meta($slider->ID, "mobile_banner", true);
+          if (!empty($mobile_image)): ?>
+										<img src="<?php echo wp_get_attachment_url(
+            $mobile_image,
+          ); ?>" class="ipadbanners" alt="<?php echo esc_attr(
+  $mobile_alt,
+); ?>" loading="lazy" width="401" height="498">
+										<?php endif;
+          ?>
+									</div>
+									<?php
+           }
+         } ?>
+								</div>
+							</div>
+						</div>
+						<div class=hero-project-slider>
+							<div class=project-slider>
+								<div class=project-slider-wrapper>
+									<?php
+         $i = 1;
+         foreach ($sliderlist as $slider) { ?>
+									<div class=project-slider-item>
+										<div class="project-slider-sub-title"> <?php echo get_post_meta(
+            $slider->ID,
+            "banner_subtitle",
+            true,
+          ); ?> </div>
+										<div class="project-slider-title">
+											<?php echo get_post_meta($slider->ID, "banner_title", true); ?>
+										</div>
+										<div class="project-slider-sub">
+											<?php echo get_post_meta($slider->ID, "about_banner", true); ?>
+										</div>
+										<?php
+          $banner_link = get_post_meta($slider->ID, "banner_link", true);
+          if (!empty($banner_link)) { ?>
+										<a href="<?php echo get_post_meta($slider->ID, "banner_link", true); ?>"
+										   class="project-slider-cta"><?php echo get_post_meta(
+               $slider->ID,
+               "banner_link_text",
+               true,
+             ); ?>
+											<img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/images/right-angle-white.svg"
+												 alt="right-angle" loading="lazy" width="20" height="14">
+										</a>
+										<?php }
+          ?>
+									</div>
+									<?php }
+         ?>
+								</div>
+							</div>
+						</div>
+						<div class=hero-next-slider>
+							<div class=next-slider>
+								<div class=next-slider-wrapper>
+									<?php
+         $slider_ids = get_post_meta($pageid, "top_section_slider", true);
+         if (!$slider_ids) {
+           $slider_ids = [];
+         }
+         $slider_args = [
+           "post_type" => "banner",
+           "post_status" => "publish",
+           "include" => $slider_ids,
+           "meta_key" => "banner_serial_number",
+           "orderby" => "meta_value",
+           "order" => "ASC",
+           //   'offset'            => 1,
+           "meta_query" => [
+             [
+               "key" => "banner_type",
+               "value" => "Slider",
+             ],
+           ],
+         ];
+
+         $sliderlist = get_posts($slider_args);
+         $nextslider = array_slice($sliderlist, 1);
+         if ($nextslider) {
+           foreach ($nextslider as $nextslide) {
+             $next_desktop_alt = get_post_meta(
+               get_post_thumbnail_id($slider->ID),
+               "_wp_attachment_image_alt",
+               true,
+             ); ?>
+									<div class=next-slider-item>
+										<div class=next-slider-title>Next </div>
+										<div class=next-slider-name><?php echo $nextslide->post_title; ?></div>
+										<?php
+          $video_top = get_post_meta($nextslide->ID, "banner_video", true);
+          if ($video_top) { ?>
+										<video class="hero-title-bg-video rabbit" playsinline="" autoplay="" muted="" loop="">
+											<source src=<?php echo $video_top; ?> type=video/mp4> <source src=<?php echo $video_top; ?> type=video>
+											Your
+											browser
+											does not support the video tag. I suggest you upgrade your browser.
+										</video>
+										<?php } else { ?>
+										<img src="<?php echo get_the_post_thumbnail_url($nextslide->ID, "full"); ?>"
+											 alt="<?php echo $next_desktop_alt; ?>" class=next-slider-image loading="lazy" width="220" height="150">
+										<?php }
+          ?>
+									</div>
+									<?php
+           }
+         }
+         $first_banner = $sliderlist[0];
+         ?>
+									<div class=next-slider-item>
+										<div class=next-slider-title>Next</div>
+										<div class=next-slider-name><?php
+          echo $first_banner->post_title;
+          $first_alt = get_post_meta(
+            get_post_thumbnail_id($first_banner->ID),
+            "_wp_attachment_image_alt",
+            true,
+          );
+          ?></div>
+										<img src="<?php echo get_the_post_thumbnail_url($first_banner->ID, "full"); ?>"
+											 alt="<?php echo esc_attr(
+              $first_alt,
+            ); ?>" class=next-slider-image loading="lazy" width="402" height="339">
+									</div>
+								</div>
+								<div class=next-slider-btn>
+									<img src="<?php echo get_stylesheet_directory_uri(); ?>/asset/images/right-angle-white.svg"
+										 alt="right" loading="lazy" width="10" height="7">
+								</div>
+							</div>
+						</div>
+						<div class=hero-count-slider>
+							<div class=count-slider>
+								<div class=count-slider-wrapper>
+									<?php if ($sliderlist) {
+           $i = 1;
+           foreach ($sliderlist as $slider) { ?>
+									<div class="count-slider-item">0<?php
+         echo $i;
+         $i++;
+         ?></div>
+									<?php }
+         } ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- Hero slider end -->
+
+<!-- creative digital studio start -->
+<!--ABOUT US-->
+<section class="hs-creative-wrapper pt-4" id="our-goals">
+	<div class=creative-studio>
+		<div class=container>
+			<div class="creative-studio-row"  >
+				<div class="creative-studio-col">
+					<div class="two-part-title-wrapper row align-items-center mt-5">
+						<div class="col-12">
+							<div class="top-title">
+								<p>DESIGNED FOR HOW BRANDS ACTUALLY GROW						    <!--NOT JUST AN ORDINARY AGENCY-->
+								</p>
+							</div>
+							<div class="two-part-title">
+								<h2 itemprop="slogan" class="font-superior">Strategy, <span class="highlighterbg">Creativity</span> and <br> Martech Built to Scale</h2>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="lead-text">
+								<p itemprop="knowsAbout">Growth does not happen in silos. It happens when ideas, execution and systems work together from the start. We bring clarity, creativity and capability into one continuous flow, where every decision supports the next and every output is designed to perform.	</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="creative-studio-col">
+					<div class="creative-studio-circles">
+						<div class="creative-studio-circle circle-1">
+							<p itemprop="seeks" class="circle-title">
+								<?php echo get_post_meta($pageid, "section2_title_1", true); ?>
+							</p>
+							<img itemprop="image"  src="https://technians.com/wp-content/uploads/2022/10/ds1.webp"
+								 alt="" loading="lazy" width="172" height="169">
+						</div>
+						<div class="creative-studio-circle circle-2">
+							<p itemprop="seeks" class="circle-title">
+								<?php echo get_post_meta($pageid, "section2_title_2", true); ?>
+							</p>
+							<img itemprop="image" src="https://technians.com/wp-content/uploads/2022/10/ds2.webp"
+								 alt="" loading="lazy" width="268" height="268">
+						</div>
+						<div class="creative-studio-circle circle-3">
+							<p itemprop="seeks" class="circle-title">
+								<?php echo get_post_meta($pageid, "section2_title_3", true); ?>
+							</p>
+							<img itemprop="image" src="https://technians.com/wp-content/uploads/2022/10/ds3.webp"
+								 alt="" loading="lazy" width="350" height="350">
+						</div>
+						<div class="creative-studio-circle circle-4">
+							<p itemprop="seeks" class="circle-title">
+								<?php echo get_post_meta($pageid, "section2_title_4", true); ?>
+							</p>
+							<img itemprop="image" src="https://technians.com/wp-content/uploads/2022/10/ds4.webp"
+								 alt="" loading="lazy" width="420" height="420">
+						</div>
+						<div class="creative-studio-circle circle-5">
+							<p itemprop="seeks" class="circle-title">
+								<?php echo get_post_meta($pageid, "section2_title_5", true); ?>
+							</p>
+							<img itemprop="image" src="https://technians.com/wp-content/uploads/2022/10/ds5.webp"
+								 alt="" loading="lazy" width="490" height="490">
+						</div>
+						<div class="creative-studio-circle circle-6">
+							<p itemprop="seeks" class="circle-title">
+								<?php echo get_post_meta($pageid, "section2_title_6", true); ?>
+							</p>
+							<img itemprop="image" src="https://technians.com/wp-content/uploads/2022/10/ds6.webp"
+								 alt="" loading="lazy" width="590" height="567">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- creative digital studio end -->
+
+<!-- crads start -->
+<?php get_template_part("template-parts/cards-section"); ?>
+<!-- crads end -->
+
+<?php get_template_part("template-parts/client-testi-featured"); ?>
+<?php
+// get_template_part( 'template-parts/new-client-testi-featured' );
+?>
+
+<!--our-culture-slider-start-->
+<?php
+// get_template_part( 'template-parts/our-culture-slider' );
+?>
+<?php get_template_part("template-parts/our-culture-slider-new"); ?>
+<!--our-culture-slider-end-->
+
+<!-- blogs news feed start -->
+<?php get_template_part("template-parts/popular-this-month-blog-section"); ?>
+<!-- blogs news feed end -->
+
+<!-- editors picks feed start -->
+<?php get_template_part("template-parts/news-editor-picks"); ?>
+<!-- editors picks feed end -->
+
+<!-- award feed start -->
+<?php get_template_part("template-parts/awards-section"); ?>
+<!-- award feed end -->
+
+<!-- cta start -->
+<?php get_template_part("template-parts/cta-button"); ?>
+<!-- cta end --> 
+<?php get_footer(); ?> 
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		/* ===================================
+       LEVEL 1 MENU SWITCHING
+    =================================== */
+
+		const level1Menus = document.querySelectorAll(".level-1-menu li");
+		const megaSections = document.querySelectorAll(".mega-section");
+
+		level1Menus.forEach(menu => {
+
+			menu.addEventListener("click", (e) => {
+
+				e.preventDefault();
+
+				const target = menu.dataset.menu;
+
+				level1Menus.forEach(item => {
+					item.classList.remove("active");
+				});
+
+				menu.classList.add("active");
+
+				megaSections.forEach(section => {
+					section.classList.remove("active");
+				});
+
+				const activeSection = document.getElementById(target);
+
+				if (activeSection) {
+					activeSection.classList.add("active");
+				}
+
+				// Mobile logic yahi add karo
+				if(window.innerWidth < 992){
+
+					document.body.classList.add("submenu-open");
+					mainNav.classList.remove("active");
+
+				}
+
+			});
+
+		});
+
+		/* ===================================
+       LEVEL 2 TAB SWITCHING
+    =================================== */
+		if(window.innerWidth > 991){
+			const level2Buttons = document.querySelectorAll(".level-2-btn");
+			level2Buttons.forEach(button => {
+				button.addEventListener("click", () => {
+					const parentSection = button.closest(".mega-section");
+					parentSection.querySelectorAll(".level-2-btn")
+						.forEach(btn => btn.classList.remove("active"));
+					button.classList.add("active");
+					const targetTab = button.dataset.tab;
+					parentSection.querySelectorAll(".tab-panel")
+						.forEach(panel => panel.classList.remove("active"));
+					const activePanel = parentSection.querySelector(`#${targetTab}`);
+					if (activePanel) {
+						activePanel.classList.add("active");
+					}
+				});
+			});
+		}
+
+		/* ===================================
+       LEVEL 3 TAB SWITCHING
+    =================================== */
+		if(window.innerWidth > 991){
+			const level3Buttons = document.querySelectorAll(".level-3-btn");
+			level3Buttons.forEach(button => {
+				button.addEventListener("click", () => {
+					const currentPanel = button.closest(".tab-panel");
+					currentPanel.querySelectorAll(".level-3-btn")
+						.forEach(btn => btn.classList.remove("active"));
+					button.classList.add("active");
+					const targetService = button.dataset.service;
+					currentPanel.querySelectorAll(".service-grid")
+						.forEach(grid => grid.classList.remove("active"));
+					const activeGrid = currentPanel.querySelector(`#${targetService}`);
+					if (activeGrid) {
+						activeGrid.classList.add("active");
+					}
+				});
+			});
+		}
+
+		/* ===================================
+       CARD HOVER ANIMATION
+    =================================== */
+		const cards = document.querySelectorAll(".service-card");
+		cards.forEach(card => {
+			card.addEventListener("mouseenter", () => {
+				card.style.transform = "translateY(-8px)";
+			});
+			card.addEventListener("mouseleave", () => {
+				card.style.transform = "translateY(0)";
+			});
+		});
+
+		/* ===================================
+       ACTIVE STATES ON PAGE LOAD
+    =================================== */
+		function initializeTabs() {
+			const activeSection = document.querySelector(".mega-section.active");
+			if (!activeSection) return;
+			const firstPanel = activeSection.querySelector(".tab-panel");
+			if (firstPanel) {
+				firstPanel.classList.add("active");
+			}
+			const firstGrid = activeSection.querySelector(".service-grid");
+			if (firstGrid) {
+				firstGrid.classList.add("active");
+			}
+		}
+		initializeTabs();
+	});
+
+	// --------------------------------------------
+	/* ==========================
+   MOBILE MENU
+========================== */
+
+	const mobileToggle = document.querySelector(".mobile-toggle");
+	const mainNav = document.querySelector(".main-nav"); 
+	if(mobileToggle){
+		mobileToggle.addEventListener("click",()=>{
+			const icon = mobileToggle.querySelector("i");
+			// STEP 1: Submenu open hai
+			if(document.body.classList.contains("submenu-open")){
+				document.body.classList.remove("submenu-open");
+				// submenu active states reset
+				document
+					.querySelectorAll(".mega-section")
+					.forEach(section => {
+					section.classList.remove("active");
+				});
+				document
+					.querySelectorAll(".level-1-menu li")
+					.forEach(item => {
+					item.classList.remove("active");
+				});
+				mainNav.classList.add("active");
+				return;
+			}
+			// STEP 2: Main menu open hai
+			if(mainNav.classList.contains("active")){
+				mainNav.classList.remove("menu-content-visible");
+				mainNav.classList.add("is-closing");
+				setTimeout(() => {
+					mainNav.classList.remove("active");
+					mainNav.classList.remove("is-closing");
+					document.body.classList.remove("menu-open");
+				}, 900); // curtain animation duration
+				mainNav.addEventListener("animationend", function closeMenu(){
+					mainNav.classList.remove("active");
+					mainNav.classList.remove("is-closing");
+					document.body.classList.remove("menu-open");
+					mainNav.removeEventListener(
+						"animationend",
+						closeMenu
+					);
+				});
+				icon.classList.remove("fa-xmark");
+				icon.classList.add("fa-bars");
+			}else{
+				// STEP 3: Main menu open karo
+				mainNav.classList.add("active");
+				document.body.classList.add("menu-open");
+				setTimeout(() => {
+					mainNav.classList.add("menu-content-visible");
+					document
+						.querySelectorAll(".level-1-menu li")
+						.forEach((item,index)=>{
+						item.style.animationDelay =
+							`${0.03 + (index * 0.03)}s`;
+					});
+				}, 900);
+				icon.classList.remove("fa-bars");
+				icon.classList.add("fa-xmark");
+			}
+		});
+	} 
+	/* =====================================
+    MOBILE BACK NAVIGATION
+    ===================================== */
+	if(window.innerWidth < 992){
+		const menuItems = document.querySelectorAll(".level-1-menu li");
+		const backBtn = document.querySelector(".mobile-back");
+		const title = document.querySelector(".mobile-submenu-title");
+		menuItems.forEach(item=>{
+			item.addEventListener("click",()=>{
+				const menuName = item.innerText.trim();
+				document.body.classList.add(
+					"submenu-open"
+				);
+				if(title){
+					title.textContent =
+						menuName;
+				}
+			});
+		}); 
+		if(backBtn){
+			backBtn.addEventListener("click",()=>{
+				document.body.classList.remove("submenu-open");
+				if(title){
+					title.textContent = "Menu";
+				}
+				// Main menu dikhao
+				mainNav.classList.add("active");
+				// Icon cross hi rahe
+				mobileToggle
+					.querySelector("i")
+					.classList.remove("fa-bars");
+				mobileToggle
+					.querySelector("i")
+					.classList.add("fa-xmark");
+				// IMPORTANT: Submenu state reset karo
+				document
+					.querySelectorAll(".mega-section")
+					.forEach(section => {
+					section.classList.remove("active");
+				});
+			});
+		}
+	}
+
+	// -----------------
+	const cards = document.querySelectorAll(".category-card");
+	const contents = document.querySelectorAll(".detail-content");
+	cards.forEach(card => {
+		card.addEventListener("mouseenter", () => {
+			const target = card.dataset.target;
+			cards.forEach(c =>
+						  c.classList.remove("active")
+						 );
+			card.classList.add("active");
+			contents.forEach(content =>
+							 content.classList.remove("active")
+							);
+			document
+				.getElementById(target)
+				.classList.add("active");
+		});
+	});
+
+	/* Mobile Click Support */
+	cards.forEach(card => {
+		card.addEventListener("click", () => {
+			const target = card.dataset.target;
+			cards.forEach(c =>
+						  c.classList.remove("active")
+						 );
+			card.classList.add("active");
+			contents.forEach(content =>
+							 content.classList.remove("active")
+							);
+			document
+				.getElementById(target)
+				.classList.add("active");
+		});
+	});
+
+	// -----------------------------------------------
+	if(window.innerWidth < 992){
+		const mobileContainer = document.querySelector(".mobile-digital-layout");
+		if(mobileContainer){
+			const groups = [
+				{
+					title:"Organic Growth",
+					grid:"#organic"
+				},
+				{
+					title:"Paid Media & Acquisition",
+					grid:"#paid"
+				},
+				{
+					title:"Conversion & Performance",
+					grid:"#conversion"
+				},
+				{
+					title:"Social & Brand Growth",
+					grid:"#social"
+				},
+				{
+					title:"Retention & Engagement",
+					grid:"#retention"
+				}
+			];
+			let html = "";
+			groups.forEach(group=>{
+				const grid = document.querySelector(group.grid);
+				if(!grid) return;
+				const links = grid.querySelectorAll(".service-card h4");
+				let items = "";
+				links.forEach(link=>{
+					items += `
+                    <a href="#">
+                        ${link.innerText}
+                        <span>→</span>
+	</a>
+                `;
+				});
+				html += `
+                <div class="mobile-group">
+                    <div class="mobile-group-title">${group.title}</div>
+                    <div class="mobile-links">${items}</div>
+	</div>
+            `;
+			});
+			mobileContainer.innerHTML = html;
+		}
+	}
+	if(window.innerWidth < 992){
+		const container = document.querySelector(".mobile-digital-layout");
+		if(container){
+			container.innerHTML = `
+        <div class="mobile-main-group">
+            <h3>Agency</h3>
+            <div class="mobile-sub-group">
+                <h4>Organic Growth</h4>
+                <a href="#">SEO <span>→</span></a>
+                <a href="#">Local SEO <span>→</span></a>
+                <a href="#">E-Commerce SEO <span>→</span></a>
+	</div>
+            <div class="mobile-sub-group">
+                <h4>Paid Media & Acquisition</h4>
+                <a href="#">PPC Ads Management <span>→</span></a>
+                <a href="#">Search Engine Marketing <span>→</span></a>
+	</div>
+            <div class="mobile-sub-group">
+                <h4>Conversion & Performance</h4>
+                <a href="#">CRO Services <span>→</span></a>
+                <a href="#">Lead Generation <span>→</span></a>
+	</div>
+            <div class="mobile-sub-group">
+                <h4>Social & Brand Growth</h4>
+                <a href="#">Social Media Marketing <span>→</span></a>
+                <a href="#">Influencer Marketing <span>→</span></a>
+                <a href="#">UGC Agency <span>→</span></a>
+                <a href="#">ORM Services <span>→</span></a>
+	</div>
+	</div>
+        <div class="mobile-main-group studio_menu">
+            <h3>Studio</h3>
+            <div class="mobile-sub-group">
+                <a href="#">Product Photography <span>→</span></a>
+                <a href="#">Video Production <span>→</span></a>
+	</div>
+	</div>
+        <div class="mobile-main-group">
+            <h3>Technology</h3>
+            <div class="mobile-sub-group">
+                <h4>Web Apps</h4>
+                <a href="#">Website Development <span>→</span></a>
+                <a href="#">WordPress Development <span>→</span></a>
+                <a href="#">Website Design <span>→</span></a>
+                <a href="#">UI/UX Design <span>→</span></a>
+	</div>
+            <div class="mobile-sub-group">
+                <h4>App & Cloud Solutions</h4>
+                <a href="#">Mobile Apps Development <span>→</span></a>
+                <a href="#">Cloud Apps Development <span>→</span></a>
+	</div>
+	</div>
+        `;
+		}
+	}
+</script>
+<?php get_footer(); ?>

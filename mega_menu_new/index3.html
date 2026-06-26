@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Mega Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================
+        RESET
+        ===================================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Inter,sans-serif;
+            background:#f8fafc;
+            color:#1e293b;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        ul{
+            list-style:none;
+        }
+
+        /* =====================================
+        HEADER
+        ===================================== */
+
+        .main-header{
+            background:#fff;
+            border-bottom:1px solid #e5e7eb;
+            position:sticky;
+            top:0;
+            z-index:999;
+        }
+
+        .container{
+            max-width:1440px;
+            margin:auto;
+            padding:0 30px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            min-height:80px;
+        }
+
+        .logo img{
+            max-height:45px;
+        }
+
+        .level-1-menu{
+            display:flex;
+            align-items:center;
+            gap:35px;
+        }
+
+        .level-1-menu li{
+            position:relative;
+            cursor:pointer;
+            font-size:15px;
+            font-weight:600;
+            color:#334155;
+            transition:.3s;
+        }
+
+        .level-1-menu li:hover{
+            color:#003b7a;
+        }
+
+        .level-1-menu li.active{
+            color:#003b7a;
+        }
+
+        .level-1-menu li.active::after{
+            content:"";
+            position:absolute;
+            bottom:-30px;
+            left:0;
+            width:100%;
+            height:3px;
+            background:#003b7a;
+        }
+
+        /* =====================================
+        MEGA MENU
+        ===================================== */
+
+        .mega-menu-wrapper{
+            background:#fff;
+            min-height:calc(100vh - 80px);
+            padding:40px 0;
+        }
+
+        .mega-section{
+            display:none;
+        }
+
+        .mega-section.active{
+            display:block;
+        }
+
+        /* =====================================
+        TOP TABS
+        ===================================== */
+
+        .top-tabs{
+            display:flex;
+            justify-content:center;
+            gap:16px;
+            margin-bottom:30px;
+        }
+
+        .top-tab{
+            border:none;
+            background:#edf2f7;
+            color:#334155;
+            padding:14px 28px;
+            border-radius:12px;
+            font-size:15px;
+            font-weight:600;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .top-tab.active{
+            background:#003b7a;
+            color:#fff;
+        }
+
+        /* =====================================
+        SUB TABS
+        ===================================== */
+
+        .sub-tabs{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:12px;
+            margin-bottom:35px;
+        }
+
+        .sub-tab{
+            border:none;
+            background:#f1f5f9;
+            color:#334155;
+            padding:12px 20px;
+            border-radius:50px;
+            cursor:pointer;
+            font-size:14px;
+            font-weight:500;
+            transition:.3s;
+        }
+
+        .sub-tab.active{
+            background:#0f62fe;
+            color:#fff;
+        }
+
+        /* =====================================
+        TAB PANELS
+        ===================================== */
+
+        .tab-panel{
+            display:none;
+        }
+
+        .tab-panel.active{
+            display:block;
+        }
+
+        /* =====================================
+        CARD GRID
+        ===================================== */
+
+        .cards-grid{
+            display:none;
+            max-width:1400px;
+            margin:auto;
+            padding:0 25px;
+            grid-template-columns:repeat(4,1fr);
+            gap:24px;
+        }
+
+        .cards-grid.active{
+            display:grid;
+        }
+
+        .service-card{
+            background:#fff;
+            border:1px solid #e5e7eb;
+            border-radius:18px;
+            padding:28px;
+            transition:.3s;
+            min-height:180px;
+            color:#111827;
+        }
+
+        .service-card:hover{
+            transform:translateY(-6px);
+            border-color:#0f62fe;
+            box-shadow:0 15px 30px rgba(15,98,254,.08);
+        }
+
+        .service-card i{
+            width:58px;
+            height:58px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#edf4ff;
+            color:#0f62fe;
+            border-radius:12px;
+            font-size:22px;
+            margin-bottom:18px;
+        }
+
+        .service-card h4{
+            font-size:18px;
+            font-weight:700;
+            margin-bottom:10px;
+        }
+
+        .service-card p{
+            color:#64748b;
+            margin-top:8px;
+        }
+
+        /* =====================================
+        ODOO BENTO GRID
+        ===================================== */
+
+        .odoo-bento-grid{
+            max-width:1400px;
+            margin:auto;
+            padding:0 25px;
+            display:grid;
+            grid-template-columns:repeat(5,1fr);
+            gap:20px;
+        }
+
+        .odoo-category{
+            background:#fff;
+            border:1px solid #e5e7eb;
+            border-radius:16px;
+            padding:22px;
+            transition:.3s;
+        }
+
+        .odoo-category:hover{
+            transform:translateY(-5px);
+            box-shadow:0 10px 25px rgba(0,0,0,.06);
+        }
+
+        .odoo-category h3{
+            font-size:18px;
+            color:#003b7a;
+            margin-bottom:18px;
+        }
+
+        .odoo-category a{
+            display:block;
+            color:#475569;
+            padding:8px 0;
+            transition:.3s;
+        }
+
+        .odoo-category a:hover{
+            color:#0f62fe;
+        }
+
+        /* =====================================
+        ECOMMERCE
+        ===================================== */
+
+        #ecommerce .cards-grid{
+            display:grid;
+        }
+
+        #ecommerce .service-card{
+            min-height:250px;
+        }
+
+        /* =====================================
+        ANIMATION
+        ===================================== */
+
+        .mega-section{
+            animation:fadeUp .35s ease;
+        }
+
+        @keyframes fadeUp{
+
+            from{
+                opacity:0;
+                transform:translateY(15px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
+        }
+
+        /* =====================================
+        RESPONSIVE
+        ===================================== */
+
+        @media(max-width:1200px){
+
+            .cards-grid{
+                grid-template-columns:repeat(3,1fr);
+            }
+
+            .odoo-bento-grid{
+                grid-template-columns:repeat(3,1fr);
+            }
+
+        }
+
+        @media(max-width:992px){
+
+            .cards-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .odoo-bento-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .level-1-menu{
+                gap:20px;
+                flex-wrap:wrap;
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .container{
+                padding:15px;
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .level-1-menu{
+                overflow-x:auto;
+                white-space:nowrap;
+                flex-wrap:nowrap;
+                width:100%;
+            }
+
+            .top-tabs{
+                overflow-x:auto;
+                justify-content:flex-start;
+                padding:0 15px;
+            }
+
+            .sub-tabs{
+                overflow-x:auto;
+                justify-content:flex-start;
+                flex-wrap:nowrap;
+                padding:0 15px;
+            }
+
+            .cards-grid{
+                grid-template-columns:1fr;
+            }
+
+            .odoo-bento-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="logo.svg" alt="Logo">
+            </a>
+
+            <nav class="main-nav">
+
+                <ul class="level-1-menu">
+
+                    <li class="menu-item active" data-menu="digital-marketing">
+                        Digital Marketing
+                    </li>
+
+                    <li class="menu-item" data-menu="odoo">
+                        Odoo
+                    </li>
+
+                    <li class="menu-item" data-menu="ecommerce">
+                        E-Commerce
+                    </li>
+
+                    <li class="menu-item">
+                        Tools
+                    </li>
+
+                    <li class="menu-item">
+                        Resources
+                    </li>
+
+                    <li class="menu-item">
+                        Contact
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =======================================
+        MEGA MENU WRAPPER
+    ======================================== -->
+
+    <div class="mega-menu-wrapper">
+
+        <!-- =======================================
+            DIGITAL MARKETING
+        ======================================== -->
+
+        <section class="mega-section active" id="digital-marketing">
+
+            <div class="top-tabs">
+
+                <button class="top-tab active" data-tab="agency">
+                    Agency
+                </button>
+
+                <button class="top-tab" data-tab="studio">
+                    Studio
+                </button>
+
+                <button class="top-tab" data-tab="technology">
+                    Technology
+                </button>
+
+            </div>
+
+            <!-- =========================
+                AGENCY
+            ========================== -->
+
+            <div class="tab-panel active" id="agency">
+
+                <div class="sub-tabs">
+
+                    <button class="sub-tab active"
+                        data-service="organic-growth">
+                        Organic Growth
+                    </button>
+
+                    <button class="sub-tab"
+                        data-service="paid-media">
+                        Paid Media & Acquisition
+                    </button>
+
+                    <button class="sub-tab"
+                        data-service="conversion">
+                        Conversion & Performance
+                    </button>
+
+                    <button class="sub-tab"
+                        data-service="social">
+                        Social & Brand Growth
+                    </button>
+
+                    <button class="sub-tab"
+                        data-service="retention">
+                        Retention & Engagement
+                    </button>
+
+                </div>
+
+                <!-- ORGANIC -->
+
+                <div class="cards-grid active"
+                    id="organic-growth">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <h4>SEO</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h4>Local SEO</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h4>E-Commerce SEO</h4>
+                    </a>
+
+                </div>
+
+                <!-- PAID MEDIA -->
+
+                <div class="cards-grid"
+                    id="paid-media">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <h4>PPC Ads Management</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h4>Search Engine Marketing</h4>
+                    </a>
+
+                </div>
+
+                <!-- CONVERSION -->
+
+                <div class="cards-grid"
+                    id="conversion">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <h4>CRO Services</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <h4>Lead Generation</h4>
+                    </a>
+
+                </div>
+
+                <!-- SOCIAL -->
+
+                <div class="cards-grid"
+                    id="social">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <h4>Social Media Marketing</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-users"></i>
+                        <h4>Influencer Marketing</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-camera"></i>
+                        <h4>UGC Agency</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-star"></i>
+                        <h4>ORM Services</h4>
+                    </a>
+
+                </div>
+
+                <!-- RETENTION -->
+
+                <div class="cards-grid"
+                    id="retention">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h4>Email Marketing</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <h4>Mobile Marketing</h4>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                STUDIO
+            ========================== -->
+
+            <div class="tab-panel"
+                id="studio">
+
+                <div class="cards-grid active">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <h4>Product Photography</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-video"></i>
+                        <h4>Video Production</h4>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                TECHNOLOGY
+            ========================== -->
+
+            <div class="tab-panel"
+                id="technology">
+
+                <div class="cards-grid active">
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-globe"></i>
+                        <h4>Website Development</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-brands fa-wordpress"></i>
+                        <h4>WordPress Development</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-palette"></i>
+                        <h4>Website Design</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-bezier-curve"></i>
+                        <h4>UI / UX Design</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <h4>Mobile Apps Development</h4>
+                    </a>
+
+                    <a href="#" class="service-card">
+                        <i class="fa-solid fa-cloud"></i>
+                        <h4>Cloud Apps Development</h4>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =======================================
+            ODOO
+        ======================================== -->
+
+        <section class="mega-section"
+                id="odoo">
+
+            <div class="odoo-bento-grid">
+
+                <div class="odoo-category">
+                    <h3>Core Services</h3>
+                    <a href="#">Odoo Implementation</a>
+                    <a href="#">Odoo Customization</a>
+                    <a href="#">Odoo Development</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Platform Support</h3>
+                    <a href="#">Odoo Hosting</a>
+                    <a href="#">Odoo Maintenance</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Training & Advisory</h3>
+                    <a href="#">Odoo Training</a>
+                    <a href="#">Odoo Consulting</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Talent</h3>
+                    <a href="#">Hire Odoo Developer</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Core Modules</h3>
+                    <a href="#">Odoo CRM</a>
+                    <a href="#">Odoo Sales</a>
+                    <a href="#">Odoo Purchase</a>
+                    <a href="#">Odoo Project</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Finance Modules</h3>
+                    <a href="#">Odoo Accounting</a>
+                    <a href="#">Odoo Expenses</a>
+                    <a href="#">Odoo Budget</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>HR Modules</h3>
+                    <a href="#">Odoo HR</a>
+                    <a href="#">Odoo Payroll</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Commerce & Website</h3>
+                    <a href="#">Odoo POS</a>
+                    <a href="#">Odoo E-Commerce</a>
+                    <a href="#">Odoo Website</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>CRM Tools</h3>
+                    <a href="#">Odoo Email Marketing</a>
+                </div>
+
+                <div class="odoo-category">
+                    <h3>Support Tools</h3>
+                    <a href="#">Odoo Helpdesk</a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =======================================
+            ECOMMERCE
+        ======================================== -->
+
+        <section class="mega-section"
+                id="ecommerce">
+
+            <div class="cards-grid active">
+
+                <div class="service-card">
+                    <h4>Marketplace</h4>
+                    <p>Marketplace Management</p>
+                    <p>Amazon Marketing</p>
+                    <p>Flipkart Marketing</p>
+                </div>
+
+                <div class="service-card">
+                    <h4>Quick Commerce</h4>
+                    <p>Blinkit Marketing</p>
+                </div>
+
+                <div class="service-card">
+                    <h4>D2C Platform</h4>
+                    <p>Shopify Management</p>
+                    <p>E-Commerce Marketing</p>
+                    <p>E-Commerce SEO</p>
+                    <p>CRO</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==========================
+       LEVEL 1 MENU SWITCHING
+    ========================== */
+
+    const menuItems = document.querySelectorAll(".menu-item");
+    const megaSections = document.querySelectorAll(".mega-section");
+
+    menuItems.forEach(item => {
+
+        item.addEventListener("click", function () {
+
+            const target = this.getAttribute("data-menu");
+
+            if (!target) return;
+
+            menuItems.forEach(menu => {
+                menu.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            megaSections.forEach(section => {
+                section.classList.remove("active");
+            });
+
+            const activeSection =
+                document.getElementById(target);
+
+            if (activeSection) {
+                activeSection.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* ==========================
+       TOP TAB SWITCHING
+    ========================== */
+
+    const topTabs =
+        document.querySelectorAll(".top-tab");
+
+    topTabs.forEach(tab => {
+
+        tab.addEventListener("click", function () {
+
+            const parentSection =
+                this.closest(".mega-section");
+
+            const targetTab =
+                this.getAttribute("data-tab");
+
+            parentSection
+                .querySelectorAll(".top-tab")
+                .forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+            this.classList.add("active");
+
+            parentSection
+                .querySelectorAll(".tab-panel")
+                .forEach(panel => {
+                    panel.classList.remove("active");
+                });
+
+            const activePanel =
+                parentSection.querySelector(
+                    "#" + targetTab
+                );
+
+            if (activePanel) {
+                activePanel.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* ==========================
+       SUB TAB SWITCHING
+    ========================== */
+
+    const subTabs =
+        document.querySelectorAll(".sub-tab");
+
+    subTabs.forEach(tab => {
+
+        tab.addEventListener("click", function () {
+
+            const parentPanel =
+                this.closest(".tab-panel");
+
+            const targetService =
+                this.getAttribute("data-service");
+
+            parentPanel
+                .querySelectorAll(".sub-tab")
+                .forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+            this.classList.add("active");
+
+            parentPanel
+                .querySelectorAll(".cards-grid")
+                .forEach(grid => {
+                    grid.classList.remove("active");
+                });
+
+            const activeGrid =
+                parentPanel.querySelector(
+                    "#" + targetService
+                );
+
+            if (activeGrid) {
+                activeGrid.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* ==========================
+       CARD HOVER EFFECT
+    ========================== */
+
+    const cards =
+        document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", function () {
+
+            this.style.transform =
+                "translateY(-6px)";
+
+        });
+
+        card.addEventListener("mouseleave", function () {
+
+            this.style.transform =
+                "translateY(0)";
+
+        });
+
+    });
+
+
+    /* ==========================
+       INITIAL ACTIVE STATES
+    ========================== */
+
+    function initMegaMenu() {
+
+        const firstMenu =
+            document.querySelector(".menu-item");
+
+        if (firstMenu) {
+            firstMenu.classList.add("active");
+        }
+
+        const firstSection =
+            document.querySelector(".mega-section");
+
+        if (firstSection) {
+            firstSection.classList.add("active");
+        }
+
+        const firstTopTab =
+            document.querySelector(".top-tab");
+
+        if (firstTopTab) {
+            firstTopTab.classList.add("active");
+        }
+
+        const firstPanel =
+            document.querySelector(".tab-panel");
+
+        if (firstPanel) {
+            firstPanel.classList.add("active");
+        }
+
+        const firstSubTab =
+            document.querySelector(".sub-tab");
+
+        if (firstSubTab) {
+            firstSubTab.classList.add("active");
+        }
+
+        const firstGrid =
+            document.querySelector(".cards-grid");
+
+        if (firstGrid) {
+            firstGrid.classList.add("active");
+        }
+
+    }
+
+    initMegaMenu();
+
+});
+    </script>
+</body>
+</html>
