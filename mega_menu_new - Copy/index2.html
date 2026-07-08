@@ -56,11 +56,11 @@
     LEVEL 2
     =================================== */
 
-    .level-2-tabs{display: flex;justify-content: center;gap: 20px;padding: 0px;width: fit-content; background: #fcfbfb;border: 2px solid #dddddd6b;border-radius: 10px;position: relative;margin-bottom: 20px;}
+    .level-2-tabs{display: flex;justify-content: center;gap: 20px;padding: 0px;width: fit-content; background: #fcfbfb;border: 2px solid #dddddd6b;border-radius: 10px;position: relative;margin-bottom: 20px;padding: 0 20px;}
     .level-2-tabs::after{content: "";position: absolute;top: auto;left: 0;right: 0;bottom: -15px;width: 100%;height: 1px;background: #e5e5e5;margin: auto;}
-    .level-2-btn{border:none;background:#eef4ff00;color:#1f2937;padding:7px 20px;border-radius:5px;font-size:14px;font-weight:500;cursor:pointer;transition:.3s;}
+    .level-2-btn{border:none;background:#eef4ff00;color:#1f2937;padding:7px 20px;border-radius:5px;font-size:14px;font-weight:500;cursor:pointer;transition:.3s;width: -webkit-fill-available;text-wrap-mode: nowrap;}
     .level-2-btn:hover{background:#dbe8ff;}
-    .level-2-btn.active{background:#002a54;color:#fff;}
+    .level-2-btn.active{background:#002a54;color:#fff;width: -webkit-fill-available;}
 
     /* ===================================
     LEVEL 3
@@ -75,27 +75,27 @@
     SERVICE GRID
     =================================== */
     .service-grid{display:none;/*max-width:1400px;margin:auto;padding:0 0px 50px;grid-template-columns:repeat(5,1fr);gap:10px;margin-top: 10px;*/}
-    .service-grid.active{display:grid;padding-top: 20px;}
-    .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: transparent !important;height: fit-content;width: -webkit-fill-available;}
+    .service-grid.active{display:grid;padding-top: 0px;}
+    .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: transparent !important;height: fit-content;width: -webkit-fill-available;display: inline-block;}
     .service-grid.active .col-md-3{position: relative;}
     .service-card p {color: #64748b;font-size: 12px;line-height: 1.8;min-height: auto;}
     .service-card:hover{transform:translateY(-6px);border-color:#0f62fe;box-shadow:0 20px 35px rgba(15,98,254,.08);}
     .service-card i{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#eef4ff;color:#0f62fe;font-size:22px;margin-bottom:20px;}
-    .service-card h4{font-size:18px;font-weight:700;line-height:1.4;margin-top: 0px;margin-bottom: 5px;}
+    .service-card h4{font-size:18px;font-weight:600;line-height:1.4;margin-top: 0px;margin-bottom: 5px;}
 
     /* ===================================
     ODOO GRID
     =================================== */
     .odoo-grid{/* max-width:1450px; */margin:auto;padding:15px;display:grid;grid-template-columns:repeat(4,1fr);background: #f5f5f5;gap:10px;}
-    .category-column{background: #fff;border: 1px solid #e1e1e1;border-radius: 16px;padding: 20px 10px;box-shadow: 0px 4px 8px #dddddd9e;}
+    .category-column{background: #fff;border: 1px solid #e1e1e1;border-radius: 16px;padding: 20px 10px;box-shadow: 0px 4px 8px #dddddd9e;height: 100%;}
     .category-column h3{font-size:16px;margin-bottom:8px;color:#002a54;display: flex;align-items: center;}
     .category-column h3 img{margin-right: 5px;}
-    .category-column a{display:block;color:#4b5563;padding:5px 0 5px;background-color: transparent !important;transition:.3s;padding-left: 40px;position: relative;font-size: 13px;transform: translateX(0px);}
-    .category-column a::before{content: "•";position: absolute;left: 14px;top: 18px;width: 15px;height: 1px;background: #002a54;color: transparent;transition: all .3s;}
-    .category-column a::after{content: "•";position: absolute;left: 28px;top: 16px;width: 5px;height: 5px;border-radius: 50%;background: #002a54;color: transparent;}
+    .category-column a{display:block;color:#4b5563;padding:5px 0 5px;background-color: transparent !important;transition:.3s;padding-left: 27px;position: relative;font-size: 13px;transform: translateX(0px);}
+    .category-column a::before{content: "•";position: absolute;left: 1px;top: 14px;width: 15px;height: 0.5px;background: #002a54;color: transparent;transition: all .3s;}
+    .category-column a::after{content: "•";position: absolute;left: 15px;top: 12px;width: 5px;height: 5px;border-radius: 50%;background: #002a54;color: transparent;}
     .category-column a:hover{color:#0f62fe;transform: translateX(10px);}
-    .category-column a:hover::before{width: 20px;left: 4px;}
-    .category-column a:hover::after{width: 5px;left: 28px;}
+    .category-column a:hover::before{width: 20px;left: -9px;}
+    .category-column a:hover::after{width: 5px;left: 9px;}
 
     /* ===================================
     ECOMMERCE GRID
@@ -110,7 +110,7 @@
     /* ===================================
     PLACEHOLDER SECTIONS
     =================================== */
-    #tools, #resources, #contact{padding:80px;text-align:center;}
+    /* #tools, #resources, #contact{padding:80px;text-align:center;} */
     #tools h2, #resources h2, #contact h2{font-size:42px;}
     /* TAB PANELS */
     .tab-panel{display:none;}
@@ -192,14 +192,16 @@
     .category{background:#f6f9fd;padding: 20px;height: 100%;}
     .category h1{color:#000;font-size:24px;text-transform: uppercase;font-weight: 600;}
     .category p{color:#000;font-size:13px;margin:8px 0px 10px;} 
-    .category_bg{background:#f3f3f3;padding:20px;height: 100%;}
+    .category_bg{background:#f3f3f3;padding:10px 20px;height: 100%;}
     .cta-card{padding: 15px;border-radius: 10px}
     .cta-card h4 {font-size: 20px;font-weight: 600;}
     .cta-graph {font-size: 30px;margin-bottom: 5px;}
     .cta-btn{background-color: #fff !important;color: #002A54;border-radius: 999px;transition: .3s;padding: 10px 25px;font-weight: 600;margin-top: 0;} 
     .category-content{position: relative;}
-    .category-content::before{content: "";position: absolute;top: 40px;left: 14px;width: 1px;height: calc(100% - 52px);background-color: #002a54;opacity: 0.5;}
-    .ecommerce-mega{ padding:20px 0;}
+    .category-content::before{content: "";position: absolute;top: 27px;left: 1px;width: 1px;height: calc(100% - 42px);background-color: #002a54;opacity: 0.5;}
+    .ecommerce-mega{padding: 20px;
+    background: #fff;
+    border-radius: 10px;}
     .mega-header{margin-bottom:20px;}
     .mega-header h2{font-size:30px;margin-bottom:5px;}
     .mega-header p{color:#64748b;}
@@ -237,7 +239,7 @@
 
     .detail-right img{width:100%;border-radius:20px;object-fit: cover;height: 100%;border: 1px solid #ddd;} 
     .detail-right{width:100%;height:210px;}
-    .learn_more{font-size: 13px;transition: all 0.3s}
+    .learn_more{font-size: 12px;transition: all 0.3s}
     .learn_more:hover{letter-spacing: 0.3px;}
     .learn_more span{margin-left: 0px;transition: all 0.3s}
     .learn_more:hover span{margin-left: 5px;}
@@ -481,50 +483,6 @@
     }
 }
 
-
-
-    /* Default hidden */
-    /* style for menu item with delay */
-/* .level-1-menu,
-.mega-menu-wrapper,
-.mobile-submenu-header{
-    opacity:0;
-    visibility:hidden;
-}
-
-/* Open hone ke baad show */
-/* .main-nav.active.menu-content-visible .level-1-menu,
-.main-nav.active.menu-content-visible .mega-menu-wrapper,
-.main-nav.active.menu-content-visible .mobile-submenu-header{
-    opacity:1;
-    visibility:visible;
-    transition:opacity .25s ease;
-}
-
-/* Close ke time force hide */
-/* .main-nav.is-closing .level-1-menu,
-.main-nav.is-closing .mega-menu-wrapper,
-.main-nav.is-closing .mobile-submenu-header{
-    opacity:0;
-    visibility:hidden;
-}
-/* Initial state */
-/* .level-1-menu li,
-.mega-section.active .mobile-main-group,
-.mega-section.active .category-column,
-.mega-section.active .service-card{
-    opacity:0;
-    transform:translateX(-25px);
-}
-
-/* Animate when menu content visible */
-/* .main-nav.menu-content-visible .level-1-menu li,
-.main-nav.menu-content-visible .mega-section.active .mobile-main-group,
-.main-nav.menu-content-visible .mega-section.active .category-column,
-.main-nav.menu-content-visible .mega-section.active .service-card{
-    animation:menuItemReveal .25s ease forwards;
-} */
-
 @keyframes menuItemReveal{
     from{
         opacity:0;
@@ -597,6 +555,95 @@
 }
     }
 
+.service-card::before{height: 4px;}
+.service_grid_bg{background: #fff;padding: 20px;border-radius: 10px;}
+.custom_dropdown_menu{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0a2f5c;background-color: #f5f5f5 !important;
+    padding: 10px 0;
+    min-width: 220px;
+    z-index: 9999;
+    border-radius: 4px;padding: 0;
+}
+
+.custom_dropdown_menu.dropdown_show{
+    display: block;
+}
+
+.custom_dropdown_menu .row{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.custom_dropdown_menu .row a{
+    color: #000;
+    padding: 8px 15px !important;background-color: #f5f5f5 !important;
+    text-decoration: none;font-size: 14px;transition: all 0.3s;border-bottom: 1px solid #d6d6d6 !important;
+}
+
+.custom_dropdown_menu .row a:last-child{
+    border-bottom: none !important;
+}
+
+.custom_dropdown_menu .row a:hover{
+    background: rgba(255,255,255,.1);color: #ffffff !important;
+    background: #002a54 !important;padding-left: 40px !important;
+}
+.custom_dropdown_menu .row a{
+    position: relative;
+    padding-left: 35px;   /* arrow space */
+    transition: all 0.3s ease;
+}
+
+/* Arrow (hidden default) */
+.custom_dropdown_menu .row a::before{
+    content: "→";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 16px;display: none;
+}
+
+/* Hover pe arrow move + show */
+.custom_dropdown_menu .row a:hover::before{
+    opacity: 1;
+    left: 15px;display: block;
+}
+ .view_more_service{
+    display: flex;
+    flex-direction: column;align-items: flex-start;
+    width: -webkit-fill-available;
+}
+
+.view_more_service a{
+    font-size: 11px;
+    color: #002a54;
+    text-decoration: underline;
+    margin-top: 5px;
+    background-color: #fff !important;
+
+    position: relative;
+    padding-left: 25px; /* arrow space */text-wrap-mode: nowrap;
+}
+
+/* Always visible arrow */
+.view_more_service a::before{
+    content: "→";
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #002a54;
+    font-size: 14px;
+}
 </style>
 </head>
 <body>
@@ -613,11 +660,11 @@
             <div class="menu-curtain curtain-3"></div>
             <ul class="level-1-menu">
                 <li data-menu="digital-marketing">Services</li>
-                <li data-menu="odoo">Solutions</li>
-                <li data-menu="ecommerce">Our Work</li>
-                <li data-menu="tools">About Us</li>
+                <li data-menu="solutions" class="custom_dropdown">Solutions</li>
+                <li data-menu="our_work" class="custom_dropdown">Our Work</li>
+                <li data-menu="about_us" class="custom_dropdown">About Us</li>
                 <li data-menu="resources">Resources</li>
-                <li data-menu="contact">Contact</li>
+                <li data-menu="contact" class="custom_dropdown">Contact</li>
             </ul>
         </nav>
     </div>
@@ -644,205 +691,131 @@
             <div class="col-lg-12 ps-lg-0">
                 <div class="category_bg">
                     <div class="level-2-tabs">
-                        <button class="level-2-btn active" data-tab="agency">Agency</button>
-                        <button class="level-2-btn" data-tab="studio">Studio</button>
-                        <button class="level-2-btn" data-tab="technology">Technology</button>
-                        <button class="level-2-btn" data-tab="e_comm">E-commerce</button>
-                        <button class="level-2-btn" data-tab="odoo">Odoo</button>
+                        <div class="view_more_service">
+                            <button class="level-2-btn active" data-tab="agency">Agency</button> 
+                            <a href="#">View Agency</a>
+                        </div>
+                        <div class="view_more_service">
+                            <button class="level-2-btn" data-tab="studio">Studio </button>
+                            <a href="#">View Studio</a>
+                        </div>
+                        <div class="view_more_service">
+                            <button class="level-2-btn" data-tab="technology">Technology</button>
+                            <a href="#">View Technology</a>
+                        </div>
+                        <div class="view_more_service">
+                            <button class="level-2-btn" data-tab="e_comm">E-commerce</button>
+                            <a href="#">View E-commerce</a>
+                        </div>
+                        <div class="view_more_service">
+                            <button class="level-2-btn" data-tab="odoo">Odoo</button>
+                            <a href="#">View Odoo</a>
+                        </div>
                     </div>
 
                     <!-- AGENCY -->
                     <div class="tab-panel active" id="agency">
-                        <div class="level-3-tabs">
+                        <!-- <div class="level-3-tabs">
                             <button class="level-3-btn active" data-service="organic">Organic Growth</button>
                             <button class="level-3-btn" data-service="paid">Paid Media & Acquisition</button>
                             <button class="level-3-btn" data-service="conversion">Conversion & Performance</button>
                             <button class="level-3-btn" data-service="social">Social & Brand Growth</button>
                             <button class="level-3-btn" data-service="retention">Retention & Engagement</button>
-                        </div>
+                        </div> -->
 
                         <!-- ORGANIC -->
                         <div class="service-grid active" id="organic">
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-9 service_grid_bg">
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>SEO</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>  -->
-                                                <div class="learn_more">Learn More <span>→</span></div>
-                                            </a>
-                                    
-                                    
-                                    
-                                            <!-- <div class="cta-card">
-                                                <div class="cta-graph">
-                                                    <i class="fa-solid fa-chart-column"></i>
-                                                </div>
-                                                <h4>Looking for a custom strategy?</h4>
-                                                <p>Let's build a plan that drives measurable growth.</p>
-                                                <a href="#" class="cta-btn">Talk To Our Experts</a>
-                                            </div> -->
-                                        <!-- </div> -->
-
-                                        <!-- PAID -->
-                                        <!-- <div class="service-grid" id="paid"> -->
-                                    
-                                    
-                                    <!-- <div class="cta-card">
-                                        <div class="cta-graph">
-                                            <i class="fa-solid fa-chart-column"></i>
-                                        </div>
-                                        <h4>Looking for a custom strategy?</h4>
-                                        <p>Let's build a plan that drives measurable growth.</p>
-                                        <a href="#" class="cta-btn">Talk To Our Experts</a>
-                                    </div>
-                                </div> -->
-
-                                <!-- CONVERSION -->
-                                <!-- <div class="service-grid" id="conversion"> -->
-                                    
-                                    
-                                    <!-- <div class="cta-card">
-                                        <div class="cta-graph">
-                                            <i class="fa-solid fa-chart-column"></i>
-                                        </div>
-                                        <h4>Looking for a custom strategy?</h4>
-                                        <p>Let's build a plan that drives measurable growth.</p>
-                                        <a href="#" class="cta-btn">Talk To Our Experts</a>
-                                    </div>
-                                </div> -->
-
-                                <!-- SOCIAL -->
-                                <!-- <div class="service-grid" id="social"> -->
-                                    
-                                    
-                                    
-                                    
-                                    <!-- <div class="cta-card">
-                                        <div class="cta-graph">
-                                            <i class="fa-solid fa-chart-column"></i>
-                                        </div>
-                                        <h4>Looking for a custom strategy?</h4>
-                                        <p>Let's build a plan that drives measurable growth.</p>
-                                        <a href="#" class="cta-btn">Talk To Our Experts</a>
-                                    </div>
-                                </div> -->
-
-                                <!-- RETENTION -->
-                                <!-- <div class="service-grid" id="retention"> -->
-                                    
-                                    
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>SEO</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>  -->
-                                                <div class="learn_more">Learn More <span>→</span></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Local SEO</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-                                                <div class="learn_more">Learn More <span>→</span></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>E-Commerce SEO</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-                                                <div class="learn_more">Learn More <span>→</span></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>PPC Ads Management</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>SEO</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a> 
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Search Engine Marketing</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <!-- <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>SEO</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Local SEO</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>E-Commerce SEO</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>PPC Ads Management</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a> 
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>CRO Services</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Search Engine Marketing</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a> 
+                                        </div>
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>CRO Services</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Lead Generation</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Lead Generation</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Social Media Marketing</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Social Media Marketing</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Influencer Marketing</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Influencer Marketing</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>UGC Agency</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>UGC Agency</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>ORM Services</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>ORM Services</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Email Marketing</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Email Marketing</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Mobile Marketing</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                        <div class="col-md-3 p-2">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Mobile Marketing</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
                                     </div>
                                     
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 p-2">
                                     <div class="cta-card">
                                         <div class="cta-graph">
                                             <i class="fa-solid fa-chart-column"></i>
@@ -859,68 +832,18 @@
                     <!-- STUDIO -->
                     <div class="tab-panel" id="studio">
                         <div class="service-grid active">
-                            <a href="#" class="service-card">
-                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                <h4>Product Photography</h4>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-                                <div class="learn_more">Learn More <span>→</span></div>
-                            </a>
-                            <a href="#" class="service-card">
-                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                <h4>Video Production</h4>
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-                                <div class="learn_more">Learn More <span>→</span></div>
-                            </a> 
-                            <div class="cta-card">
-                                <div class="cta-graph">
-                                    <i class="fa-solid fa-chart-column"></i>
-                                </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TECHNOLOGY -->
-                    <div class="tab-panel" id="technology">
-                        <div class="level-3-tabs">
-                            <button class="level-3-btn active" data-service="web_app">Web Apps</button>
-                            <button class="level-3-btn" data-service="cloud_solution">App & Cloud Solutions</button> 
-                        </div> 
-                        <div class="service-grid active" id="web_app">
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-9 service_grid_bg">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Website Development</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                            <a href="#" class="service-card"> 
+                                                <h4>Product Photography</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
                                         <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>WordPress Development</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-                                                <div class="learn_more">Learn More <span>→</span></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>Website Design</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-                                                <div class="learn_more">Learn More <span>→</span></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a href="#" class="service-card">
-                                                <!-- <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;"> -->
-                                                <h4>UI/UX Design</h4>
-                                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+                                            <a href="#" class="service-card"> 
+                                                <h4>Video Production</h4> 
                                                 <div class="learn_more">Learn More <span>→</span></div>
                                             </a>
                                         </div>
@@ -938,28 +861,326 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="service-grid" id="cloud_solution">
-                             <a href="#" class="service-card">
-                                <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
-                                <h4>Mobile Apps Development</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <div class="learn_more">Learn More <span>→</span></div>
-                            </a>
-                             <a href="#" class="service-card">
-                                <img src="https://static.thenounproject.com/png/3315575-200.png" alt="img" class="img-fluid" style="width:40px;height:40px;">
-                                <h4>Cloud Apps Development</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <div class="learn_more">Learn More <span>→</span></div>
-                            </a>
-                            <div class="cta-card">
-                                <div class="cta-graph">
-                                    <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <!-- TECHNOLOGY -->
+                    <div class="tab-panel" id="technology">
+                        <!-- <div class="level-3-tabs">
+                            <button class="level-3-btn active" data-service="web_app">Web Apps</button>
+                            <button class="level-3-btn" data-service="cloud_solution">App & Cloud Solutions</button> 
+                        </div>  -->
+                        <div class="service-grid active" id="web_app">
+                            <div class="row">
+                                <div class="col-md-9 service_grid_bg">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Website Development</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="#" class="service-card"> 
+                                                <h4>WordPress Development</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Website Design</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="#" class="service-card"> 
+                                                <h4>UI/UX Design</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Mobile Apps Development</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="#" class="service-card"> 
+                                                <h4>Cloud Apps Development</h4> 
+                                                <div class="learn_more">Learn More <span>→</span></div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h4>Looking for a custom strategy?</h4>
-                                <p>Let's build a plan that drives measurable growth.</p>
-                                <a href="#" class="cta-btn">Talk To Our Experts</a>
+                                <div class="col-md-3">
+                                    <div class="cta-card">
+                                        <div class="cta-graph">
+                                            <i class="fa-solid fa-chart-column"></i>
+                                        </div>
+                                        <h4>Looking for a custom strategy?</h4>
+                                        <p>Let's build a plan that drives measurable growth.</p>
+                                        <a href="#" class="cta-btn">Talk To Our Experts</a>
+                                    </div>
+                                </div>
                             </div>
                         </div> 
+                    </div>
+                    <style>
+                        .ecommerce-menu .e-comm_list{border: 1px solid #ddd;padding: 10px;}
+                        .ecommerce-menu .e-comm_list a{padding: 5px 0px;border-radius: 0px;border: 0px !important;border-bottom: 1px solid #ddd !important;}
+                        .ecommerce-menu .e-comm_list a::before{top: 90%;}
+                    </style>
+                    <div class="tab-panel" id="e_comm">
+                        <div class="ecommerce-menu">
+                            <div class="row">
+                                <div class="col-md-9 service_grid_bg">
+                                    <div class="row">
+                                        <div class="col-md-4 p-2">
+                                            <h3>D2C</h3>
+                                            <div class="e-comm_list">
+                                                <a href="#" class="service-card">Shopify Management</a> 
+                                                <a href="#" class="service-card">E-Commerce Marekting</a> 
+                                                <a href="#" class="service-card">E-Commerce SEO</a> 
+                                                <a href="#" class="service-card">CRO</a> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 p-2">
+                                            <h3>Marketplace Solutions</h3>
+                                            <div class="e-comm_list">
+                                                <a href="#" class="service-card">Marketplace Management</a> 
+                                                <a href="#" class="service-card">Amazon Marekting</a> 
+                                                <a href="#" class="service-card">Flipkart Marekting</a> 
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-4 p-2">
+                                            <h3>Quick Commerce</h3>
+                                            <div class="e-comm_list">
+                                                <a href="#" class="service-card">Blinkit Marketing</a>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-3 p-2">
+                                    <div class="cta-card">
+                                        <div class="cta-graph">
+                                            <i class="fa-solid fa-chart-column"></i>
+                                        </div>
+                                        <h4>Looking for a custom strategy?</h4>
+                                        <p>Let's build a plan that drives measurable growth.</p>
+                                        <a href="#" class="cta-btn">Talk To Our Experts</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- <section class="ecommerce-mega">
+                            <!-- <div class="mega-header">
+                                <h2>E-Commerce Solutions</h2>
+                                <p>Powerful e-commerce solutions to launch and grow your online business.</p>
+                            </div> -->
+                          <!--   <div class="category-cards">
+                                <div class="category-card active" data-target="marketplace">
+                                    <div class="card-text">
+                                        <h3>Marketplace Solutions</h3>
+                                        <p>Multi-vendor marketplaces that scale with your vision.</p>
+                                    </div>
+                                    <div class="card-icon">🛒</div>
+                                </div>
+                                <div class="category-card"
+                                    data-target="quick">
+                                    <div class="card-text">
+                                        <h3>Quick Commerce</h3>
+                                        <p>Fast delivery solutions for on-demand shoppers.</p>
+                                    </div>
+                                    <div class="card-icon"> 🛵 </div>
+                                </div>
+                                <div class="category-card" data-target="d2c">
+                                    <div class="card-text">
+                                        <h3>D2C Platforms</h3>
+                                        <p>Build your brand and sell directly to customers.</p>
+                                    </div>
+                                    <div class="card-icon">🛍️</div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Content Area -->
+
+                          <!--   <div class="detail-panel">
+                                <!-- Marketplace -->
+                             <!--    <div class="detail-content active" id="marketplace">
+                                    <div class="detail-left">
+                                        <span class="tag">Marketplace Solutions</span>
+                                        <h3>Marketplace Growth Services</h3>
+                                        <p>Manage, optimize and scale your marketplace presence across major platforms.</p>
+                                        <div class="services">
+                                            <a href="#">Marketplace Management <span>→</span></a>
+                                            <a href="#">Amazon Marketing <span>→</span></a>
+                                            <a href="#">Flipkart Marketing <span>→</span></a>
+                                        </div>
+
+                                        <a href="#" class="cta-btn">Explore Marketplace →</a>
+                                    </div>
+
+                                    <div class="detail-right">
+                                        <img src="https://images.bizibl.com/sites/default/files/marketplaces.png" alt="Marketplace">
+                                    </div>
+                                </div>
+
+                                <!-- Quick Commerce -->
+
+                             <!--    <div class="detail-content" id="quick">
+                                    <div class="detail-left">
+                                        <span class="tag">Quick Commerce</span>
+                                        <h3>Instant Delivery Growth</h3>
+                                        <p> Reach customers faster with quick commerce marketplace optimization. </p>
+                                        <div class="services">
+                                            <a href="#">Blinkit Marketing <span>→</span></a>
+                                        </div>
+
+                                        <a href="#" class="cta-btn"> Explore Quick Commerce → </a>
+                                    </div>
+
+                                    <div class="detail-right">
+                                        <!-- <img src="https://placehold.co/200x140" alt="Quick Commerce"> -->
+                                    <!--     <img src="https://www.orangemantra.com/blog/wp-content/uploads/2025/02/Infographic-Leading-Quick-Commerce-Platforms-in-India.png" alt="Quick Commerce">
+                                    </div>
+                                </div>
+
+                                <!-- D2C -->
+                              <!--   <div class="detail-content" id="d2c">
+                                    <div class="detail-left">
+                                        <span class="tag">D2C Platforms</span>
+                                        <h3>Build & Scale Your Brand</h3>
+                                        <p> Create a powerful direct-to-consumer growth engine. </p>
+                                        <div class="services">
+                                            <a href="#">Shopify Management <span>→</span></a>
+                                            <a href="#">E-Commerce Marketing <span>→</span></a>
+                                            <a href="#">E-Commerce SEO <span>→</span></a>
+                                            <a href="#">CRO <span>→</span></a>
+                                        </div>
+                                        <a href="#" class="cta-btn"> Explore D2C → </a>
+                                    </div>
+                                    <div class="detail-right">
+                                        <!-- <img src="https://placehold.co/200x140" alt="D2C"> -->
+                                  <!--       <img src="https://media.licdn.com/dms/image/v2/D4D12AQEhyz34aN3XFw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695082251762?e=2147483647&v=beta&t=VDa59D0BPBAaOBCeXNDXPUDWsxtfxERhYH4FyL73Jrg" alt="D2C">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>  -->
+                    </div>
+                    <div class="tab-panel" id="odoo">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Core Services</h3>
+                                                <a href="#">Odoo Implementation</a>
+                                                <a href="#">Odoo Customization</a>
+                                                <a href="#">Odoo Development</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Platform Support</h3>
+                                                <a href="#">Odoo Hosting</a>
+                                                <a href="#">Odoo Maintenance</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Training & Advisory</h3>
+                                                <a href="#">Odoo Training</a>
+                                                <a href="#">Odoo Consulting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Talent</h3>
+                                                <a href="#">Hire Odoo Developer</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Core Modules</h3>
+                                                <a href="#">Odoo CRM</a>
+                                                <a href="#">Odoo Sales Management</a>
+                                                <a href="#">Odoo Purchase Management</a>
+                                                <a href="#">Odoo Project Management</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Finance Modules</h3>
+                                                <a href="#">Odoo Accounting</a>
+                                                <a href="#">Odoo Expenses</a>
+                                                <a href="#">Odoo Budget</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>HR Modules</h3>
+                                                <a href="#">Odoo HR Management</a>
+                                                <a href="#">Odoo Payroll</a>
+                                                <a href="#">Hire Odoo Developer</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Commerce & Website</h3>
+                                                <a href="#">Odoo POS</a>
+                                                <a href="#">Odoo E-Commerce</a>
+                                                <a href="#">Odoo Website</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>CRM Tools</h3>
+                                                <a href="#">Odoo Email Marketing</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 p-2">
+                                        <div class="category-column">
+                                            <div class="category-content">
+                                                <h3>Support Tools</h3>
+                                                <a href="#">Odoo Helpdesk</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                    
+                            </div>
+                                <div class="col-md-3">
+                                    <div class="cta-card">
+                                        <div class="cta-graph">
+                                            <i class="fa-solid fa-chart-column"></i>
+                                        </div>
+                                        <h4>Looking for a custom strategy?</h4>
+                                        <p>Let's build a plan that drives measurable growth.</p>
+                                        <a href="#" class="cta-btn">Talk To Our Experts</a>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                     <!-- ------------------------ -->
                     <div class="mobile-digital-layout"></div>
@@ -973,101 +1194,20 @@
     <!-- ODOO -->
     <!-- ========================= -->
 
-    <section class="mega-section" id="odoo">
+    <!-- <section class="mega-section" id="solutions">
         <div class="row">
-            <div class="col-lg-3 pe-lg-0">
-                <div class="category">
-                    <h1>ODOO</h1>
-                    <p>Streamline operations with expert Odoo implementation, customization, integration, and support services tailored to your business needs.</p>
-                    <a href="#" class="btn btn-primary mt-lg-3">Learn More</a>
-                    <img src="https://datapillar.ai/wp-content/uploads/2024/09/Soft-Green-Modern-Personal-Branding-Golden-Rules-Instagram-Post.png" alt="img" class="img-fluid d-none d-lg-block">
-                </div>
-            </div>
-            <div class="col-lg-9 ps-lg-0">
-                <div class="odoo-grid">
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Core Services</h3>
-                            <a href="#">Odoo Implementation</a>
-                            <a href="#">Odoo Customization</a>
-                            <a href="#">Odoo Development</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Platform Support</h3>
-                            <a href="#">Odoo Hosting</a>
-                            <a href="#">Odoo Maintenance</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Training & Advisory</h3>
-                            <a href="#">Odoo Training</a>
-                            <a href="#">Odoo Consulting</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Talent</h3>
-                            <a href="#">Hire Odoo Developer</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Core Modules</h3>
-                            <a href="#">Odoo CRM</a>
-                            <a href="#">Odoo Sales Management</a>
-                            <a href="#">Odoo Purchase Management</a>
-                            <a href="#">Odoo Project Management</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Finance Modules</h3>
-                            <a href="#">Odoo Accounting</a>
-                            <a href="#">Odoo Expenses</a>
-                            <a href="#">Odoo Budget</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > HR Modules</h3>
-                            <a href="#">Odoo HR Management</a>
-                            <a href="#">Odoo Payroll</a>
-                            <a href="#">Hire Odoo Developer</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Commerce & Website</h3>
-                            <a href="#">Odoo POS</a>
-                            <a href="#">Odoo E-Commerce</a>
-                            <a href="#">Odoo Website</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > CRM Tools</h3>
-                            <a href="#">Odoo Email Marketing</a>
-                        </div>
-                    </div>
-                    <div class="category-column">
-                        <div class="category-content">
-                            <h3><img src="https://cdn-icons-png.flaticon.com/512/176/176966.png" alt="img" class="img-fluid" > Support Tools</h3>
-                            <a href="#">Odoo Helpdesk</a>
-                        </div>
-                    </div>
-                    <div class="cta-card">
-                        <div class="cta-graph">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-                        <h4>Looking for a custom strategy?</h4>
-                        <p>Let's build a plan that drives measurable growth.</p>
-                        <a href="#" class="cta-btn">Talk To Our Experts</a>
-                    </div>
-                </div>
-            </div>
+            <a href="#">D2C</a>
+            <a href="#">B2B</a>
+            <a href="#">Lead Generation</a>
+            <a href="#">Brand Activation</a> 
+        </div>
+    </section> -->
+    <section class="mega-section custom_dropdown_menu" id="solutions">
+        <div class="row">
+            <a href="#">D2C</a>
+            <a href="#">B2B</a>
+            <a href="#">Lead Generation</a>
+            <a href="#">Brand Activation</a>
         </div>
     </section>
 
@@ -1075,8 +1215,11 @@
     <!-- ECOMMERCE -->
     <!-- ========================= -->
 
-    <section class="mega-section" id="ecommerce">
-        <section class="container ecommerce-mega">
+    <section class="mega-section custom_dropdown_menu" id="our_work">
+        <div class="row">
+            <a href="https://nians.com/work/">Featured Work</a>
+        </div>
+        <!-- <section class="container ecommerce-mega">
             <div class="mega-header">
                 <h2>E-Commerce Solutions</h2>
                 <p>Powerful e-commerce solutions to launch and grow your online business.</p>
@@ -1108,9 +1251,9 @@
 
             <!-- Dynamic Content Area -->
 
-            <div class="detail-panel">
+             <!--  <!--  <!-- <div class="detail-panel">
                 <!-- Marketplace -->
-                <div class="detail-content active" id="marketplace">
+             <!--  <!--     <div class="detail-content active" id="marketplace">
                     <div class="detail-left">
                         <span class="tag">Marketplace Solutions</span>
                         <h3>Marketplace Growth Services</h3>
@@ -1131,7 +1274,7 @@
 
                 <!-- Quick Commerce -->
 
-                <div class="detail-content" id="quick">
+              <!--    <div class="detail-content" id="quick">
                     <div class="detail-left">
                         <span class="tag">Quick Commerce</span>
                         <h3>Instant Delivery Growth</h3>
@@ -1145,12 +1288,12 @@
 
                     <div class="detail-right">
                         <!-- <img src="https://placehold.co/200x140" alt="Quick Commerce"> -->
-                        <img src="https://www.orangemantra.com/blog/wp-content/uploads/2025/02/Infographic-Leading-Quick-Commerce-Platforms-in-India.png" alt="Quick Commerce">
+                        <!--  <img src="https://www.orangemantra.com/blog/wp-content/uploads/2025/02/Infographic-Leading-Quick-Commerce-Platforms-in-India.png" alt="Quick Commerce">
                     </div>
                 </div>
 
                 <!-- D2C -->
-                <div class="detail-content" id="d2c">
+                 <!-- <div class="detail-content" id="d2c">
                     <div class="detail-left">
                         <span class="tag">D2C Platforms</span>
                         <h3>Build & Scale Your Brand</h3>
@@ -1165,30 +1308,144 @@
                     </div>
                     <div class="detail-right">
                         <!-- <img src="https://placehold.co/200x140" alt="D2C"> -->
-                        <img src="https://media.licdn.com/dms/image/v2/D4D12AQEhyz34aN3XFw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695082251762?e=2147483647&v=beta&t=VDa59D0BPBAaOBCeXNDXPUDWsxtfxERhYH4FyL73Jrg" alt="D2C">
+                  <!--        <img src="https://media.licdn.com/dms/image/v2/D4D12AQEhyz34aN3XFw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695082251762?e=2147483647&v=beta&t=VDa59D0BPBAaOBCeXNDXPUDWsxtfxERhYH4FyL73Jrg" alt="D2C">
 
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>  -->
     </section>
 
     <!-- TOOLS -->
 
-    <section class="mega-section" id="tools">
-        <h2>Tools Section</h2>
+    <!-- <section class="mega-section" id="about_us">
+        <div class="row">
+            <div class="col-12">
+                <a href="#">Team</a>
+                <a href="#">Featured Work</a>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="mega-section custom_dropdown_menu" id="about_us">
+        <div class="row"> 
+            <a href="#">Team</a>
+            <a href="#">Featured Work</a> 
+        </div>
     </section>
 
     <!-- RESOURCES -->
 
     <section class="mega-section" id="resources">
-        <h2>Resources Section</h2>
+        <!-- <h2>Resources Section</h2> -->
+        <!-- <div class="tab-panel" id="odoo"> -->
+            <div class="row p-3">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Resources</h3>
+                                    <a href="#">Resource Homepage</a>
+                                    <a href="#">Case Studies</a>
+                                    <a href="#">Industry News</a>
+                                    <a href="#">Blogs</a>
+                                    <a href="#">Admin Login</a>
+                                    <a href="#">Funnels</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Digital Audience</h3>
+                                    <a href="#">Facebook Audience</a>
+                                    <a href="#">Google Audience</a>
+                                    <a href="#">LinkedIn Audience</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Tools</h3>
+                                    <a href="#">B2C Sales Calculator</a>
+                                    <a href="#">B2B Sales Calculator</a>
+                                    <a href="#">Lead Generation Sales Calculator</a>
+                                    <a href="#">ROI Calculator</a>
+                                    <a href="#">Keyword Match Tool</a>
+                                    <a href="#">Buyer Persona Builder</a>
+                                    <a href="#">Questionnaire</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Quick Links</h3>
+                                    <a href="#">Privacy Policy</a>
+                                    <a href="#">Cookies Policy</a>
+                                    <a href="#">Legal Stuff</a>
+                                    <a href="#">Submit Feedback</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Latest Updates</h3>
+                                    <a href="#">News</a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Our Team</h3>
+                                    <a href="#">Team</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 p-2">
+                            <div class="category-column">
+                                <div class="category-content">
+                                    <h3>Portfolio</h3>
+                                    <a href="#">Featured Work</a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>                                   
+                </div>
+                    <div class="col-md-3">
+                        <div class="cta-card">
+                            <div class="cta-graph">
+                                <i class="fa-solid fa-chart-column"></i>
+                            </div>
+                            <h4>Looking for a custom strategy?</h4>
+                            <p>Let's build a plan that drives measurable growth.</p>
+                            <a href="#" class="cta-btn">Talk To Our Experts</a>
+                        </div>
+                    </div>
+            </div>
+        <!-- </div> -->
     </section>
 
     <!-- CONTACT -->
 
-    <section class="mega-section" id="contact">
-        <h2>Contact Section</h2>
+    <!-- <section class="mega-section" id="contact">
+        <!-- <h2>Contact Section</h2> -->
+        <!--<a href="#">Contact Us</a>
+    </section> -->
+    <section class="mega-section custom_dropdown_menu" id="contact">
+        <div class="row">
+            <a href="#">Contact Us</a>
+        </div>
     </section>
 
     <!-- Mobile Menu start -->
@@ -1371,7 +1628,7 @@ if(window.innerWidth > 991){
     const cards = document.querySelectorAll(".service-card");
     cards.forEach(card => {
         card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-8px)";
+            card.style.transform = "translateY(-5px)";
         });
         card.addEventListener("mouseleave", () => {
             card.style.transform = "translateY(0)";
@@ -1667,6 +1924,48 @@ if(window.innerWidth < 992){
         `;
     }
 }
+</script>
+<script>
+   document.querySelectorAll(".custom_dropdown").forEach(item => {
+
+        const menu = document.getElementById(item.dataset.menu);
+
+        if (!menu) return;
+
+        item.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            // Sab dropdown band karo
+            document.querySelectorAll(".custom_dropdown_menu").forEach(drop => {
+                if (drop !== menu) {
+                    drop.classList.remove("dropdown_show");
+                }
+            });
+
+            // Current dropdown toggle
+            menu.classList.toggle("dropdown_show");
+
+            // Position under clicked menu
+            const rect = item.getBoundingClientRect();
+            menu.style.position = "absolute";
+            menu.style.left = rect.left + window.scrollX + "px";
+            menu.style.top = "90px";
+        });
+    });
+
+    // Outside click = close
+    document.addEventListener("click", function () {
+        document.querySelectorAll(".custom_dropdown_menu").forEach(drop => {
+            drop.classList.remove("dropdown_show");
+        });
+    });
+
+    // Dropdown ke andar click karne par close na ho
+    document.querySelectorAll(".custom_dropdown_menu").forEach(menu => {
+        menu.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    });
 </script>
 </body>
 </html>
