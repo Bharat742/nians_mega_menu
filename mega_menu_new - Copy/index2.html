@@ -77,7 +77,9 @@
     .service-grid{display:none;/*max-width:1400px;margin:auto;padding:0 0px 50px;grid-template-columns:repeat(5,1fr);gap:10px;margin-top: 10px;*/}
     .service-grid.active{display:grid;padding-top: 0px;}
     .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: #fff !important;height: fit-content;width: -webkit-fill-available;display: inline-block;}
-    .service-grid.active .col-md-3{position: relative;}
+    .service-card::after{content: "";position: absolute;top: 0;left: 0;bottom: 0;right: 0;opacity: 0.2;background-image: url('https://nians.com/wp-content/uploads/2025/10/favicon.png');background-position: right;background-repeat: no-repeat;background-size: 50px;animation: mover 1.5s infinite alternate;}
+    .service-grid.active .col-md-3{position: relative; }
+    @-webkit-keyframes mover {0% { transform: translateY(0); }100% { transform: translateY(-5px); }}
     .service-card p {color: #64748b;font-size: 12px;line-height: 1.8;min-height: auto;}
     .service-card:hover{transform:translateY(-6px);border-color:#0f62fe;box-shadow:0 20px 35px rgba(15,98,254,.08);}
     .service-card i{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#eef4ff;color:#0f62fe;font-size:22px;margin-bottom:20px;}
@@ -556,7 +558,46 @@
     }
 
 .service-card::before{height: 3px;background: #002a54;}
-.service_grid_bg{background: #fff;padding: 20px;border-radius: 10px;background: url("Vector-Smart.png");background-size: cover;background-repeat: no-repeat;background-position: center;}
+.service_grid_bg{background: #fff;padding: 20px;border-radius: 10px;background: url("Vector-Smart.png");background-size: cover;background-repeat: no-repeat;background-position: center;}.service_grid_bg {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.service_grid_bg::before{
+    content:"";
+    position:absolute;
+    inset:-5%;
+    background:url("Vector-Smart.png") center/cover no-repeat;
+    z-index:0;
+    animation:bgMove 15s ease-in-out infinite alternate;
+    transform:scale(1.08);
+}
+
+.service_grid_bg > *{
+    position:relative;
+    z-index:1;
+}
+
+@keyframes bgMove{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+    25%{
+        transform:translate(-30px,-20px) scale(1.1);
+    }
+    50%{
+        transform:translate(10px,0px) scale(1);
+    }
+    75%{
+        transform:translate(-15px,15px) scale(1.1);
+    }
+    100%{
+        transform:translate(15px,-10px) scale(1.08);
+    }
+}
 .custom_dropdown_menu{
     display: none;
     position: absolute;
@@ -631,18 +672,22 @@
     background-color: #fff !important;
 
     position: relative;
-    padding-left: 25px; /* arrow space */text-wrap-mode: nowrap;
+    padding-left: 0px; /* arrow space */text-wrap-mode: nowrap;width: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
 }
 
 /* Always visible arrow */
 .view_more_service a::before{
     content: "→";
     position: absolute;
-    left: 7px;
+    right: -60px;
     top: 50%;
     transform: translateY(-50%);
     color: #002a54;
-    font-size: 14px;
+    font-size: 11px; 
+    display: flex;width: -webkit-fill-available;
+    justify-content: center;
 }
 </style>
 </head>
