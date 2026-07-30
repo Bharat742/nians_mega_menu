@@ -56,7 +56,7 @@
     LEVEL 2
     =================================== */
 
-    .level-2-tabs{display: flex;justify-content: center;gap: 20px;padding: 0px;width: fit-content; background: #fcfbfb;border: 2px solid #dddddd6b;border-radius: 10px;position: relative;margin-bottom: 20px;padding: 7px;}
+    .level-2-tabs{display: flex;justify-content: center;gap: 5px;padding: 0px;width: fit-content; background: #fcfbfb;border: 2px solid #dddddd6b;border-radius: 10px;position: relative;margin-bottom: 20px;padding: 7px;}
     .level-2-tabs::after{content: "";position: absolute;top: auto;left: 0;right: 0;bottom: -15px;width: 100%;height: 1px;background: #e5e5e5;margin: auto;}
     .level-2-btn{border:none;background:#eef4ff00;color:#1f2937;padding:7px 20px;border-radius:5px;font-size:14px;font-weight:500;cursor:pointer;transition:.3s;width: -webkit-fill-available;text-wrap-mode: nowrap;}
     .level-2-btn:hover{background:#dbe8ff;}
@@ -76,7 +76,9 @@
     =================================== */
     .service-grid{display:none;/*max-width:1400px;margin:auto;padding:0 0px 50px;grid-template-columns:repeat(5,1fr);gap:10px;margin-top: 10px;*/}
     .service-grid.active{display:grid;padding-top: 0px;}
-    .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: #fff !important;height: fit-content;width: -webkit-fill-available;display: inline-block;}
+    .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: #fff !important;height: 100%;width: -webkit-fill-available;display: inline-flex;
+    flex-direction: column;
+    justify-content: center;}
     /* .service-card::after{content: "";position: absolute;top: 0;left: 0;bottom: 0;right: 0;opacity: 0.2;background-image: url('https://nians.com/wp-content/uploads/2025/10/favicon.png');background-position: right;background-repeat: no-repeat;background-size: 50px;animation: mover 1.5s infinite alternate;} */
     /* asds */
     .service-grid.active .col-md-3{position: relative; }
@@ -84,7 +86,10 @@
     .service-card p {color: #64748b;font-size: 12px;line-height: 1.8;min-height: auto;}
     .service-card:hover{transform:translateY(-6px);border-color:#0f62fe;box-shadow:0 20px 35px rgba(15,98,254,.08);box-shadow: 3px 3px 2px 0 #002a5473;box-shadow: 3px 3px 0px 0 #002a5485;border-radius: 0px;border-bottom: 0px !important;}
     .service-card i{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#eef4ff;color:#0f62fe;font-size:22px;margin-bottom:20px;}
-    .service-card h4{font-size:15px;font-weight:600;line-height:1.4;margin-top: 0px;margin-bottom: 5px;}
+    .service-card h4{font-size:15px;font-weight:600;line-height:1.4;margin-top: 0px;margin-bottom: 0px;}
+    .service-card p{ display: -webkit-box;
+  -webkit-line-clamp: 1;overflow: hidden;margin-bottom: 0px;
+  -webkit-box-orient: vertical; }
 
 
 
@@ -632,10 +637,10 @@
     }
 
 .service-card::before{height: 2px;background: #002a54;}
-.service_grid_bg{padding: 20px;border-radius: 10px;/*background: #fff;background: url("Vector-Smart.png");*/background-size: cover;background-repeat: no-repeat;background-position: center;}.service_grid_bg {
+.service_grid_bg{padding: 0px 20px 20px 20px;border-radius: 10px;/*background: #fff;background: url("Vector-Smart.png");*/background-size: cover;background-repeat: no-repeat;background-position: center; 
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     border-radius: 10px;
     background: #fff0;
 }
@@ -742,6 +747,7 @@
     flex-direction: column;align-items: flex-start;
     width: -webkit-fill-available;
 }
+/* .view_more_service:hover + .tab-panel{} */
 
 .view_more_service a{
     font-size: 11px;
@@ -855,7 +861,8 @@
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>SEO</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Improve your website's visibility in search engine results and drive organic traffic.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
                                         <!-- <div class="col-md-3 p-2">
@@ -867,73 +874,77 @@
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Local SEO</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>E-Commerce SEO</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>PPC Ads Management</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Search Engine Marketing</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>CRO Services</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Optimize your website and sales funnel to increase conversions and revenue.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Lead Generation</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Social Media Marketing</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Boost your brand's online presence and engage with your audience on social platforms.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Influencer Marketing</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Partner with influencers to promote your brand and reach new audiences.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>UGC Agency</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>ORM Services</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Email Marketing</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Mobile Marketing</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Engage your audience on the go with targeted mobile campaigns.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                     </div>
@@ -959,16 +970,17 @@
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Product Photography</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Video Production</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Create compelling video content that tells your brand's story and engages your audience.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                     </div>
@@ -997,40 +1009,42 @@
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Website Development</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>WordPress Development</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Website Design</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Create a visually appealing and user-friendly website that reflects your brand and engages your audience.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>UI/UX Design</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Mobile Apps Development</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 p-2">
                                             <a href="#" class="service-card"> 
                                                 <h4>Cloud Apps Development</h4> 
-                                                <div class="learn_more">View More <span>→</span></div>
+                                                <p>Build scalable and secure cloud-based applications that meet your business needs.</p>
+                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                     </div>
@@ -1056,7 +1070,7 @@
                     <div class="tab-panel" id="e_comm">
                         <div class="ecommerce-menu">
                             <div class="row">
-                                <div class="col-md-9" style="background: url('Vector-Smart.png');background-size: cover;background-repeat: no-repeat;background-position: center;padding: 10px 30px;">
+                                <div class="col-md-9" style="/*background: url('Vector-Smart.png');*/background-size: cover;background-repeat: no-repeat;background-position: center;padding: 0px 20px;">
                                     <div class="row">
                                         <div class="col-md-3 p-2">
                                             <div class="category-column">
@@ -1231,7 +1245,7 @@
                     </div>
                     <div class="tab-panel" id="odoo">
                         <div class="row">
-                            <div class="col-md-9" style="background: url('Vector-Smart.png');background-size: cover;background-repeat: no-repeat;background-position: center;padding: 10px 30px;">
+                            <div class="col-md-9" style="/*background: url('Vector-Smart.png');*/background-size: cover;background-repeat: no-repeat;background-position: center;padding: 0px 20px;">
                                 <div class="row">
                                     <div class="col-md-3 p-2">
                                         <div class="category-column">
@@ -1739,24 +1753,58 @@ level1Menus.forEach(menu => {
     /* ===================================
        LEVEL 2 TAB SWITCHING
     =================================== */
-if(window.innerWidth > 991){
+// if(window.innerWidth > 991){
+//     const level2Buttons = document.querySelectorAll(".level-2-btn");
+//     level2Buttons.forEach(button => {
+//         button.addEventListener("click", () => {
+//             const parentSection = button.closest(".mega-section");
+//             parentSection.querySelectorAll(".level-2-btn")
+//                 .forEach(btn => btn.classList.remove("active"));
+//             button.classList.add("active");
+//             const targetTab = button.dataset.tab;
+//             parentSection.querySelectorAll(".tab-panel")
+//                 .forEach(panel => panel.classList.remove("active"));
+//             const activePanel = parentSection.querySelector(`#${targetTab}`);
+//             if (activePanel) {
+//                 activePanel.classList.add("active");
+//             }
+//         });
+//     });
+//     }
+
+
+
+
+if (window.innerWidth > 991) {
     const level2Buttons = document.querySelectorAll(".level-2-btn");
+
     level2Buttons.forEach(button => {
-        button.addEventListener("click", () => {
+        button.addEventListener("mouseenter", () => {
             const parentSection = button.closest(".mega-section");
-            parentSection.querySelectorAll(".level-2-btn")
-                .forEach(btn => btn.classList.remove("active"));
+
+            // Remove active class from all buttons
+            parentSection.querySelectorAll(".level-2-btn").forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            // Add active class to hovered button
             button.classList.add("active");
+
+            // Hide all panels
+            parentSection.querySelectorAll(".tab-panel").forEach(panel => {
+                panel.classList.remove("active");
+            });
+
+            // Show corresponding panel
             const targetTab = button.dataset.tab;
-            parentSection.querySelectorAll(".tab-panel")
-                .forEach(panel => panel.classList.remove("active"));
             const activePanel = parentSection.querySelector(`#${targetTab}`);
+
             if (activePanel) {
                 activePanel.classList.add("active");
             }
         });
     });
-    }
+}
 
     /* ===================================
        LEVEL 3 TAB SWITCHING
