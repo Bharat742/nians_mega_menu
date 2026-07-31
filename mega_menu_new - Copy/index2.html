@@ -76,20 +76,19 @@
     =================================== */
     .service-grid{display:none;/*max-width:1400px;margin:auto;padding:0 0px 50px;grid-template-columns:repeat(5,1fr);gap:10px;margin-top: 10px;*/}
     .service-grid.active{display:grid;padding-top: 0px;}
-    .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: #fff !important;height: 100%;width: -webkit-fill-available;display: inline-flex;
+    .service-card{background: #fff;border: 1px solid #d3d3d3 !important;border-radius: 10px;padding: 10px 15px;/*min-height: 180px;*/transition: .35s;color: #111827;background-color: #fff !important;height: 100%;width: -webkit-fill-available;display: inline-flex;
     flex-direction: column;
     justify-content: center;}
     /* .service-card::after{content: "";position: absolute;top: 0;left: 0;bottom: 0;right: 0;opacity: 0.2;background-image: url('https://nians.com/wp-content/uploads/2025/10/favicon.png');background-position: right;background-repeat: no-repeat;background-size: 50px;animation: mover 1.5s infinite alternate;} */
     /* asds */
     .service-grid.active .col-md-3{position: relative; }
     @-webkit-keyframes mover {0% { transform: translateY(0); }100% { transform: translateY(-5px); }}
-    .service-card p {color: #64748b;font-size: 12px;line-height: 1.8;min-height: auto;}
+    .service-card p {color: #64748b;font-size: 12px;line-height: 1.8;min-height: auto;display: -webkit-box;
+  -webkit-line-clamp: 1;overflow: hidden;margin-bottom: 0px;
+  -webkit-box-orient: vertical;}
     .service-card:hover{transform:translateY(-6px);border-color:#0f62fe;box-shadow:0 20px 35px rgba(15,98,254,.08);box-shadow: 3px 3px 2px 0 #002a5473;box-shadow: 3px 3px 0px 0 #002a5485;border-radius: 0px;border-bottom: 0px !important;}
     .service-card i{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:#eef4ff;color:#0f62fe;font-size:22px;margin-bottom:20px;}
-    .service-card h4{font-size:15px;font-weight:600;line-height:1.4;margin-top: 0px;margin-bottom: 0px;}
-    .service-card p{ display: -webkit-box;
-  -webkit-line-clamp: 1;overflow: hidden;margin-bottom: 0px;
-  -webkit-box-orient: vertical; }
+    .service-card h4{font-size:15px;font-weight:600;line-height:1.4;margin-top: 0px;margin-bottom: 0px;} 
 
 
 
@@ -210,7 +209,9 @@
         .service-grid{grid-template-columns:repeat(2,1fr);}
         .odoo-grid{grid-template-columns:repeat(2,1fr);}
         .ecommerce-grid{grid-template-columns:1fr;}
-        .level-1-menu{gap:20px;flex-wrap:wrap;padding:15px 0;}
+        .level-1-menu{gap:20px;flex-wrap:wrap;padding:15px 0;}.level-1-menu li:hover {
+    color: #c7c7c7;
+}
     }
 
     @media(max-width:768px){
@@ -219,7 +220,7 @@
         .level-2-tabs, .level-3-tabs{overflow-x:auto;justify-content:flex-start;flex-wrap:nowrap;padding-left:20px;}
         .level-2-btn, .level-3-btn{white-space:nowrap;}
         .main-nav{padding:0 15px;}
-        .level-1-menu{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;}
+        .level-1-menu{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding: 5px 10px 0px 10px !important;}
     }
     /* ==========================
     NAV CONTAINER
@@ -340,15 +341,15 @@
         .services a{font-size: 10px;padding: 5px;}
         .detail-left h3 {font-size: 16px;font-weight: 600;}
         .mobile-toggle{display:block;}
-        .nav-container{width:100%;padding:0 15px; }
+        .nav-container{width:100%;padding:0 15px;min-height: 60px;}
         .level-1-menu li.active::after{height:0px;}
         /* .main-nav{position:fixed;top:80px;left:-100%;width:100%;height:calc(100vh - 80px);background:#fff;transition:.35s;overflow:auto;z-index:999;} */
         .main-nav{
             position:fixed;
-            top:80px;
+            top:60px;
             left:0;
             width:100%;
-            height:calc(100vh - 80px);
+            height:calc(100vh - 60px);
             background:#002a54; /* DARK BLUE FIXED */
             overflow:hidden;
 
@@ -391,8 +392,8 @@
         }
         .main-nav.active{left:0;padding-left: 0px; }
         .category-column{border-radius:7px;padding: 15px 10px;}
-        .level-1-menu{flex-direction:column;align-items:flex-start; gap:7px;padding: 0 12px;}
-        .level-1-menu li {color: #fff;padding: 12px 0 3px 0;width: -webkit-fill-available;justify-content: flex-end;}.logo img{width: 120px;}
+        .level-1-menu{flex-direction:column;align-items:flex-start; gap:7px;padding: 0 10px;}
+        .level-1-menu li {color: #fff;padding: 12px 0 3px 0;width: -webkit-fill-available;justify-content: flex-end;}.logo img{width: 100px;}
         .level-1-menu li.active{color: #fff;}
         .level-1-menu li.active::before {
     background: #f9f9f9;
@@ -422,15 +423,16 @@
         .mobile-links a:hover{transform:translateX(5px);}
         .mobile-digital-layout{display:block; }
         .mobile-main-group{margin-bottom:30px;}
-        .mobile-main-group h3{font-size:23px;font-weight:600;margin-bottom:20px;color:#003b7a;width: fit-content;/* border-bottom: 1px solid #ddd */}
+        .mobile-main-group h3{font-size:16px;font-weight:600;margin-bottom:10px;color:#003b7a;width: fit-content;/* border-bottom: 1px solid #ddd */}
         .mobile-sub-group{margin-bottom:24px;position: relative;}
         .mobile-sub-group h4{font-size:15px;font-weight:600;text-transform:uppercase;margin-bottom:10px;color:#181818;}
-        .mobile-sub-group::before{content: "";position: absolute;bottom: 10px;left: 1px;width: 1px;height: calc(100% - 30px);background-color: #002a542e;}
-        .mobile-sub-group a{display:flex;justify-content:space-between;align-items:center;padding:2px 0px 3px 12px;margin-bottom:8px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;text-decoration:none;color:#111;background-color: transparent !important;border-color: transparent !important;position: relative;font-size: 12px;line-height: 15px;}
+        .mobile-sub-group::before{content: "";position: absolute;bottom: 10px;left: 1px;width: 1px;height: calc(100% - 10px);background-color: #002a542e;}
+        .mobile-sub-group a{display:flex;justify-content:space-between;align-items:center;padding:2px 0px 3px 20px;margin-bottom:8px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;text-decoration:none;color:#111;background-color: transparent !important;border-color: transparent !important;position: relative;font-size: 12px;line-height: 15px;}
         .mobile-sub-group a::before{content: "";position: absolute;bottom: 0px;top: 0px;left: 1px;width: 10px;height: 1px;background-color: #002a542e;margin: auto;}
+        .mobile-sub-group a::after{content: "";position: absolute;bottom: 0px;top: 0px;left: 9px;width: 10px;height: 4px;width: 4px;background-color: #002a54;margin: auto;border-radius: 50%;}
         .service-grid{display:grid !important;}
         .level-2-tabs, .level-3-tabs{display:none;}
-        .category_bg{padding:25px 12px;background:#f5f5f5;}
+        .category_bg{padding:15px 10px;background:#f5f5f5;}
         .category{background:#fff;padding: 20px 12px;}
         .category a{font-size: 12px;padding: 5px 15px;}
         .category p{font-size: 12px;line-height: 20px;}
@@ -464,9 +466,9 @@
     .mobile-submenu-header{display:none;}
 
     @media(max-width:991px){
-        .mobile-submenu-header{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:12px 15px;align-items:center;gap:15px;}
+        .mobile-submenu-header{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1px solid #e5e5e5;padding:5px 10px;align-items:center;gap:15px;}
         .mobile-back{border:none;background:none;font-size:12px;font-weight:600;color:#002b5b;padding:0;cursor:pointer;}
-        .mobile-submenu-title{font-size:12px;font-weight:600;color:#002b5b;text-transform: uppercase;}
+        .mobile-submenu-title{font-size:15px;font-weight:600;color:#002b5b;text-transform: uppercase;}
         /* submenu open state */
         body.submenu-open .mobile-submenu-header{display:flex;}
     }
@@ -477,8 +479,9 @@
         body.submenu-open .mega-menu-wrapper{display:block;}
         body.submenu-open .mobile-submenu-header{display:none;display: flex;justify-content: space-between;}
         /* body:not(.submenu-open) .mobile-submenu-header{display:none; justify-content: space-between;} */
-        .mega-section.active{display:block !important;visibility:visible !important;opacity:1 !important;}
-        .studio_menu .mobile-sub-group::before{height: calc(100% - -8px);}
+        .mega-section.active{display:block !important;visibility:visible !important;opacity:1 !important;top: 33px !important;left: 0px !important;min-width: 100%;} 
+        .studio_menu .mobile-sub-group::before{height: calc(100% - 10px);}
+        .custom_dropdown_menu .row a{font-size: 12px !important;}
         
 
 /* menu with curtain */
@@ -858,89 +861,89 @@
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>SEO</h4> 
                                                 <p>Improve your website's visibility in search engine results and drive organic traffic.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
-                                        <!-- <div class="col-md-3 p-2">
+                                        <!-- <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>SEO</h4> 
                                                 <div class="learn_more">View More <span>→</span></div>
                                             </a>
                                         </div> -->
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Local SEO</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>E-Commerce SEO</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>PPC Ads Management</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Search Engine Marketing</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>CRO Services</h4> 
                                                 <p>Optimize your website and sales funnel to increase conversions and revenue.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Lead Generation</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Social Media Marketing</h4> 
                                                 <p>Boost your brand's online presence and engage with your audience on social platforms.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Influencer Marketing</h4> 
                                                 <p>Partner with influencers to promote your brand and reach new audiences.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>UGC Agency</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>ORM Services</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Email Marketing</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Mobile Marketing</h4> 
                                                 <p>Engage your audience on the go with targeted mobile campaigns.</p>
@@ -950,7 +953,7 @@
                                     </div>
                                     
                                 </div>
-                                <div class="col-md-3 p-2">
+                                <div class="col-md-3 p-1">
                                     <div class="cta-card">
                                         <div class="cta-graph">
                                             <i class="fa-solid fa-chart-column"></i>
@@ -970,13 +973,13 @@
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Product Photography</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Video Production</h4> 
                                                 <p>Create compelling video content that tells your brand's story and engages your audience.</p>
@@ -1009,38 +1012,38 @@
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Website Development</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>WordPress Development</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Website Design</h4> 
                                                 <p>Create a visually appealing and user-friendly website that reflects your brand and engages your audience.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>UI/UX Design</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Mobile Apps Development</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <h4>Cloud Apps Development</h4> 
                                                 <p>Build scalable and secure cloud-based applications that meet your business needs.</p>
@@ -1072,7 +1075,7 @@
                             <div class="row">
                                 <div class="col-md-9" style="/*background: url('Vector-Smart.png');*/background-size: cover;background-repeat: no-repeat;background-position: center;padding: 0px 20px;">
                                     <div class="row">
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <div class="category-column">
                                                 <div class="category-content">
                                                     <h3>D2C</h3>
@@ -1083,7 +1086,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <div class="category-column">
                                                 <div class="category-content">
                                                     <h3>Marketplace Solutions</h3>
@@ -1093,7 +1096,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 p-2">
+                                        <div class="col-md-3 p-1">
                                             <div class="category-column">
                                                 <div class="category-content">
                                                     <h3>Quick Commerce</h3>
@@ -1132,7 +1135,7 @@
                                     </div>
                                     
                                 </div> -->
-                                <div class="col-md-3 p-2">
+                                <div class="col-md-3 p-1">
                                     <div class="cta-card">
                                         <div class="cta-graph">
                                             <i class="fa-solid fa-chart-column"></i>
@@ -1247,7 +1250,7 @@
                         <div class="row">
                             <div class="col-md-9" style="/*background: url('Vector-Smart.png');*/background-size: cover;background-repeat: no-repeat;background-position: center;padding: 0px 20px;">
                                 <div class="row">
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Core Services</h3>
@@ -1257,7 +1260,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Platform Support</h3>
@@ -1266,7 +1269,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Training & Advisory</h3>
@@ -1275,7 +1278,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Talent</h3>
@@ -1283,7 +1286,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Core Modules</h3>
@@ -1294,7 +1297,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Finance Modules</h3>
@@ -1304,7 +1307,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>HR Modules</h3>
@@ -1314,7 +1317,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Commerce & Website</h3>
@@ -1324,7 +1327,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>CRM Tools</h3>
@@ -1332,7 +1335,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 p-2">
+                                    <div class="col-md-3 p-1">
                                         <div class="category-column">
                                             <div class="category-content">
                                                 <h3>Support Tools</h3>
@@ -1514,7 +1517,7 @@
             <div class="row p-3">
                 <div class="col-md-9">
                     <div class="row">
-                        <div class="col-md-3 p-2">
+                        <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Resources</h3>
@@ -1528,7 +1531,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 p-2">
+                        <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Digital Audience</h3>
@@ -1539,7 +1542,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 p-2">
+                        <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Tools</h3>
@@ -1554,7 +1557,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 p-2">
+                        <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Quick Links</h3>
@@ -1566,7 +1569,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="col-md-3 p-2">
+                        <!-- <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Latest Updates</h3>
@@ -1575,7 +1578,7 @@
                             </div>
                         </div> -->
 
-                        <!-- <div class="col-md-3 p-2">
+                        <!-- <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Our Team</h3>
@@ -1584,7 +1587,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 p-2">
+                        <div class="col-md-3 p-1">
                             <div class="category-column">
                                 <div class="category-content">
                                     <h3>Portfolio</h3>
@@ -2082,23 +2085,23 @@ if(window.innerWidth < 992){
         <div class="mobile-main-group">
             <h3>Agency</h3>
             <div class="mobile-sub-group">
-                <h4>Organic Growth</h4>
+                <!--<h4>Organic Growth</h4>-->
                 <a href="#">SEO <span>→</span></a>
                 <a href="#">Local SEO <span>→</span></a>
                 <a href="#">E-Commerce SEO <span>→</span></a>
-            </div>
-            <div class="mobile-sub-group">
-                <h4>Paid Media & Acquisition</h4>
+            <!--</div>
+            <div class="mobile-sub-group">-->
+                <!--<h4>Paid Media & Acquisition</h4>-->
                 <a href="#">PPC Ads Management <span>→</span></a>
                 <a href="#">Search Engine Marketing <span>→</span></a>
-            </div>
-            <div class="mobile-sub-group">
-                <h4>Conversion & Performance</h4>
+            <!--</div>
+            <div class="mobile-sub-group">-->
+                <!--<h4>Conversion & Performance</h4>-->
                 <a href="#">CRO Services <span>→</span></a>
                 <a href="#">Lead Generation <span>→</span></a>
-            </div>
-            <div class="mobile-sub-group">
-                <h4>Social & Brand Growth</h4>
+           <!-- </div>
+            <div class="mobile-sub-group">-->
+                <!--<h4>Social & Brand Growth</h4>-->
                 <a href="#">Social Media Marketing <span>→</span></a>
                 <a href="#">Influencer Marketing <span>→</span></a>
                 <a href="#">UGC Agency <span>→</span></a>
@@ -2115,14 +2118,14 @@ if(window.innerWidth < 992){
         <div class="mobile-main-group">
             <h3>Technology</h3>
             <div class="mobile-sub-group">
-                <h4>Web Apps</h4>
+                <!--<h4>Web Apps</h4>-->
                 <a href="#">Website Development <span>→</span></a>
                 <a href="#">WordPress Development <span>→</span></a>
                 <a href="#">Website Design <span>→</span></a>
                 <a href="#">UI/UX Design <span>→</span></a>
-            </div>
+            <!-- </div>
             <div class="mobile-sub-group">
-                <h4>App & Cloud Solutions</h4>
+                <h4>App & Cloud Solutions</h4>-->
                 <a href="#">Mobile Apps Development <span>→</span></a>
                 <a href="#">Cloud Apps Development <span>→</span></a>
             </div>
