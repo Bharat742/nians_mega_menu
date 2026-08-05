@@ -321,7 +321,7 @@
 
     .detail-right img{width:100%;border-radius:20px;object-fit: cover;height: 100%;border: 1px solid #ddd;} 
     .detail-right{width:100%;height:210px;}
-    .learn_more{font-size: 12px;transition: all 0.3s}
+    .learn_more{font-size: 23px;transition: all 0.3s;position: absolute;right: 12px;top: 0;}
     .learn_more:hover{letter-spacing: 0.3px;}
     .learn_more span{margin-left: 0px;transition: all 0.3s}
     .learn_more:hover span{margin-left: 5px;}
@@ -857,12 +857,71 @@
                         </div> -->
 
                         <!-- ORGANIC -->
+                         <style>
+                            .hero-icons::before {
+    background-image: url("https://nians.com/wp-content/themes/technians-child/asset/images/black-arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    bottom: 0;
+    content: '';
+    height:17px;
+    left: 95%;
+    margin: auto;
+    position: absolute;
+    top: 10px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    width: 17px;
+    z-index: 9;
+}
+.hero-icons::after {
+    background: #000;
+    content: '';
+    display: inline-block;
+    height: 2px;
+    left: 92%;
+    opacity: 0;
+    position: absolute;
+    top: 9px;
+    transition: .2s ease-in-out;
+    width: 0;
+    z-index: 99;
+}
+.service-card:hover .hero-icons::before {
+    left: 97%;
+}
+.service-card:hover .hero-icons::after {
+    width: 22px;
+    opacity: 1;
+}
+.hero-icons{display: inline-block;
+    position: relative;
+    vertical-align: middle;}
+    .view_more_service a::before{    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: .45s;
+    height: 100%;
+    background: #002a5424;
+    top: auto;
+    bottom: 0;}
+    .view_more_service a:hover::before {
+    transform: scaleX(1);
+}
+                         </style>
                         <div class="service-grid active" id="organic">
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
                                         <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
+                                            <a href="#" class="service-card">  
+                                                 <span class="hero-icons"></span>
                                                 <h4>SEO</h4> 
                                                 <p>Improve your website's visibility in search engine results and drive organic traffic.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -876,30 +935,35 @@
                                         </div> -->
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Local SEO</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
+                                            <a href="#" class="service-card">
+                                                <span class="hero-icons"></span> 
                                                 <h4>E-Commerce SEO</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>PPC Ads Management</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Search Engine Marketing</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a> 
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>CRO Services</h4> 
                                                 <p>Optimize your website and sales funnel to increase conversions and revenue.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -907,12 +971,14 @@
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Lead Generation</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Social Media Marketing</h4> 
                                                 <p>Boost your brand's online presence and engage with your audience on social platforms.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -920,6 +986,7 @@
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Influencer Marketing</h4> 
                                                 <p>Partner with influencers to promote your brand and reach new audiences.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -927,24 +994,28 @@
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>UGC Agency</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>ORM Services</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Email Marketing</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Mobile Marketing</h4> 
                                                 <p>Engage your audience on the go with targeted mobile campaigns.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -975,12 +1046,14 @@
                                     <div class="row">
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Product Photography</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Video Production</h4> 
                                                 <p>Create compelling video content that tells your brand's story and engages your audience.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -1013,19 +1086,22 @@
                                 <div class="col-md-9 service_grid_bg">
                                     <div class="row">
                                         <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
+                                            <a href="#" class="service-card">
+                                                <span class="hero-icons"></span> 
                                                 <h4>Website Development</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>WordPress Development</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Website Design</h4> 
                                                 <p>Create a visually appealing and user-friendly website that reflects your brand and engages your audience.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
@@ -1033,18 +1109,21 @@
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>UI/UX Design</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Mobile Apps Development</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
+                                                <span class="hero-icons"></span>
                                                 <h4>Cloud Apps Development</h4> 
                                                 <p>Build scalable and secure cloud-based applications that meet your business needs.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
