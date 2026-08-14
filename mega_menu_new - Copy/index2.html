@@ -761,22 +761,10 @@
 
     position: relative;
     padding-left: 0px; /* arrow space */text-wrap-mode: nowrap;width: -webkit-fill-available;
-    display: flex;
+    display: flex;z-index: 1;
     justify-content: center;
 }
 
-/* Always visible arrow */
-.view_more_service a::before{
-    content: "→";
-    position: absolute;
-    right: -60px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #002a54;
-    font-size: 11px; 
-    display: flex;width: -webkit-fill-available;
-    justify-content: center;
-}
 </style>
 </head>
 <body>
@@ -900,8 +888,9 @@
 .hero-icons{display: inline-block;
     position: relative;
     vertical-align: middle;}
-    .view_more_service a::before{    content: "";
-    position: absolute;
+    
+/* Always visible arrow */ .view_more_service a::before{    content: "";
+    /* position: absolute;
     left: 0;
     width: 100%;
     transform: scaleX(0);
@@ -910,9 +899,24 @@
     height: 100%;
     background: #002a5424;
     top: auto;
-    bottom: 0;}
+    bottom: 0; */
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #002a5424;
+    transition: .3s;color: #002a54;
+    font-size: 11px;
+    display: flex;
+    /* width: -webkit-fill-available; */
+    justify-content: center;}
     .view_more_service a:hover::before {
-    transform: scaleX(1);
+    /* transform: scaleX(1); */
+    left: 0;
+    width: 80%;
 }
                          </style>
                         <div class="service-grid active" id="organic">
