@@ -27,7 +27,7 @@
     /* ===================================
     HEADER
     =================================== */
-    .main-header{background:#ffffff;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:9999;}
+    .main-header{background:#ffffff;border-bottom:1px solid #e5e7eb;position:absolute;top:0;z-index:9999;left: 0;right: 0;}
     .main-nav{/* max-width:1440px; */margin:auto;padding:0 30px;}
     .level-1-menu{display:flex;align-items:center;justify-content:center;gap:40px;list-style:none;margin-bottom: 0;min-height:80px;padding-left: 0;}
     .level-1-menu li{cursor:pointer;font-size:15px;font-weight:500;color:#374151;transition:.3s;position:relative;padding:10px 0;}
@@ -40,7 +40,7 @@
     =================================== */
     .mega-menu-wrapper{width:100%;min-height:calc(100vh - 80px);background:#fff;}
     .mega-section{display:none;animation:fadeIn .3s ease;}
-    .mega-section.active{display:block;/* width: calc(100% - 90px); */margin-left: auto;}
+    .mega-section.active{display:block;/* width: calc(100% - 90px); */margin-left: auto;position: relative;z-index: 99;background: #fff;}
     @keyframes fadeIn{
 
         from{
@@ -232,7 +232,8 @@
     /* ==========================
     MEGA MENU ANIMATION
     ========================== */
-    .mega-menu-wrapper{opacity:1;visibility:visible;transition:.35s ease;}
+    .mega-menu-wrapper{opacity:1;visibility:visible;transition:.35s ease;top: 90px;
+    position: relative;}
     .mega-section{animation:menuFade .4s ease;}
     @keyframes menuFade{
         from{
@@ -764,7 +765,28 @@
     display: flex;z-index: 1;
     justify-content: center;
 }
+.hero-icons::before {background-image: url("https://nians.com/wp-content/themes/technians-child/asset/images/black-arrow.svg");background-size: contain;background-repeat: no-repeat;background-position: 50%;bottom: 0;content: '';height:17px;left: 95%;margin: auto;position: absolute;top: 10px;-webkit-transition: .3s;-moz-transition: .3s;-o-transition: .3s;transition: .3s;width: 17px;z-index: 9;}
+.hero-icons::after {background: #000;content: '';display: inline-block;height: 2px;left: 92%;opacity: 0;position: absolute;top: 9px;transition: .2s ease-in-out;width: 0;z-index: 99;}
+.service-card:hover .hero-icons::before {left: 97%;}
+.service-card:hover .hero-icons::after {width: 22px;opacity: 1;}
+.hero-icons{display: inline-block;position: relative;vertical-align: middle;}  
+.view_more_service a::before{ content: ""; position: absolute;content: "";width: 0;height: 100%;top: 0;right: 0;z-index: -1;background-color: #002a5424;transition: .3s;color: #002a54;font-size: 11px;display: flex; justify-content: center;}
+    .view_more_service a:hover::before { left: 0;width: 100%;}
+    /* ================================
+   SERVICES - SHOW DIRECTLY
+================================ */
 
+#digital-marketing .level-2-tabs {
+    display: none;
+}
+
+#digital-marketing #agency {
+    display: block;
+}
+
+#digital-marketing #agency .service-grid {
+    display: block;
+}
 </style>
 </head>
 <body>
@@ -835,90 +857,9 @@
                     </div>
 
                     <!-- AGENCY -->
-                    <div class="tab-panel active" id="agency">
-                        <!-- <div class="level-3-tabs">
-                            <button class="level-3-btn active" data-service="organic">Organic Growth</button>
-                            <button class="level-3-btn" data-service="paid">Paid Media & Acquisition</button>
-                            <button class="level-3-btn" data-service="conversion">Conversion & Performance</button>
-                            <button class="level-3-btn" data-service="social">Social & Brand Growth</button>
-                            <button class="level-3-btn" data-service="retention">Retention & Engagement</button>
-                        </div> -->
+                    <div class="tab-panel active" id="agency"> 
 
-                        <!-- ORGANIC -->
-                         <style>
-                            .hero-icons::before {
-    background-image: url("https://nians.com/wp-content/themes/technians-child/asset/images/black-arrow.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    bottom: 0;
-    content: '';
-    height:17px;
-    left: 95%;
-    margin: auto;
-    position: absolute;
-    top: 10px;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
-    width: 17px;
-    z-index: 9;
-}
-.hero-icons::after {
-    background: #000;
-    content: '';
-    display: inline-block;
-    height: 2px;
-    left: 92%;
-    opacity: 0;
-    position: absolute;
-    top: 9px;
-    transition: .2s ease-in-out;
-    width: 0;
-    z-index: 99;
-}
-.service-card:hover .hero-icons::before {
-    left: 97%;
-}
-.service-card:hover .hero-icons::after {
-    width: 22px;
-    opacity: 1;
-}
-.hero-icons{display: inline-block;
-    position: relative;
-    vertical-align: middle;}
-    
-/* Always visible arrow */ .view_more_service a::before{    content: "";
-    /* position: absolute;
-    left: 0;
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: .45s;
-    height: 100%;
-    background: #002a5424;
-    top: auto;
-    bottom: 0; */
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #002a5424;
-    transition: .3s;color: #002a54;
-    font-size: 11px;
-    display: flex;
-    /* width: -webkit-fill-available; */
-    justify-content: center;}
-    .view_more_service a:hover::before {
-    /* transform: scaleX(1); */
-    left: 0;
-    width: 100%;
-}
-                         </style>
+                        <!-- ORGANIC --> 
                         <div class="service-grid active" id="organic">
                             <div class="row">
                                 <div class="col-md-9 service_grid_bg">
@@ -940,51 +881,14 @@
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <span class="hero-icons"></span>
-                                                <h4>Local SEO</h4> 
+                                                <h4>PPC</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card">
                                                 <span class="hero-icons"></span> 
-                                                <h4>E-Commerce SEO</h4> 
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>PPC Ads Management</h4> 
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a> 
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>Search Engine Marketing</h4> 
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a> 
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>CRO Services</h4> 
-                                                <p>Optimize your website and sales funnel to increase conversions and revenue.</p>
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>Lead Generation</h4> 
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>Social Media Marketing</h4> 
-                                                <p>Boost your brand's online presence and engage with your audience on social platforms.</p>
+                                                <h4>Social Media</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
                                             </a>
                                         </div>
@@ -992,39 +896,16 @@
                                             <a href="#" class="service-card"> 
                                                 <span class="hero-icons"></span>
                                                 <h4>Influencer Marketing</h4> 
-                                                <p>Partner with influencers to promote your brand and reach new audiences.</p>
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
+                                            </a> 
                                         </div>
                                         <div class="col-md-3 p-1">
                                             <a href="#" class="service-card"> 
                                                 <span class="hero-icons"></span>
-                                                <h4>UGC Agency</h4> 
+                                                <h4>Local SEO</h4> 
                                                 <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>ORM Services</h4> 
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>Email Marketing</h4> 
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 p-1">
-                                            <a href="#" class="service-card"> 
-                                                <span class="hero-icons"></span>
-                                                <h4>Mobile Marketing</h4> 
-                                                <p>Engage your audience on the go with targeted mobile campaigns.</p>
-                                                <!-- <div class="learn_more">View More <span>→</span></div> -->
-                                            </a>
-                                        </div>
+                                            </a> 
+                                        </div> 
                                     </div>
                                     
                                 </div>
@@ -1462,10 +1343,17 @@
     </section> -->
     <section class="mega-section custom_dropdown_menu" id="solutions">
         <div class="row">
-            <a href="#">D2C</a>
-            <a href="#">B2B</a>
+            <a href="#">B2B Marketing</a>
+            <a href="#">Performance Marketing</a>
+            <a href="#">Brand Growth</a>
             <a href="#">Lead Generation</a>
-            <a href="#">Brand Activation</a>
+            <a href="#">Customer Acquisition</a>
+            <a href="#">Demand Generation</a>
+            <a href="#">Marketing Automation</a>
+            <a href="#">Customer Retention</a>
+            <a href="#">Conversion Optimization</a>
+            <a href="#">Go-to-Market</a>
+            <a href="#">Omnichannel Marketing</a>
         </div>
     </section>
 
@@ -1575,20 +1463,13 @@
     </section>
 
     <!-- TOOLS -->
-
-    <!-- <section class="mega-section" id="about_us">
-        <div class="row">
-            <div class="col-12">
-                <a href="#">Team</a>
-                <a href="#">Featured Work</a>
-            </div>
-        </div>
-    </section> -->
+ 
 
     <section class="mega-section custom_dropdown_menu" id="about_us">
         <div class="row"> 
             <a href="#">Team</a>
             <a href="#">Featured Work</a> 
+            <a href="#">Awards</a> 
         </div>
     </section>
 
@@ -1606,6 +1487,7 @@
                                     <h3>Resources</h3>
                                     <a href="#">Resource Homepage</a>
                                     <a href="#">Case Studies</a>
+                                    <a href="#">Clients</a>
                                     <a href="#">Industry News</a>
                                     <a href="#">Blogs</a>
                                     <a href="#">Admin Login</a>
@@ -1695,13 +1577,10 @@
     </section>
 
     <!-- CONTACT -->
-
-    <!-- <section class="mega-section" id="contact">
-        <!-- <h2>Contact Section</h2> -->
-        <!--<a href="#">Contact Us</a>
-    </section> -->
+ 
     <section class="mega-section custom_dropdown_menu" id="contact">
         <div class="row">
+            <a href="#">Career</a>
             <a href="#">Contact Us</a>
         </div>
     </section>
@@ -1710,79 +1589,13 @@
 
     <!-- Mobile Menu end -->
 
-
 </div>
+<img src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/09/agency.png" alt="Mega Menu" class="img-fluid" style="position: absolute;top: 0;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    /* ===================================
-       LEVEL 1 MENU SWITCHING
-    =================================== */
-
-//     const level1Menus = document.querySelectorAll(".level-1-menu li");
-//     const megaSections = document.querySelectorAll(".mega-section");
-//     // level1Menus.forEach(menu => {
-//     //     menu.addEventListener("click", () => {
-//     //         const target = menu.dataset.menu;
-//     //     console.log("Clicked:", target);
-//     //         level1Menus.forEach(item => {
-//     //             item.classList.remove("active");
-//     //         });
-//     //         menu.classList.add("active");
-//     //         megaSections.forEach(section => {
-//     //             section.classList.remove("active");
-//     //         });
-//     //         const activeSection = document.getElementById(target);
-//     //     console.log("Section Found:", activeSection);
-//     //         if (activeSection) {
-//     //             activeSection.classList.add("active");
-//     //         }
-//     //     });
-//     // });
-//     level1Menus.forEach(menu => {
-
-//     menu.addEventListener("click", () => {
-
-//         const target = menu.dataset.menu;
-//         console.log("Clicked:", target);
-//         const activeSection =
-//         document.getElementById(target);
-
-//         const isAlreadyActive =
-//         menu.classList.contains("active");
-
-//         // reset all
-//         level1Menus.forEach(item =>
-//             item.classList.remove("active")
-//         );
-
-//         megaSections.forEach(section =>
-//             section.classList.remove("active")
-//         );
-
-//         // agar same menu pe click hua to close hi rehne do
-//         if(isAlreadyActive){
-//             document.body.classList.remove("submenu-open");
-//             return;
-//         }
-
-//         // warna open karo
-//         menu.classList.add("active");
-
-//         if(activeSection){
-//             activeSection.classList.add("active");
-//         }
-
-//         if(window.innerWidth < 992){
-//             document.body.classList.add("submenu-open");
-//         }
-
-//     });
-
-// });
-
+    document.addEventListener("DOMContentLoaded", () => { 
 const level1Menus = document.querySelectorAll(".level-1-menu li");
 const megaSections = document.querySelectorAll(".mega-section");
 
@@ -1835,53 +1648,31 @@ level1Menus.forEach(menu => {
     });
 
 });
-
-    /* ===================================
-       LEVEL 2 TAB SWITCHING
-    =================================== */
-// if(window.innerWidth > 991){
-//     const level2Buttons = document.querySelectorAll(".level-2-btn");
-//     level2Buttons.forEach(button => {
-//         button.addEventListener("click", () => {
-//             const parentSection = button.closest(".mega-section");
-//             parentSection.querySelectorAll(".level-2-btn")
-//                 .forEach(btn => btn.classList.remove("active"));
-//             button.classList.add("active");
-//             const targetTab = button.dataset.tab;
-//             parentSection.querySelectorAll(".tab-panel")
-//                 .forEach(panel => panel.classList.remove("active"));
-//             const activePanel = parentSection.querySelector(`#${targetTab}`);
-//             if (activePanel) {
-//                 activePanel.classList.add("active");
-//             }
-//         });
-//     });
-//     }
-
-
-
+ 
 
 if (window.innerWidth > 991) {
     const level2Buttons = document.querySelectorAll(".level-2-btn");
 
     level2Buttons.forEach(button => {
         button.addEventListener("mouseenter", () => {
+
             const parentSection = button.closest(".mega-section");
 
-            // Remove active class from all buttons
+            // Don't switch tabs inside Services
+            if (parentSection && parentSection.id === "digital-marketing") {
+                return;
+            }
+
             parentSection.querySelectorAll(".level-2-btn").forEach(btn => {
                 btn.classList.remove("active");
             });
 
-            // Add active class to hovered button
             button.classList.add("active");
 
-            // Hide all panels
             parentSection.querySelectorAll(".tab-panel").forEach(panel => {
                 panel.classList.remove("active");
             });
 
-            // Show corresponding panel
             const targetTab = button.dataset.tab;
             const activePanel = parentSection.querySelector(`#${targetTab}`);
 
@@ -2009,28 +1800,7 @@ if(mobileToggle){
             icon.classList.add("fa-xmark");
         }
     });
-}
-//     document
-// .querySelectorAll(".level-1-menu li")
-// .forEach(item=>{
-//     item.addEventListener("click",()=>{
-//           if(window.innerWidth < 992){
-//             // submenu view open karo
-//             document.body.classList.add("submenu-open");
-//             // main nav visible rakho
-//             mainNav.classList.remove("active");
-//             mainNav.classList.remove("is-closing");
-//             // cross icon maintain rakho
-//             const icon = mobileToggle.querySelector("i");
-//             icon.classList.remove("fa-bars");
-//             icon.classList.add("fa-xmark");
-//         }
-//         else{
-//             // main nav visible rakho
-//             mainNav.classList.add("active");
-//         }
-//     });
-// });
+} 
     /* =====================================
     MOBILE BACK NAVIGATION
     ===================================== */
@@ -2241,7 +2011,7 @@ if(window.innerWidth < 992){
             const rect = item.getBoundingClientRect();
             menu.style.position = "absolute";
             menu.style.left = rect.left + window.scrollX + "px";
-            menu.style.top = "90px";
+            menu.style.top = "0px";
         });
     });
 
